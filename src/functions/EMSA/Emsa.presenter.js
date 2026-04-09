@@ -1,4 +1,4 @@
-import register_day from "./Service.js";
+import {register_day} from "./Service.js";
 
 const select = document.querySelector("#daySelect");
 const form = document.querySelector("#day-form");
