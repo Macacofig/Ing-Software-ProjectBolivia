@@ -1,0 +1,16 @@
+[
+  {
+    "numPassedTests": 1,
+    "failedTests": 1,
+    "numTotalTests": 2,
+    "timestamp": 1775744289303,
+    "success": false,
+    "testId": 0
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "visual: Configuration for netlify",
+    "commitTimestamp": 1775745039639,
+    "testId": 0
+  }
+]
