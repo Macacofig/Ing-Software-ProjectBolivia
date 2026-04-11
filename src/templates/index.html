@@ -7,25 +7,47 @@
   <body>
     <div class="container">
       <h2>Registrar día de servicio</h2>
+      <section class="zones">
+        <form id="formulario">
+          <!-- SELECT DISTRITO -->
+          <label>Distrito:</label>
+          <select id="distrito">
+            <option value="">Selecciona distrito</option>
+            <option value="2">Distrito 2</option>
+            <option value="6">Distrito 6</option>
+            <option value="7">Distrito 7</option>
+            <option value="8">Distrito 8</option>
+            <option value="9">Distrito 9</option>
+            <option value="15">Distrito 15</option>
+          </select>
 
-      <form id="day-form">
-        <select id="daySelect">
-          <option value="">Selecciona un día</option>
-          <option value="lunes">Lunes</option>
-          <option value="martes">Martes</option>
-          <option value="miércoles">Miércoles</option>
-          <option value="jueves">Jueves</option>
-          <option value="viernes">Viernes</option>
-          <option value="sábado">Sábado</option>
-          <option value="domingo">Domingo</option>
-        </select>
+          <!-- SELECT ZONA -->
+          <label>Zona:</label>
+          <select id="zona">
+            <option value="">Selecciona zona</option>
+          </select>
 
-        <button type="submit">Guardar</button>
-      </form>
+          <!-- TU FORM ORIGINAL -->
+          <label>Día:</label>
+          <select id="daySelect">
+            <option value="">Selecciona un día</option>
+            <option value="lunes">Lunes</option>
+            <option value="martes">Martes</option>
+            <option value="miércoles">Miércoles</option>
+            <option value="jueves">Jueves</option>
+            <option value="viernes">Viernes</option>
+            <option value="sábado">Sábado</option>
+            <option value="domingo">Domingo</option>
+          </select>
 
+          <button type="submit">Guardar</button>
+        </form>
+      </section>
+      
       <div id="resultado-div"></div>
     </div>
 
     <script type="module" src="../functions/EMSA/Emsa.presenter.js"></script>
+    <script type="module" src="../functions/EMSA/zones.js"></script>
   </body>
 </html>
