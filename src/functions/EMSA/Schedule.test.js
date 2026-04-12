@@ -8,8 +8,13 @@ describe("Schedule", () => {
   });
 
   it("should return an error when the zone has no schedule assigned", () => {
-  const result = get_schedule("Zona Desconocida");
-  expect(result).toEqual("No schedule found for this zone");
-});
-
+    const result = get_schedule("Zona Desconocida");
+    expect(result).toEqual("No schedule found for this zone");
   });
+
+  it("should return an error when no zone is provided", () => {
+    const result = get_schedule("");
+    expect(result).toEqual("No schedule found for this zone");
+  });
+
+});
