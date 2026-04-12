@@ -1,8 +1,8 @@
-function register_day(day)
+function register_day(day, distrito, zona)
 {
-    if(day!=="")
+    if(day!=="" && distrito !== "" && zona !== "")
     {
-        return "Day Successfully registered"
+        return "Successfully registered"
     }
     return "Invalid day";
 }

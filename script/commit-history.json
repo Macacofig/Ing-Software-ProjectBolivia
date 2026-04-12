@@ -1,11 +1,11 @@
 [
   {
-    "sha": "HEAD",
+    "sha": "a1f79aab3a7936dedf22068e1bc0b2f393d9027a",
     "author": "omkrfig",
     "commit": {
       "date": "2026-04-09T14:30:38.000Z",
       "message": "visual: Configuration for netlify",
-      "url": "/commit/HEAD"
+      "url": "/commit/a1f79aab3a7936dedf22068e1bc0b2f393d9027a"
     },
     "stats": {
       "total": 29581,
@@ -17,5 +17,43 @@
     "test_count": 2,
     "failed_tests": 1,
     "conclusion": "failure"
+  },
+  {
+    "sha": "4fad40ced72f31fbeb56641ea8e95b6b3284a1fb",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-12T19:04:12.000Z",
+      "message": "fead: I'm add the test for zones",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/4fad40ced72f31fbeb56641ea8e95b6b3284a1fb"
+    },
+    "stats": {
+      "total": 32,
+      "additions": 21,
+      "deletions": 11,
+      "date": "2026-04-12"
+    },
+    "coverage": 66.67,
+    "test_count": 2,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-12T19:12:06.000Z",
+      "message": "fead: I'm add the test for day , distrit ans zones.",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 14,
+      "deletions": 9,
+      "date": "2026-04-12"
+    },
+    "coverage": 66.67,
+    "test_count": 3,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]
