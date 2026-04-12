@@ -17,4 +17,9 @@ describe("Schedule", () => {
     expect(result).toEqual("No schedule found for this zone");
   });
 
+  it("should display the assigned schedule for the given zone", () => {
+  const result = get_schedule("Ushpa Ushpa");
+  expect(result).toEqual("Tuesday and Friday, 06:00 - 08:00");
+});
+
 });
