@@ -19,12 +19,12 @@
     "conclusion": "failure"
   },
   {
-    "sha": "HEAD",
+    "sha": "4fad40ced72f31fbeb56641ea8e95b6b3284a1fb",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-12T19:04:12.000Z",
       "message": "fead: I'm add the test for zones",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/4fad40ced72f31fbeb56641ea8e95b6b3284a1fb"
     },
     "stats": {
       "total": 32,
@@ -34,6 +34,25 @@
     },
     "coverage": 66.67,
     "test_count": 2,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-12T19:12:06.000Z",
+      "message": "fead: I'm add the test for day , distrit ans zones.",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 23,
+      "additions": 14,
+      "deletions": 9,
+      "date": "2026-04-12"
+    },
+    "coverage": 66.67,
+    "test_count": 3,
     "failed_tests": 0,
     "conclusion": "success"
   }
