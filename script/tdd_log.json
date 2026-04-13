@@ -230,9 +230,23 @@
     "testId": 9
   },
   {
-    "commitId": "HEAD",
+    "commitId": "6a88376b0bde8938f72264f82efd44a1a7f6bd2e",
     "commitName": "test: add failing test for empty input validation",
     "commitTimestamp": 1776039883456,
     "testId": 9
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 0,
+    "numTotalTests": 10,
+    "timestamp": 1776040044522,
+    "success": true,
+    "testId": 10
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: add validation block for empty name and zone inputs",
+    "commitTimestamp": 1776040108233,
+    "testId": 10
   }
 ]

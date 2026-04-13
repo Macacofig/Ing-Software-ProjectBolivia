@@ -171,12 +171,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "6a88376b0bde8938f72264f82efd44a1a7f6bd2e",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T00:24:43.000Z",
       "message": "test: add failing test for empty input validation",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/6a88376b0bde8938f72264f82efd44a1a7f6bd2e"
     },
     "stats": {
       "total": 7,
@@ -188,5 +188,24 @@
     "test_count": 10,
     "failed_tests": 1,
     "conclusion": "failure"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:28:28.000Z",
+      "message": "fix: add validation block for empty name and zone inputs",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 6,
+      "deletions": 2,
+      "date": "2026-04-13"
+    },
+    "coverage": 90.91,
+    "test_count": 10,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]
