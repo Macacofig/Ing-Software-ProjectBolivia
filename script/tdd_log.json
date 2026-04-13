@@ -138,9 +138,31 @@
     "testId": 3
   },
   {
-    "commitId": "HEAD",
+    "commitId": "72da0cd9dcf453c17e52c6dba45a1f175a3c1146",
     "commitName": "test: add failing test for basic route registration",
     "commitTimestamp": 1776038726701,
     "testId": 3
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 1,
+    "numTotalTests": 8,
+    "timestamp": 1776038862331,
+    "success": false,
+    "testId": 4
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 1,
+    "numTotalTests": 8,
+    "timestamp": 1776038983295,
+    "success": false,
+    "testId": 4
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refact: test for basic route registration",
+    "commitTimestamp": 1776039082737,
+    "testId": 4
   }
 ]
