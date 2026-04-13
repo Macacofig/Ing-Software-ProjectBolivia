@@ -244,9 +244,23 @@
     "testId": 10
   },
   {
-    "commitId": "HEAD",
+    "commitId": "afbbfcfd6638c704a1e9f374ef0af03c5f31b6e8",
     "commitName": "fix: add validation block for empty name and zone inputs",
     "commitTimestamp": 1776040108233,
     "testId": 10
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 1,
+    "numTotalTests": 11,
+    "timestamp": 1776040243976,
+    "success": false,
+    "testId": 11
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: add failing test to prevent duplicate routes",
+    "commitTimestamp": 1776040351490,
+    "testId": 11
   }
 ]
