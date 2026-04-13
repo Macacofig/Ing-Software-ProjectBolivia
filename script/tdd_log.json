@@ -258,9 +258,23 @@
     "testId": 11
   },
   {
-    "commitId": "HEAD",
+    "commitId": "09919c69cc9c49634da7802bf33b17e27433f1a2",
     "commitName": "test: add failing test to prevent duplicate routes",
     "commitTimestamp": 1776040351490,
     "testId": 11
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776040493833,
+    "success": true,
+    "testId": 12
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: implement validation to reject duplicate routes",
+    "commitTimestamp": 1776040526065,
+    "testId": 12
   }
 ]
