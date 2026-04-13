@@ -174,9 +174,23 @@
     "testId": 5
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ccd6039527b8928ef8312f2c9e8143804d5c88b3",
     "commitName": "feat: add dummy implementation to pass first route test",
     "commitTimestamp": 1776039180608,
     "testId": 5
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 0,
+    "numTotalTests": 8,
+    "timestamp": 1776039273598,
+    "success": true,
+    "testId": 6
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Refact: implementation to pass first route test",
+    "commitTimestamp": 1776039305821,
+    "testId": 6
   }
 ]

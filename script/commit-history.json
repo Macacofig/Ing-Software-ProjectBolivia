@@ -95,12 +95,12 @@
     "conclusion": "failure"
   },
   {
-    "sha": "HEAD",
+    "sha": "ccd6039527b8928ef8312f2c9e8143804d5c88b3",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T00:13:00.000Z",
       "message": "feat: add dummy implementation to pass first route test",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/ccd6039527b8928ef8312f2c9e8143804d5c88b3"
     },
     "stats": {
       "total": 11,
@@ -109,6 +109,25 @@
       "date": "2026-04-13"
     },
     "coverage": 88.89,
+    "test_count": 8,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:15:05.000Z",
+      "message": "Refact: implementation to pass first route test",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 3,
+      "deletions": 8,
+      "date": "2026-04-13"
+    },
+    "coverage": 87.5,
     "test_count": 8,
     "failed_tests": 0,
     "conclusion": "success"
