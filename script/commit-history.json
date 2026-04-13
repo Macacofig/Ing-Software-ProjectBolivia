@@ -38,12 +38,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "2223a75eea0b8075232755b589d1bc809e024d14",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-12T19:12:06.000Z",
       "message": "fead: I'm add the test for day , distrit ans zones.",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/2223a75eea0b8075232755b589d1bc809e024d14"
     },
     "stats": {
       "total": 23,
@@ -53,6 +53,25 @@
     },
     "coverage": 66.67,
     "test_count": 3,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:05:25.000Z",
+      "message": "test: add failing test for basic route registration",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 9,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 85.71,
+    "test_count": 7,
     "failed_tests": 0,
     "conclusion": "success"
   }
