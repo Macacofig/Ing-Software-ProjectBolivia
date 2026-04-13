@@ -1,5 +1,11 @@
 function registrarRuta(nombre, zona, listaRutas) {
-  return { exito: true };
+  const nuevasRutas = [...listaRutas, { nombre: nombre, zona: zona }];
+
+  return { 
+    exito: true, 
+    mensaje: "Ruta registrada exitosamente.",
+    rutas: nuevasRutas 
+  };
 }
 
 export { registrarRuta };
