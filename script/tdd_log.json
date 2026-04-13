@@ -188,9 +188,23 @@
     "testId": 6
   },
   {
-    "commitId": "HEAD",
+    "commitId": "e0f2ac429fd18304f43e4124e3460d0522dfc0c9",
     "commitName": "Refact: implementation to pass first route test",
     "commitTimestamp": 1776039305821,
     "testId": 6
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 1,
+    "numTotalTests": 9,
+    "timestamp": 1776039386636,
+    "success": false,
+    "testId": 7
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: add expectations for success message and route list",
+    "commitTimestamp": 1776039593355,
+    "testId": 7
   }
 ]
