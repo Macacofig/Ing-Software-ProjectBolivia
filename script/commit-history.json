@@ -228,17 +228,36 @@
     "conclusion": "failure"
   },
   {
-    "sha": "HEAD",
+    "sha": "22f074c611d6e63d4c9a7048d1d13a73bedf8b7b",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T00:35:25.000Z",
       "message": "feat: implement validation to reject duplicate routes",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/22f074c611d6e63d4c9a7048d1d13a73bedf8b7b"
     },
     "stats": {
       "total": 13,
       "additions": 12,
       "deletions": 1,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:02:10.000Z",
+      "message": "feat: add HTML structure and empty presenter for route management",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 22,
+      "deletions": 6,
       "date": "2026-04-13"
     },
     "coverage": 93.33,

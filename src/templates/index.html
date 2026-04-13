@@ -9,7 +9,6 @@
       <h2>Registrar día de servicio</h2>
       <section class="zones">
         <form id="formulario">
-          <!-- SELECT DIA -->
           <label>Día:</label>
           <select id="daySelect">
             <option value="">Selecciona un día</option>
@@ -22,7 +21,6 @@
             <option value="domingo">Domingo</option>
           </select>
 
-          <!-- SELECT DISTRITO -->
           <label>Distrito:</label>
           <select id="distrito">
             <option value="">Selecciona distrito</option>
@@ -34,21 +32,39 @@
             <option value="15">Distrito 15</option>
           </select>
 
-          <!-- SELECT ZONA -->
           <label>Zona:</label>
           <select id="zona">
             <option value="">Selecciona zona</option>
           </select>
-
 
           <button type="submit">Guardar</button>
         </form>
       </section>
       
       <div id="resultado-div"></div>
-    </div>
+
+      <hr style="margin: 20px 0; border: 1px solid #eee;">
+      <h2>Registrar Ruta de Recolección</h2>
+      
+      <form id="route-form">
+        <label>Nombre de la Ruta:</label>
+        <input type="text" id="nombreRuta" placeholder="Ej. Ruta Norte 1" style="width: 100%; box-sizing: border-box; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc;">
+        
+        <label>Zona asignada:</label>
+        <input type="text" id="zonaRuta" placeholder="Ej. Pucara" style="width: 100%; box-sizing: border-box; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc;">
+
+        <button type="submit" style="margin-top: 15px;">Añadir Ruta</button>
+      </form>
+
+      <div id="mensaje-ruta" style="margin-top: 15px; font-weight: bold; font-size: 14px;"></div>
+
+      <h3 style="text-align: left; font-size: 16px; color: #555; margin-top: 20px;">Rutas Actuales:</h3>
+      <ul id="lista-rutas" style="text-align: left; padding-left: 20px; font-size: 14px; color: #333;"></ul>
+      </div>
 
     <script type="module" src="../functions/EMSA/Emsa.presenter.js"></script>
     <script type="module" src="../functions/EMSA/zones.js"></script>
+    
+    <script type="module" src="../functions/EMSA/Route.presenter.js"></script>
   </body>
 </html>
