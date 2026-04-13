@@ -38,12 +38,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "2223a75eea0b8075232755b589d1bc809e024d14",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-12T19:12:06.000Z",
       "message": "fead: I'm add the test for day , distrit ans zones.",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/2223a75eea0b8075232755b589d1bc809e024d14"
     },
     "stats": {
       "total": 23,
@@ -53,6 +53,253 @@
     },
     "coverage": 66.67,
     "test_count": 3,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "72da0cd9dcf453c17e52c6dba45a1f175a3c1146",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:05:25.000Z",
+      "message": "test: add failing test for basic route registration",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/72da0cd9dcf453c17e52c6dba45a1f175a3c1146"
+    },
+    "stats": {
+      "total": 9,
+      "additions": 9,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 85.71,
+    "test_count": 7,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "67c4ad2c9165f5ea3f30e197d4d2dfd715759411",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:11:22.000Z",
+      "message": "refact: test for basic route registration",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/67c4ad2c9165f5ea3f30e197d4d2dfd715759411"
+    },
+    "stats": {
+      "total": 18,
+      "additions": 9,
+      "deletions": 9,
+      "date": "2026-04-13"
+    },
+    "coverage": 85.71,
+    "test_count": 8,
+    "failed_tests": 1,
+    "conclusion": "failure"
+  },
+  {
+    "sha": "ccd6039527b8928ef8312f2c9e8143804d5c88b3",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:13:00.000Z",
+      "message": "feat: add dummy implementation to pass first route test",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/ccd6039527b8928ef8312f2c9e8143804d5c88b3"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 11,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 88.89,
+    "test_count": 8,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "e0f2ac429fd18304f43e4124e3460d0522dfc0c9",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:15:05.000Z",
+      "message": "Refact: implementation to pass first route test",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/e0f2ac429fd18304f43e4124e3460d0522dfc0c9"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 3,
+      "deletions": 8,
+      "date": "2026-04-13"
+    },
+    "coverage": 87.5,
+    "test_count": 8,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "2d78257d518ba6ee3a0d754e92622ba56fc05f71",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:19:53.000Z",
+      "message": "test: add expectations for success message and route list",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/2d78257d518ba6ee3a0d754e92622ba56fc05f71"
+    },
+    "stats": {
+      "total": 11,
+      "additions": 10,
+      "deletions": 1,
+      "date": "2026-04-13"
+    },
+    "coverage": 87.5,
+    "test_count": 9,
+    "failed_tests": 1,
+    "conclusion": "failure"
+  },
+  {
+    "sha": "9f19b7a881c1cee1d2a7750731970af27e8a3c81",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:23:18.000Z",
+      "message": "feat: implement route array update and success message",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/9f19b7a881c1cee1d2a7750731970af27e8a3c81"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 7,
+      "deletions": 1,
+      "date": "2026-04-13"
+    },
+    "coverage": 88.89,
+    "test_count": 9,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "6a88376b0bde8938f72264f82efd44a1a7f6bd2e",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:24:43.000Z",
+      "message": "test: add failing test for empty input validation",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/6a88376b0bde8938f72264f82efd44a1a7f6bd2e"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 7,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 88.89,
+    "test_count": 10,
+    "failed_tests": 1,
+    "conclusion": "failure"
+  },
+  {
+    "sha": "afbbfcfd6638c704a1e9f374ef0af03c5f31b6e8",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:28:28.000Z",
+      "message": "fix: add validation block for empty name and zone inputs",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/afbbfcfd6638c704a1e9f374ef0af03c5f31b6e8"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 6,
+      "deletions": 2,
+      "date": "2026-04-13"
+    },
+    "coverage": 90.91,
+    "test_count": 10,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "09919c69cc9c49634da7802bf33b17e27433f1a2",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:32:31.000Z",
+      "message": "test: add failing test to prevent duplicate routes",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/09919c69cc9c49634da7802bf33b17e27433f1a2"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 12,
+      "deletions": 1,
+      "date": "2026-04-13"
+    },
+    "coverage": 90.91,
+    "test_count": 11,
+    "failed_tests": 1,
+    "conclusion": "failure"
+  },
+  {
+    "sha": "22f074c611d6e63d4c9a7048d1d13a73bedf8b7b",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:35:25.000Z",
+      "message": "feat: implement validation to reject duplicate routes",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/22f074c611d6e63d4c9a7048d1d13a73bedf8b7b"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 12,
+      "deletions": 1,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "6cd1f639eed1e3c83fb3ad67475a66ff331851c8",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:02:10.000Z",
+      "message": "feat: add HTML structure and empty presenter for route management",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/6cd1f639eed1e3c83fb3ad67475a66ff331851c8"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 22,
+      "deletions": 6,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "a4dfb11e480929c6f2e7bb18c9c1d163599e7145",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:05:35.000Z",
+      "message": "feat: implement Route presenter to connect UI with domain logic",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/a4dfb11e480929c6f2e7bb18c9c1d163599e7145"
+    },
+    "stats": {
+      "total": 36,
+      "additions": 36,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:09:54.000Z",
+      "message": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 40,
+      "additions": 21,
+      "deletions": 19,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"
   }

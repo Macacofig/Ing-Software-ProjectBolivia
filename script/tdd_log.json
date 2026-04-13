@@ -124,9 +124,175 @@
     "testId": 2
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2223a75eea0b8075232755b589d1bc809e024d14",
     "commitName": "fead: I'm add the test for day , distrit ans zones.",
     "commitTimestamp": 1776021127878,
     "testId": 2
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 0,
+    "numTotalTests": 7,
+    "timestamp": 1776038562578,
+    "success": false,
+    "testId": 3
+  },
+  {
+    "commitId": "72da0cd9dcf453c17e52c6dba45a1f175a3c1146",
+    "commitName": "test: add failing test for basic route registration",
+    "commitTimestamp": 1776038726701,
+    "testId": 3
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 1,
+    "numTotalTests": 8,
+    "timestamp": 1776038862331,
+    "success": false,
+    "testId": 4
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 1,
+    "numTotalTests": 8,
+    "timestamp": 1776038983295,
+    "success": false,
+    "testId": 4
+  },
+  {
+    "commitId": "67c4ad2c9165f5ea3f30e197d4d2dfd715759411",
+    "commitName": "refact: test for basic route registration",
+    "commitTimestamp": 1776039082737,
+    "testId": 4
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 0,
+    "numTotalTests": 8,
+    "timestamp": 1776039123070,
+    "success": true,
+    "testId": 5
+  },
+  {
+    "commitId": "ccd6039527b8928ef8312f2c9e8143804d5c88b3",
+    "commitName": "feat: add dummy implementation to pass first route test",
+    "commitTimestamp": 1776039180608,
+    "testId": 5
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 0,
+    "numTotalTests": 8,
+    "timestamp": 1776039273598,
+    "success": true,
+    "testId": 6
+  },
+  {
+    "commitId": "e0f2ac429fd18304f43e4124e3460d0522dfc0c9",
+    "commitName": "Refact: implementation to pass first route test",
+    "commitTimestamp": 1776039305821,
+    "testId": 6
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 1,
+    "numTotalTests": 9,
+    "timestamp": 1776039386636,
+    "success": false,
+    "testId": 7
+  },
+  {
+    "commitId": "2d78257d518ba6ee3a0d754e92622ba56fc05f71",
+    "commitName": "test: add expectations for success message and route list",
+    "commitTimestamp": 1776039593355,
+    "testId": 7
+  },
+  {
+    "numPassedTests": 9,
+    "failedTests": 0,
+    "numTotalTests": 9,
+    "timestamp": 1776039757216,
+    "success": true,
+    "testId": 8
+  },
+  {
+    "commitId": "9f19b7a881c1cee1d2a7750731970af27e8a3c81",
+    "commitName": "feat: implement route array update and success message",
+    "commitTimestamp": 1776039798765,
+    "testId": 8
+  },
+  {
+    "numPassedTests": 9,
+    "failedTests": 1,
+    "numTotalTests": 10,
+    "timestamp": 1776039860871,
+    "success": false,
+    "testId": 9
+  },
+  {
+    "commitId": "6a88376b0bde8938f72264f82efd44a1a7f6bd2e",
+    "commitName": "test: add failing test for empty input validation",
+    "commitTimestamp": 1776039883456,
+    "testId": 9
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 0,
+    "numTotalTests": 10,
+    "timestamp": 1776040044522,
+    "success": true,
+    "testId": 10
+  },
+  {
+    "commitId": "afbbfcfd6638c704a1e9f374ef0af03c5f31b6e8",
+    "commitName": "fix: add validation block for empty name and zone inputs",
+    "commitTimestamp": 1776040108233,
+    "testId": 10
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 1,
+    "numTotalTests": 11,
+    "timestamp": 1776040243976,
+    "success": false,
+    "testId": 11
+  },
+  {
+    "commitId": "09919c69cc9c49634da7802bf33b17e27433f1a2",
+    "commitName": "test: add failing test to prevent duplicate routes",
+    "commitTimestamp": 1776040351490,
+    "testId": 11
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776040493833,
+    "success": true,
+    "testId": 12
+  },
+  {
+    "commitId": "22f074c611d6e63d4c9a7048d1d13a73bedf8b7b",
+    "commitName": "feat: implement validation to reject duplicate routes",
+    "commitTimestamp": 1776040526065,
+    "testId": 12
+  },
+  {
+    "commitId": "6cd1f639eed1e3c83fb3ad67475a66ff331851c8",
+    "commitName": "feat: add HTML structure and empty presenter for route management",
+    "commitTimestamp": 1776042130753,
+    "testId": 13
+  },
+  {
+    "commitId": "a4dfb11e480929c6f2e7bb18c9c1d163599e7145",
+    "commitName": "feat: implement Route presenter to connect UI with domain logic",
+    "commitTimestamp": 1776042335951,
+    "testId": 14
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
+    "commitTimestamp": 1776042594893,
+    "testId": 15
   }
 ]
