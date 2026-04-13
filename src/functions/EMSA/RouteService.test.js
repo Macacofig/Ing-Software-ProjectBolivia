@@ -15,4 +15,11 @@ describe("RouteService", () => {
     expect(resultado.rutas.length).toBe(1); // Exigimos que la lista crezca
     expect(resultado.rutas[0]).toEqual({ nombre: "Ruta 1", zona: "Pucara" });
   });
+  
+  it("Paso 3: Debería fallar si falta el nombre o la zona", () => {
+    const resultado = registrarRuta("", "Pucara", []);
+    
+    expect(resultado.exito).toBe(false);
+    expect(resultado.mensaje).toBe("Error: Faltan datos.");
+  });
 });

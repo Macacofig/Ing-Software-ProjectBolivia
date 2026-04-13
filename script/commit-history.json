@@ -152,12 +152,12 @@
     "conclusion": "failure"
   },
   {
-    "sha": "HEAD",
+    "sha": "9f19b7a881c1cee1d2a7750731970af27e8a3c81",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T00:23:18.000Z",
       "message": "feat: implement route array update and success message",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/9f19b7a881c1cee1d2a7750731970af27e8a3c81"
     },
     "stats": {
       "total": 8,
@@ -169,5 +169,24 @@
     "test_count": 9,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T00:24:43.000Z",
+      "message": "test: add failing test for empty input validation",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 7,
+      "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 88.89,
+    "test_count": 10,
+    "failed_tests": 1,
+    "conclusion": "failure"
   }
 ]
