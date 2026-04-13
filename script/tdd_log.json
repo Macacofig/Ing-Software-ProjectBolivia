@@ -284,9 +284,15 @@
     "testId": 13
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a4dfb11e480929c6f2e7bb18c9c1d163599e7145",
     "commitName": "feat: implement Route presenter to connect UI with domain logic",
     "commitTimestamp": 1776042335951,
     "testId": 14
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
+    "commitTimestamp": 1776042594893,
+    "testId": 15
   }
 ]

@@ -266,17 +266,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a4dfb11e480929c6f2e7bb18c9c1d163599e7145",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T01:05:35.000Z",
       "message": "feat: implement Route presenter to connect UI with domain logic",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/a4dfb11e480929c6f2e7bb18c9c1d163599e7145"
     },
     "stats": {
       "total": 36,
       "additions": 36,
       "deletions": 0,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:09:54.000Z",
+      "message": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 40,
+      "additions": 21,
+      "deletions": 19,
       "date": "2026-04-13"
     },
     "coverage": 93.33,
