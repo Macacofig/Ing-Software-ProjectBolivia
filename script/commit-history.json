@@ -247,17 +247,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "6cd1f639eed1e3c83fb3ad67475a66ff331851c8",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T01:02:10.000Z",
       "message": "feat: add HTML structure and empty presenter for route management",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/6cd1f639eed1e3c83fb3ad67475a66ff331851c8"
     },
     "stats": {
       "total": 28,
       "additions": 22,
       "deletions": 6,
+      "date": "2026-04-13"
+    },
+    "coverage": 93.33,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-13T01:05:35.000Z",
+      "message": "feat: implement Route presenter to connect UI with domain logic",
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 36,
+      "additions": 36,
+      "deletions": 0,
       "date": "2026-04-13"
     },
     "coverage": 93.33,
