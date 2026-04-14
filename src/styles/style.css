@@ -96,3 +96,56 @@ button {
   background: #2196F3;
   color: white;
 }
+
+/* ========================= */
+/* RUTAS UI */
+/* ========================= */
+
+.ruta-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.ruta-input input {
+  flex: 1;
+}
+
+.ruta-input button {
+  width: 45px;
+  background: #4CAF50;
+  color: white;
+  font-size: 18px;
+}
+
+.lista-rutas {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* ITEM RUTA */
+.ruta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 14px;
+}
+
+/* BOTÓN ELIMINAR */
+.ruta-item button {
+  background: #f44336;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* DRAG VISUAL */
+.ruta-item.dragging {
+  opacity: 0.5;
+}

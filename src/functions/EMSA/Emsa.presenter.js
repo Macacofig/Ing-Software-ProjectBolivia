@@ -1,4 +1,4 @@
-import { register_schedule } from "./Service.js";
+import { register_Route } from "./Service.js";
 
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
@@ -17,7 +17,6 @@ const Zones_by_district = {
   "9": ["Aguas Calientes", "San Antonio", "Villa Paraíso", "21 de Septiembre", "Pucara"],
   "15": ["Arrumani Agrario", "J.V. Copacabana"]
 };
-
 
 // Logic for zone and district select
 /*****************************************************************/
@@ -54,55 +53,149 @@ const lista = document.getElementById("lista-registros");
 const clearBtn = document.getElementById("clearBtn");
 const guardarTodoBtn = document.getElementById("guardarTodo");
 
+// Routes elements
+const inputRuta = document.getElementById("inputRuta");
+const addRutaBtn = document.getElementById("addRuta");
+const listaRutas = document.getElementById("lista-rutas");
+
 // Array for storing records in memory
 let registros = [];
+let rutas = [];
 
-// Clear form
+// CLEAR
 clearBtn.addEventListener("click", () => {
   form.reset();
-  Zone_input.disabled = true;
+  rutas = [];
+  renderRutas();
 });
 
-// Save in UI
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+// =======================
+// RUTAS
+// =======================
 
-  const Day = Day_input.value;
-  const District = District_input.value;
-  const Zone = Zone_input.value;
-  const Schedule = Schedule_input.value;
+// AGREGAR
+addRutaBtn.addEventListener("click", () => {
+  const nombre = inputRuta.value.trim();
+  if (!nombre) return;
 
-  const data = { Day, District, Zone, Schedule };
+  rutas.push(nombre);
+  inputRuta.value = "";
+  renderRutas();
+});
+
+// RENDER RUTAS
+function renderRutas() {
+  listaRutas.innerHTML = "";
+
+  rutas.forEach((ruta, index) => {
+    const li = document.createElement("li");
+    li.className = "ruta-item";
+    li.draggable = true;
+
+    li.innerHTML = `
+      ${ruta}
+      <button data-index="${index}">x</button>
+    `;
+
+    // ELIMINAR
+    li.querySelector("button").onclick = () => {
+      rutas.splice(index, 1);
+      renderRutas();
+    };
+
+    // DRAG
+    li.addEventListener("dragstart", () => {
+      li.classList.add("dragging");
+    });
+
+    li.addEventListener("dragend", () => {
+      li.classList.remove("dragging");
+    });
+
+    listaRutas.appendChild(li);
+  });
+}
+
+// DRAG LOGIC
+listaRutas.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  const dragging = document.querySelector(".dragging");
+  const afterElement = getDragAfterElement(listaRutas, e.clientY);
+
+  if (afterElement == null) {
+    listaRutas.appendChild(dragging);
+  } else {
+    listaRutas.insertBefore(dragging, afterElement);
+  }
+
+  updateArrayFromDOM();
+});
+
+function getDragAfterElement(container, y) {
+  const elements = [...container.querySelectorAll(".ruta-item:not(.dragging)")];
+
+  return elements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+    if (offset < 0 && offset > closest.offset) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
+// ACTUALIZAR ARRAY SEGUN ORDEN
+function updateArrayFromDOM() {
+  rutas = [...listaRutas.children].map(li => li.firstChild.textContent.trim());
+}
+
+// =======================
+// FORM → SOLO PREPARA DATA
+// =======================
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const data = {
+    Day: Day_input.value,
+    District: District_input.value,
+    Zone: Zone_input.value,
+    Schedule: Schedule_input.value,
+    rutas: rutas.join(", ")
+  };
+
   registros.push(data);
 
+  form.reset();
+  rutas = [];
+  renderRutas();
   renderRegistros();
 });
-/*****************************************************************/
-/*****************************************************************/
 
+// =======================
+// RENDER FINAL (DERECHA)
+// =======================
 
-// Logic for rendering records in the UI
-/*****************************************************************/
-/*****************************************************************/
-// RENDER
 function renderRegistros() {
   lista.innerHTML = "";
 
-  registros.forEach((item) => {
+  registros.forEach(item => {
     const div = document.createElement("div");
-    div.classList.add("registro-item");
+    div.className = "registro-card";
 
     div.innerHTML = `
-      <p><strong>Día:</strong> ${item.Day}</p>
-      <p><strong>Distrito:</strong> ${item.District}</p>
-      <p><strong>Zona:</strong> ${item.Zone}</p>
-      <p><strong>Horario:</strong> ${item.Schedule}</p>
-      <hr>
+      <p><b>${item.Day}</b></p>
+      <p>Distrito: ${item.District}</p>
+      <p>Zona: ${item.Zone}</p>
+      <p>Hora: ${item.Schedule}</p>
+      <p>Rutas: ${item.rutas}</p>
     `;
 
     lista.appendChild(div);
   });
 }
+
 /*****************************************************************/
 /*****************************************************************/
 

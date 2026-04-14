@@ -48,6 +48,15 @@
             <label>Horario:</label>
             <input type="time" id="schedule">
 
+            <!-- 🔥 RUTAS -->
+            <label>Rutas:</label>
+            <div class="ruta-input">
+              <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
+              <button type="button" id="addRuta">+</button>
+            </div>
+
+            <ul id="lista-rutas" class="lista-rutas"></ul>
+
             <button type="submit" class="btn-save">Guardar</button>
           </form>
         </div>
@@ -73,6 +82,5 @@
     </div>
 
     <script type="module" src="../functions/EMSA/Emsa.presenter.js"></script>
-    <script type="module" src="../functions/EMSA/Route.presenter.js"></script>
   </body>
 </html>
