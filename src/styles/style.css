@@ -1,62 +1,151 @@
 body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  background: linear-gradient(135deg, #e3f2fd, #f4f6f8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #f4f6f8);
 }
 
-.container {
+/* LAYOUT */
+.main-layout {
+  display: flex;
+  height: 100vh;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* PANEL IZQUIERDO */
+.left-panel {
+  flex: 0 0 60%;
+}
+
+/* PANEL DERECHO */
+.right-panel {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CARD */
+.card {
   background: white;
-  padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 280px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* labels */
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SCROLL AREA */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+/* FORM */
 label {
-  display: block;
   margin-top: 10px;
   font-size: 14px;
   color: #555;
 }
 
-/* selects */
-select {
+select, input {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  background-color: #f9fafb;
-  transition: all 0.3s ease;
 }
 
-select:focus {
-  border-color: #4CAF50;
-  outline: none;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-}
-
-/* botón */
+/* BOTONES */
 button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: white;
-  font-weight: bold;
+  padding: 10px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: bold;
 }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+/* SAVE */
+.btn-save {
+  margin-top: 15px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+/* CLEAR */
+.btn-clear {
+  background: #f44336;
+  color: white;
+  width: auto;
+  padding: 8px 12px;
+}
+
+/* GUARDAR TODO */
+.btn-save-all {
+  margin-top: 10px;
+  background: #2196F3;
+  color: white;
+}
+
+/* ========================= */
+/* RUTAS UI */
+/* ========================= */
+
+.ruta-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.ruta-input input {
+  flex: 1;
+}
+
+.ruta-input button {
+  width: 45px;
+  background: #4CAF50;
+  color: white;
+  font-size: 18px;
+}
+
+.lista-rutas {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* ITEM RUTA */
+.ruta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 14px;
+}
+
+/* BOTÓN ELIMINAR */
+.ruta-item button {
+  background: #f44336;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* DRAG VISUAL */
+.ruta-item.dragging {
+  opacity: 0.5;
 }
