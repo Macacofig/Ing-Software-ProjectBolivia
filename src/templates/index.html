@@ -5,66 +5,74 @@
     <link rel="stylesheet" href="../styles/style.css">
   </head>
   <body>
-    <div class="container">
-      <h2>Registrar día de servicio</h2>
-      <section class="zones">
-        <form id="formulario">
-          <label>Día:</label>
-          <select id="daySelect">
-            <option value="">Selecciona un día</option>
-            <option value="lunes">Lunes</option>
-            <option value="martes">Martes</option>
-            <option value="miércoles">Miércoles</option>
-            <option value="jueves">Jueves</option>
-            <option value="viernes">Viernes</option>
-            <option value="sábado">Sábado</option>
-            <option value="domingo">Domingo</option>
-          </select>
+    <div class="main-layout">
 
-          <label>Distrito:</label>
-          <select id="distrito">
-            <option value="">Selecciona distrito</option>
-            <option value="2">Distrito 2</option>
-            <option value="6">Distrito 6</option>
-            <option value="7">Distrito 7</option>
-            <option value="8">Distrito 8</option>
-            <option value="9">Distrito 9</option>
-            <option value="15">Distrito 15</option>
-          </select>
+      <!-- IZQUIERDA (FORMULARIO) -->
+      <div class="left-panel">
+        <div class="card">
+          <div class="card-header">
+            <h2>Registrar servicio</h2>
+            <button type="button" id="clearBtn" class="btn-clear">Clear</button>
+          </div>
 
-          <label>Zona:</label>
-          <select id="zona">
-            <option value="">Selecciona zona</option>
-          </select>
+          <form id="formulario">
 
-          <button type="submit">Guardar</button>
-        </form>
-      </section>
-      
-      <div id="resultado-div"></div>
+            <label>Día:</label>
+            <select id="daySelect">
+              <option value="">Selecciona un día</option>
+              <option value="lunes">Lunes</option>
+              <option value="martes">Martes</option>
+              <option value="miércoles">Miércoles</option>
+              <option value="jueves">Jueves</option>
+              <option value="viernes">Viernes</option>
+              <option value="sábado">Sábado</option>
+              <option value="domingo">Domingo</option>
+            </select>
 
-      <hr style="margin: 20px 0; border: 1px solid #eee;">
-      <h2>Registrar Ruta de Recolección</h2>
-      
-      <form id="route-form">
-        <label>Nombre de la Ruta:</label>
-        <input type="text" id="nombreRuta" placeholder="Ej. Ruta Norte 1" style="width: 100%; box-sizing: border-box; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc;">
-        
-        <label>Zona asignada:</label>
-        <input type="text" id="zonaRuta" placeholder="Ej. Pucara" style="width: 100%; box-sizing: border-box; padding: 10px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc;">
+            <label>Distrito:</label>
+            <select id="distrito">
+              <option value="">Selecciona distrito</option>
+              <option value="2">Distrito 2</option>
+              <option value="6">Distrito 6</option>
+              <option value="7">Distrito 7</option>
+              <option value="8">Distrito 8</option>
+              <option value="9">Distrito 9</option>
+              <option value="15">Distrito 15</option>
+            </select>
 
-        <button type="submit" style="margin-top: 15px;">Añadir Ruta</button>
-      </form>
+            <label>Zona:</label>
+            <select id="zona">
+              <option value="">Selecciona zona</option>
+            </select>
 
-      <div id="mensaje-ruta" style="margin-top: 15px; font-weight: bold; font-size: 14px;"></div>
+            <label>Horario:</label>
+            <input type="time" id="schedule">
 
-      <h3 style="text-align: left; font-size: 16px; color: #555; margin-top: 20px;">Rutas Actuales:</h3>
-      <ul id="lista-rutas" style="text-align: left; padding-left: 20px; font-size: 14px; color: #333;"></ul>
+            <button type="submit" class="btn-save">Guardar</button>
+          </form>
+        </div>
       </div>
 
+      <!-- DERECHA (LISTA) -->
+      <div class="right-panel">
+        <div class="card">
+
+          <h2>Registros</h2>
+
+          <div id="lista-registros" class="scroll-area">
+            <!-- aquí se insertan los registros -->
+          </div>
+
+          <button id="guardarTodo" class="btn-save-all">
+            Guardar todo
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
     <script type="module" src="../functions/EMSA/Emsa.presenter.js"></script>
-    <script type="module" src="../functions/EMSA/zones.js"></script>
-    
     <script type="module" src="../functions/EMSA/Route.presenter.js"></script>
   </body>
 </html>

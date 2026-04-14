@@ -294,5 +294,37 @@
     "commitName": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
     "commitTimestamp": 1776042594893,
     "testId": 15
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776090873120,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 0,
+    "numTotalTests": 10,
+    "timestamp": 1776093388238,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776093522059,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 0,
+    "numTotalTests": 7,
+    "timestamp": 1776136572584,
+    "success": true,
+    "testId": 16
   }
 ]
