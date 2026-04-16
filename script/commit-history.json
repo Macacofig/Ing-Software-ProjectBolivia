@@ -323,17 +323,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5a2e3bec7f6cedc29f04a5ac19b4acb799b02e84",
     "author": "Alejandra",
     "commit": {
       "date": "2026-04-16T05:28:26.000Z",
       "message": "test: add error cases for empty fields in register functions",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/5a2e3bec7f6cedc29f04a5ac19b4acb799b02e84"
     },
     "stats": {
       "total": 13,
       "additions": 13,
       "deletions": 0,
+      "date": "2026-04-16"
+    },
+    "coverage": 100,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Alejandra",
+    "commit": {
+      "date": "2026-04-16T05:30:23.000Z",
+      "message": "feat: add error returns for empty fields in register functions",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 1,
+      "additions": 0,
+      "deletions": 1,
       "date": "2026-04-16"
     },
     "coverage": 100,

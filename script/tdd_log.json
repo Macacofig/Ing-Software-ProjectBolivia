@@ -430,9 +430,15 @@
     "testId": 16
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5a2e3bec7f6cedc29f04a5ac19b4acb799b02e84",
     "commitName": "test: add error cases for empty fields in register functions",
     "commitTimestamp": 1776317307285,
     "testId": 17
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: add error returns for empty fields in register functions",
+    "commitTimestamp": 1776317424119,
+    "testId": 18
   }
 ]

@@ -1,6 +1,5 @@
 let list_Services= [];
 
-///agregar los returns que dijo, el day y abajo el return they have to be added/aggreded --con los traverse.
 function register_day(day)
 {
     if(day!=="")
