@@ -15,5 +15,9 @@ describe("Service", () => {
   it("Debería devolver éxito al recibir datos", () => {
     expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("New Service was registered Successfully");
   });
+  it("Debería devolver que ya existe ", () => {
+    register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
+    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Service already exists");
+  });
 });
 
