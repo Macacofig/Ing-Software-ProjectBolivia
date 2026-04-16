@@ -361,12 +361,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1ae34ab0ed2585f7879d85bb7e4f5dfb47ab0236",
     "author": "Alejandra",
     "commit": {
       "date": "2026-04-16T13:54:54.000Z",
       "message": "feat: show alert when inputs are empty on form submit",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/1ae34ab0ed2585f7879d85bb7e4f5dfb47ab0236"
     },
     "stats": {
       "total": 8,
@@ -375,6 +375,25 @@
       "date": "2026-04-16"
     },
     "coverage": 100,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Alejandra",
+    "commit": {
+      "date": "2026-04-16T14:07:15.000Z",
+      "message": "test: update empty fields error message to match specific field validation",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 7,
+      "additions": 5,
+      "deletions": 2,
+      "date": "2026-04-16"
+    },
+    "coverage": 85.19,
     "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"

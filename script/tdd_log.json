@@ -442,9 +442,15 @@
     "testId": 18
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1ae34ab0ed2585f7879d85bb7e4f5dfb47ab0236",
     "commitName": "feat: show alert when inputs are empty on form submit",
     "commitTimestamp": 1776347694960,
     "testId": 19
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: update empty fields error message to match specific field validation",
+    "commitTimestamp": 1776348435916,
+    "testId": 20
   }
 ]
