@@ -22,5 +22,20 @@ describe("Service", () => {
   it("Debería devolver que error por campos vacíos", () => {
     expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("All fields must be filled out");
   });
+  
+
+  it("It should return error when day is empty", () => {
+  expect(register_day("")).toEqual("Day is empty");
+   });
+
+  it("It should return error when district or zone is empty", () => {
+  expect(register_district_zone("monday", "", "Pucara")).toEqual("Day, District or Zone is empty");
+  });
+
+  it("It should return error when schedule is empty", () => {
+  expect(register_schedule("monday", "9", "Pucara", "")).toEqual("Day, District, Zone or Schedule is empty");
+  });
+
+
 });
 
