@@ -1,11 +1,13 @@
 let list_Services= [];
 
+///agregar los returns que dijo, el day y abajo el return they have to be added/aggreded --con los traverse.
 function register_day(day)
 {
     if(day!=="")
     {
         return "Day: Successfully registered"
     }
+    return "Day is empty";
 }
 function register_district_zone(day, distrito, zone)
 {
@@ -13,6 +15,7 @@ function register_district_zone(day, distrito, zone)
     {
         return "Day,District,Zone: Successfully registered"
     }
+    return "Day, District or Zone is empty";
 }
 
 function register_schedule(day, distrito, zone, schedule)
@@ -21,6 +24,7 @@ function register_schedule(day, distrito, zone, schedule)
     {
         return "Day,District,Zone,Schedule: Successfully registered"
     }
+    return "Day, District, Zone or Schedule is empty";
 }
 
 function register_Route(day, distrito, zone, schedule, listaRutas) {
