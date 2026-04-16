@@ -285,12 +285,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "6c355c2d0263cb336fe9681ffa582299f4190f8e",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-13T01:09:54.000Z",
       "message": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
-      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Ruben-Cordero/Ing-Software-ProjectBolivia/commit/6c355c2d0263cb336fe9681ffa582299f4190f8e"
     },
     "stats": {
       "total": 40,
@@ -300,6 +300,25 @@
     },
     "coverage": 93.33,
     "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-16T12:15:25.000Z",
+      "message": "fead: I'm create the user page ( visual interface )",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 129,
+      "additions": 129,
+      "deletions": 0,
+      "date": "2026-04-16"
+    },
+    "coverage": 100,
+    "test_count": 6,
     "failed_tests": 0,
     "conclusion": "success"
   }

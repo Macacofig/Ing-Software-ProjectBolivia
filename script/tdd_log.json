@@ -290,7 +290,7 @@
     "testId": 14
   },
   {
-    "commitId": "HEAD",
+    "commitId": "6c355c2d0263cb336fe9681ffa582299f4190f8e",
     "commitName": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
     "commitTimestamp": 1776042594893,
     "testId": 15
@@ -373,6 +373,12 @@
     "numTotalTests": 6,
     "timestamp": 1776310297106,
     "success": true,
+    "testId": 16
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fead: I'm create the user page ( visual interface )",
+    "commitTimestamp": 1776341727300,
     "testId": 16
   }
 ]
