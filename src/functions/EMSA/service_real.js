@@ -30,3 +30,9 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
     }
     return "All fields must be filled out";
 }
+
+function getServices() {
+    // Load existing services from localStorage
+    let list_Services = JSON.parse(localStorage.getItem('services')) || [];
+    return list_Services;
+}
