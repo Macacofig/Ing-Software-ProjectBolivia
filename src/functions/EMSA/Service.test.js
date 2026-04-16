@@ -19,5 +19,8 @@ describe("Service", () => {
     register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
     expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Service already exists");
   });
+  it("Debería devolver que error por campos vacíos", () => {
+    expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("All fields must be filled out");
+  });
 });
 
