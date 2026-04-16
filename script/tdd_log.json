@@ -448,9 +448,23 @@
     "testId": 19
   },
   {
-    "commitId": "HEAD",
+    "commitId": "4fda24a6a1007d02a5ecf4c5e6398b10eaf00f0f",
     "commitName": "test: update empty fields error message to match specific field validation",
     "commitTimestamp": 1776348435916,
     "testId": 20
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776348605003,
+    "success": true,
+    "testId": 21
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Test: Mensaje de error de campos vacios al usuario",
+    "commitTimestamp": 1776348830990,
+    "testId": 21
   }
 ]
