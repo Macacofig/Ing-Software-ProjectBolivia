@@ -47,4 +47,8 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
   return "All fields must be filled out";
 }
 
-export { register_day, register_district_zone, register_schedule, register_Route};
+function getServices() {
+    return list_Services;
+}
+
+export { register_day, register_district_zone, register_schedule, register_Route, getServices};
