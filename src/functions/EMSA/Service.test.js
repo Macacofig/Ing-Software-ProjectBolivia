@@ -1,4 +1,4 @@
-import {register_day, register_district_zone, register_schedule, register_Route, getServices} from "./Service.js";
+import {register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices} from "./Service.js";
 
 describe("Service", () => {
     
@@ -31,6 +31,27 @@ describe("Service", () => {
         zone: "Zona 1",
         schedule: "08:00-12:00",
         listaRutas: "caracoles"
+      }
+    ]);
+  });
+  it("Debería devolver la lista de servicios", () => {
+    clearServices();
+    register_Route("Lunes", "9", "Zona 1", "08:00-12:00", "caracoles");
+    register_Route("Martes", "2", "Zona 2", "09:00-12:00", "caracoles, tortugas");
+    expect(getServices()).toEqual([
+      {
+        day: "Lunes",
+        distrito: "9",
+        zone: "Zona 1",
+        schedule: "08:00-12:00",
+        listaRutas: "caracoles"
+      },
+      {
+        day: "Martes",
+        distrito: "2",
+        zone: "Zona 2",
+        schedule: "09:00-12:00",
+        listaRutas: "caracoles, tortugas"
       }
     ]);
   });
