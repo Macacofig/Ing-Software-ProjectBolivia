@@ -12,8 +12,15 @@ describe("Service", () => {
   it("It should register day with district, zone and schedule", () => {
     expect(register_schedule("monday", "9", "Pucara", "8:00-12:00")).toEqual("Day,District,Zone,Schedule: Successfully registered");
   });
-  it("Paso 1: Debería devolver éxito al recibir datos", () => {
-    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Day,District,Zone,Schedule,Rute: Successfully registered");
+  it("Debería devolver éxito al recibir datos", () => {
+    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("New Service was registered Successfully");
+  });
+  it("Debería devolver que ya existe ", () => {
+    register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
+    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Service already exists");
+  });
+  it("Debería devolver que error por campos vacíos", () => {
+    expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("All fields must be filled out");
   });
 });
 
