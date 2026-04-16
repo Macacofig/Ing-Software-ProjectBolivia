@@ -290,7 +290,7 @@
     "testId": 14
   },
   {
-    "commitId": "HEAD",
+    "commitId": "1177c8fe34180e63dc1b0a0a350b3f6787aecdde",
     "commitName": "Merge branch 'HORARIOS' of https://github.com/Macacofig/Ing-Software-ProjectBolivia into HORARIOS",
     "commitTimestamp": 1776042594893,
     "testId": 15
@@ -374,5 +374,71 @@
     "timestamp": 1776310297106,
     "success": true,
     "testId": 16
+  },
+  {
+    "numPassedTests": 0,
+    "failedTests": 0,
+    "numTotalTests": 0,
+    "timestamp": 1776312343843,
+    "success": false,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 6,
+    "failedTests": 1,
+    "numTotalTests": 7,
+    "timestamp": 1776312359513,
+    "success": false,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 0,
+    "numTotalTests": 7,
+    "timestamp": 1776312467375,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 0,
+    "numTotalTests": 7,
+    "timestamp": 1776312584433,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 7,
+    "failedTests": 1,
+    "numTotalTests": 8,
+    "timestamp": 1776314472079,
+    "success": false,
+    "testId": 16
+  },
+  {
+    "numPassedTests": 8,
+    "failedTests": 0,
+    "numTotalTests": 8,
+    "timestamp": 1776314598012,
+    "success": true,
+    "testId": 16
+  },
+  {
+    "commitId": "8d0183b8b9e69a226cca70b07f8f17c25c3d9b00",
+    "commitName": "Merge branch 'master' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
+    "commitTimestamp": 1776316552706,
+    "testId": 16
+  },
+  {
+    "commitId": "5a2e3bec7f6cedc29f04a5ac19b4acb799b02e84",
+    "commitName": "test: add error cases for empty fields in register functions",
+    "commitTimestamp": 1776317307285,
+    "testId": 17
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: add error returns for empty fields in register functions",
+    "commitTimestamp": 1776317424119,
+    "testId": 18
   }
 ]
