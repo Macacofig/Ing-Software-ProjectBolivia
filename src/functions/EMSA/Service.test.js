@@ -1,4 +1,4 @@
-import {register_day, register_district_zone, register_schedule, register_Route} from "./Service.js";
+import {register_day, register_district_zone, register_schedule, register_Route, getServices} from "./Service.js";
 
 describe("Service", () => {
     
@@ -22,5 +22,16 @@ describe("Service", () => {
   it("Debería devolver que error por campos vacíos", () => {
     expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("All fields must be filled out");
   });
+  it("Debería devolver la lista de servicios", () => {
+    register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
+    expect(getServices()).toEqual([
+      {
+        day: "Lunes",
+        distrito: "Pucara",
+        zone: "Zona 1",
+        schedule: "08:00-12:00",
+        listaRutas: "caracoles"
+      }
+    ]);
+  });
 });
-
