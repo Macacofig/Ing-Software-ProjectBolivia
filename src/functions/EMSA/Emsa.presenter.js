@@ -1,5 +1,6 @@
 import { register_Route } from "./Service.js";
 
+
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
 const District_input = document.getElementById("distrito"); // DISTRICT INPUT
@@ -164,6 +165,13 @@ form.addEventListener("submit", (e) => {
     Schedule: Schedule_input.value,
     rutas: rutas.join(", ")
   };
+
+   const validation = register_Route(data.Day, data.District, data.Zone, data.Schedule, data.rutas);
+
+  if (validation !== "New Service was registered Successfully") {
+    alert(validation);
+    return;
+  }
 
   registros.push(data);
 

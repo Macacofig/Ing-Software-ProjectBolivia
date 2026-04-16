@@ -436,9 +436,15 @@
     "testId": 17
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2b26e1c60f4cb960f2e5cf28537d0cbf1a56862e",
     "commitName": "feat: add error returns for empty fields in register functions",
     "commitTimestamp": 1776317424119,
     "testId": 18
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: show alert when inputs are empty on form submit",
+    "commitTimestamp": 1776347694960,
+    "testId": 19
   }
 ]
