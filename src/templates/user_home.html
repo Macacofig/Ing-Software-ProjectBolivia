@@ -3,40 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMSA Modern Interface</title>
+    <title>EMSA</title>
+
     <link rel="stylesheet" href="../styles/user_home.css">
+
+    <!-- Fuente -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-   <div class="main-background">
-       <div class="container">
-            <div class="header">
-                <h1 class="titulo">EMSA</h1>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <h1 class="titulo">EMSA</h1>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+        <!-- FILTROS -->
+        <section class="filters">
+            <form class="filter-bar">
+
+                <label>
+                    <span>Distrito</span>
+                    <select id="filter-distrito">
+                        <option value="">Seleccionar</option>
+                        <option value="1">Distrito 1</option>
+                        <option value="2">Distrito 2</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Zona</span>
+                    <select id="filter-zona">
+                        <option value="">Seleccionar</option>
+                        <option value="norte">Norte</option>
+                        <option value="sur">Sur</option>
+                    </select>
+                </label>
+
+                <label>
+                    <span>Fecha</span>
+                    <select id="filter-dia">
+                        <option value="">Seleccionar</option>
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miercoles">Miércoles</option>
+                        <option value="jueves">Jueves</option>
+                        <option value="viernes">Viernes</option>
+                        <option value="sabado">Sábado</option>
+                        <option value="domingo">Domingo</option>
+                    </select>
+                </label>
+
+                <button type="button" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+
+            </form>
+        </section>
+
+        <!-- RESULTADOS -->
+        <section class="results">
+            <h2 class="subtitulo">Dias de Servicio</h2>
+
+            <div id="grid-cards" class="grid-cards">
+                <!-- Cards vacías por ahora -->
+                <article class="card">
+                    <p><strong>Distrito:</strong></p>
+                    <p><strong>Zona:</strong></p>
+                    <p><strong>Día:</strong></p>
+                    <p><strong>Hora:</strong></p>
+                </article>
             </div>
+        </section>
 
-            <div class="grid-cards">
-                <div class="card1">
-                    <h3>Distrito 1</h3>
-                    <p><strong>Zona:</strong> Norte</p>
-                    <p><strong>Día:</strong> Lunes</p>
-                    <p><strong>Hora:</strong> 08:00</p>
-                </div>
+    </main>
 
-                <div class="card2">
-                    <h3>Distrito 2</h3>
-                    <p><strong>Zona:</strong> Sur</p>
-                    <p><strong>Día:</strong> Martes</p>
-                    <p><strong>Hora:</strong> 10:30</p>
-                </div>
+    <script src="../functions/EMSA/user.js"></script>
 
-                <div class="card3">
-                    <h3>Distrito 3</h3>
-                    <p><strong>Zona:</strong> Central</p>
-                    <p><strong>Día:</strong> Miércoles</p>
-                    <p><strong>Hora:</strong> 14:00</p>
-                </div>
-            </div>
-       </div>
-   </div>
 </body>
 </html>

@@ -1,88 +1,165 @@
+:root {
+    --naranja-pastel: #FFD8B1;
+    --accent-color: #000000;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f0f2f5;
+    background: white;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+    min-height: 100vh;
     color: #444;
 }
 
-.main-background {
-    width: 100%;
-    min-height: 500vh;
-    padding: 40px 20px;
+/* ===== HEADER ===== */
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
+.header-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Ahora el h1 es directo, ya no hay .header */
+.titulo {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 70px;
+    padding: 1px 212px;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 12px;
+    color: #2c3e50;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+/* ===== MAIN ===== */
+.main-content {
+    width: 90%;
+    margin: auto;
     text-align: center;
 }
 
-.header {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 10px 40px;
-    display: inline-block;
+/* ===== FILTROS ===== */
+.filters {
     margin-bottom: 50px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
-.titulo {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 600;
-    letter-spacing: 3px;
+.filter-bar {
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    gap: 15px;
+    border: 2px solid var(--accent-color);
+}
+
+/* Labels ahora envuelven inputs */
+.filter-bar label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.filter-bar select,
+.filter-bar input {
+    border: 1px solid #ddd;
+    outline: none;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 25px;
+    font-family: inherit;
     color: #555;
-    text-transform: uppercase;
+    transition: all 0.3s;
 }
 
+.filter-bar select:focus,
+.filter-bar input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+}
 
+.search-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-btn:hover {
+    transform: scale(1.1);
+    background: #357abd;
+}
+
+/* ===== RESULTADOS ===== */
+.results {
+    margin-bottom: 40px;
+}
+
+.subtitulo {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* ===== CARDS ===== */
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
 }
 
-
 .card {
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+    padding: 30px;
+    border-radius: 30px;
     text-align: left;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-.card h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    color: #333;
+/* Colores dinámicos */
+.bg-orange { background-color: var(--naranja-pastel); }
+
+.card h3 { 
+    margin: 0 0 15px 0; 
+    font-size: 1.6rem; 
+    color: rgba(0,0,0,0.7);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding-bottom: 5px;
 }
 
-.card p {
-    margin: 8px 0;
-    font-size: 0.95rem;
+.card p { 
+    margin: 10px 0; 
+    font-size: 1.1rem; 
+    color: rgba(0,0,0,0.8); 
 }
 
-.card1 {
-    background: rgba(232, 156, 89, 0.848); 
+.card strong { 
+    color: rgba(0,0,0,0.6); 
+    font-weight: 600; 
 }
-
-.card2 {
-    background: rgba(232, 156, 89, 0.848); 
-
-}
-
-.card3 {
-    background: rgba(232, 156, 89, 0.848); 
-}
-

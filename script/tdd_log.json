@@ -462,9 +462,21 @@
     "testId": 21
   },
   {
-    "commitId": "HEAD",
+    "commitId": "2fc9609e22f6d45774f2a4d791f677ac8c8083ce",
     "commitName": "Test: Mensaje de error de campos vacios al usuario",
     "commitTimestamp": 1776348830990,
+    "testId": 21
+  },
+  {
+    "commitId": "eff7e4c86432a3ea82b0be7b335b7a4d5b6e7380",
+    "commitName": "fead: I fixed the interface the users",
+    "commitTimestamp": 1776349014074,
+    "testId": 20
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Merge branch 'main' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
+    "commitTimestamp": 1776362918705,
     "testId": 21
   }
 ]

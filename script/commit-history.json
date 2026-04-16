@@ -361,12 +361,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "1ae34ab0ed2585f7879d85bb7e4f5dfb47ab0236",
-    "author": "Alejandra",
+    "sha": "eff7e4c86432a3ea82b0be7b335b7a4d5b6e7380",
+    "author": "Nataly",
     "commit": {
-      "date": "2026-04-16T13:54:54.000Z",
-      "message": "feat: show alert when inputs are empty on form submit",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/1ae34ab0ed2585f7879d85bb7e4f5dfb47ab0236"
+      "date": "2026-04-16T12:30:13.000Z",
+      "message": "fead: UI of the user_home ( visual interface )",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/eff7e4c86432a3ea82b0be7b335b7a4d5b6e7380"
     },
     "stats": {
       "total": 8,
@@ -410,6 +410,44 @@
       "total": 114,
       "additions": 57,
       "deletions": 57,
+      "date": "2026-04-16"
+    },
+    "coverage": 85.19,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-16T14:16:52.000Z",
+      "message": "fead: I fixed the interface the users",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 285,
+      "additions": 205,
+      "deletions": 80,
+      "date": "2026-04-16"
+    },
+    "coverage": 100,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-16T18:08:37.000Z",
+      "message": "Merge branch 'main' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 129,
+      "additions": 70,
+      "deletions": 59,
       "date": "2026-04-16"
     },
     "coverage": 85.19,
