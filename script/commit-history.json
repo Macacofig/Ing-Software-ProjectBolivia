@@ -361,17 +361,36 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "2fc9609e22f6d45774f2a4d791f677ac8c8083ce",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-16T12:30:13.000Z",
       "message": "fead: UI of the user_home ( visual interface )",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/2fc9609e22f6d45774f2a4d791f677ac8c8083ce"
     },
     "stats": {
       "total": 130,
       "additions": 130,
       "deletions": 0,
+      "date": "2026-04-16"
+    },
+    "coverage": 100,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-16T14:16:52.000Z",
+      "message": "fead: I fixed the interface the users",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 285,
+      "additions": 205,
+      "deletions": 80,
       "date": "2026-04-16"
     },
     "coverage": 100,
