@@ -304,12 +304,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8d0183b8b9e69a226cca70b07f8f17c25c3d9b00",
     "author": "Alejandra",
     "commit": {
       "date": "2026-04-16T05:04:20.000Z",
       "message": "Merge branch 'master' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/8d0183b8b9e69a226cca70b07f8f17c25c3d9b00"
     },
     "stats": {
       "total": 220,
@@ -319,6 +319,25 @@
     },
     "coverage": 84.21,
     "test_count": 8,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Alejandra",
+    "commit": {
+      "date": "2026-04-16T05:28:26.000Z",
+      "message": "test: add error cases for empty fields in register functions",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 13,
+      "additions": 13,
+      "deletions": 0,
+      "date": "2026-04-16"
+    },
+    "coverage": 100,
+    "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"
   }

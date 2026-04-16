@@ -424,9 +424,15 @@
     "testId": 16
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8d0183b8b9e69a226cca70b07f8f17c25c3d9b00",
     "commitName": "Merge branch 'master' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
     "commitTimestamp": 1776316552706,
     "testId": 16
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "test: add error cases for empty fields in register functions",
+    "commitTimestamp": 1776317307285,
+    "testId": 17
   }
 ]

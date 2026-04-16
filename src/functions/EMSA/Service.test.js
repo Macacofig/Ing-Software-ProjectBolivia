@@ -55,4 +55,17 @@ describe("Service", () => {
       }
     ]);
   });
+
+  it("should return error when day is empty", () => {
+  expect(register_day("")).toEqual("Day is empty");
+  });
+
+  it("should return error when district or zone is empty", () => {
+  expect(register_district_zone("monday", "", "Pucara")).toEqual("Day, District or Zone is empty");
+  });
+
+  it("should return error when schedule is empty", () => {
+  expect(register_schedule("monday", "9", "Pucara", "")).toEqual("Day, District, Zone or Schedule is empty");
+  });
+
 });
