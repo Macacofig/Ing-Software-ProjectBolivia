@@ -480,9 +480,31 @@
     "testId": 21
   },
   {
-    "commitId": "HEAD",
+    "commitId": "a6e54236e2ccb05ae5b4caf24293a17ccb4266bc",
     "commitName": "feat:Integracion del SideBar",
     "commitTimestamp": 1776392425945,
     "testId": 22
+  },
+  {
+    "numPassedTests": 10,
+    "failedTests": 1,
+    "numTotalTests": 11,
+    "timestamp": 1776396828978,
+    "success": false,
+    "testId": 23
+  },
+  {
+    "numPassedTests": 11,
+    "failedTests": 0,
+    "numTotalTests": 11,
+    "timestamp": 1776397072336,
+    "success": true,
+    "testId": 23
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refact:error de test",
+    "commitTimestamp": 1776397104556,
+    "testId": 23
   }
 ]

@@ -26,18 +26,29 @@ function register_schedule(day, distrito, zone, schedule)
     return "Day, District, Zone or Schedule is empty";
 }
 
+
 function register_Route(day, distrito, zone, schedule, listaRutas) {
-  if (day !== "" && distrito !== "" && zone !== "" && schedule !== "" && listaRutas.length !== "" ) {
-    //verify if the service already exists in the list_Services
-    if(list_Services.length>0 && 
+  // 1. Nueva validación específica para hacer pasar tu test
+  if (day === "") {
+    return "Please select a day";
+  }
+
+  // 2. Lógica original para el resto de los campos
+  if (distrito !== "" && zone !== "" && schedule !== "" && listaRutas.length !== "") {
+    
+    // Verificar si el servicio ya existe
+    if (list_Services.length > 0 && 
         list_Services.some(
-        service => service.day === day && 
-        service.distrito === distrito && 
-        service.zone === zone && 
-        service.schedule === schedule)) 
+          service => service.day === day && 
+          service.distrito === distrito && 
+          service.zone === zone && 
+          service.schedule === schedule
+        )) 
     {
         return "Service already exists";
     }
+    
+    // Guardar el nuevo servicio
     list_Services.push({
         day: day,
         distrito: distrito,
@@ -45,8 +56,11 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
         schedule: schedule,
         listaRutas: listaRutas
     });
+    
     return "New Service was registered Successfully";
   }
+  
+  // Mensaje genérico de respaldo para los demás campos vacíos
   return "All fields must be filled out";
 }
 

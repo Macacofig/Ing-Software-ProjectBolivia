@@ -418,12 +418,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a6e54236e2ccb05ae5b4caf24293a17ccb4266bc",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-16T14:16:52.000Z",
       "message": "fead: I fixed the interface the users",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/a6e54236e2ccb05ae5b4caf24293a17ccb4266bc"
     },
     "stats": {
       "total": 285,
@@ -473,5 +473,24 @@
     "test_count": 11,
     "failed_tests": 1,
     "conclusion": "failure"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-17T03:38:24.000Z",
+      "message": "refact:error de test",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 28,
+      "additions": 21,
+      "deletions": 7,
+      "date": "2026-04-17"
+    },
+    "coverage": 95.24,
+    "test_count": 11,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]
