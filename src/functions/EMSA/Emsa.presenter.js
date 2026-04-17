@@ -1,6 +1,5 @@
 import { register_Route } from "./Service.js";
 
-
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
 const District_input = document.getElementById("distrito"); // DISTRICT INPUT
@@ -218,3 +217,18 @@ guardarTodoBtn.addEventListener("click", () => {
 });
 /*****************************************************************/
 /*****************************************************************/
+
+// =======================================================
+// LÓGICA ESTÉTICA DEL SIDEBAR AÑADIDA (Sin tocar funcionalidad)
+// =======================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.getElementById('appSidebar');
+    const toggleBtn = document.getElementById('toggleSidebar');
+
+    if(sidebar && toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            // Alternar la clase 'collapsed'
+            sidebar.classList.toggle('collapsed');
+        });
+    }
+});

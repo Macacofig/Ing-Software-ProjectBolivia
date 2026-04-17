@@ -399,12 +399,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "c73030fe2452709e4717075c7fb3c4c664e88c97",
     "author": "Alejandra",
     "commit": {
       "date": "2026-04-16T14:13:50.000Z",
       "message": "Test: Mensaje de error de campos vacios al usuario",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/c73030fe2452709e4717075c7fb3c4c664e88c97"
     },
     "stats": {
       "total": 114,
@@ -454,5 +454,24 @@
     "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-17T02:20:24.000Z",
+      "message": "feat:Integracion del SideBar",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 474,
+      "additions": 264,
+      "deletions": 210,
+      "date": "2026-04-17"
+    },
+    "coverage": 100,
+    "test_count": 11,
+    "failed_tests": 1,
+    "conclusion": "failure"
   }
 ]

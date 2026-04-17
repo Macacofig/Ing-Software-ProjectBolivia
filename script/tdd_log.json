@@ -474,9 +474,15 @@
     "testId": 20
   },
   {
-    "commitId": "HEAD",
+    "commitId": "c73030fe2452709e4717075c7fb3c4c664e88c97",
     "commitName": "Merge branch 'main' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
     "commitTimestamp": 1776362918705,
     "testId": 21
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat:Integracion del SideBar",
+    "commitTimestamp": 1776392425945,
+    "testId": 22
   }
 ]
