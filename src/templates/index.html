@@ -1,85 +1,129 @@
 <!DOCTYPE html>
 <html xml:lang="es">
   <head>
+    <meta charset="UTF-8">
     <title>EMSA PROYECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
   </head>
   <body>
     <div class="main-layout">
 
-      <!-- IZQUIERDA (FORMULARIO) -->
-      <div class="left-panel">
-        <div class="card">
-          <div class="card-header">
-            <h2>Registrar servicio</h2>
-            <button type="button" id="clearBtn" class="btn-clear">Clear</button>
+      <aside class="sidebar expanded" id="appSidebar">
+        <div class="mac-controls">
+          <span class="dot close"></span>
+          <span class="dot minimize"></span>
+          <span class="dot expand"></span>
+        </div>
+
+        <button id="toggleSidebar" class="toggle-btn">◀</button>
+
+        <div class="sidebar-inner">
+          <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Ruben+Cordero&background=f39c12&color=fff" alt="User" class="avatar">
+            <div class="user-info">
+              <span class="user-role">ADMINISTRADOR</span>
+              <span class="user-name">Rubén Cordero</span>
+            </div>
           </div>
 
-          <form id="formulario">
+          <nav class="sidebar-menu">
+            <span class="menu-label">MAIN</span>
+            <ul>
+              <li class="menu-item">
+                <span class="icon">🏠</span>
+                <span class="text">Inicio</span>
+              </li>
+              <li class="menu-item">
+                <span class="icon">📖</span>
+                <span class="text">Registrar Servicio</span>
+              </li>
+              <li class="menu-item">
+                <span class="icon">📋</span>
+                <span class="text">Ver Servicios</span>
+              </li>
+              <li class="menu-item">
+                <span class="icon">⚙️</span>
+                <span class="text">Ajustes</span>
+              </li>
+            </ul>
+          </nav>
 
-            <label>Día:</label>
-            <select id="daySelect">
-              <option value="">Selecciona un día</option>
-              <option value="lunes">Lunes</option>
-              <option value="martes">Martes</option>
-              <option value="miércoles">Miércoles</option>
-              <option value="jueves">Jueves</option>
-              <option value="viernes">Viernes</option>
-              <option value="sábado">Sábado</option>
-              <option value="domingo">Domingo</option>
-            </select>
+          <div class="sidebar-footer">
+            <button class="btn-logout">
+              <span class="icon">🚪</span>
+              <span class="text">Cerrar Sesión</span>
+            </button>
+          </div>
+        </div>
+      </aside>
 
-            <label>Distrito:</label>
-            <select id="distrito">
-              <option value="">Selecciona distrito</option>
-              <option value="2">Distrito 2</option>
-              <option value="6">Distrito 6</option>
-              <option value="7">Distrito 7</option>
-              <option value="8">Distrito 8</option>
-              <option value="9">Distrito 9</option>
-              <option value="15">Distrito 15</option>
-            </select>
-
-            <label>Zona:</label>
-            <select id="zona">
-              <option value="">Selecciona zona</option>
-            </select>
-
-            <label>Horario:</label>
-            <input type="time" id="schedule">
-
-            <!-- 🔥 RUTAS -->
-            <label>Rutas:</label>
-            <div class="ruta-input">
-              <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
-              <button type="button" id="addRuta">+</button>
+      <div class="content-wrapper">
+        
+        <div class="left-panel">
+          <div class="card glass-card">
+            <div class="card-header">
+              <h2>Registrar servicio</h2>
+              <button type="button" id="clearBtn" class="btn-clear">Clear</button>
             </div>
 
-            <ul id="lista-rutas" class="lista-rutas"></ul>
+            <form id="formulario">
+              <label>Día:</label>
+              <select id="daySelect">
+                <option value="">Selecciona un día</option>
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miércoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+                <option value="sábado">Sábado</option>
+                <option value="domingo">Domingo</option>
+              </select>
 
-            <button type="submit" class="btn-save">Guardar</button>
-          </form>
-        </div>
-      </div>
+              <label>Distrito:</label>
+              <select id="distrito">
+                <option value="">Selecciona distrito</option>
+                <option value="2">Distrito 2</option>
+                <option value="6">Distrito 6</option>
+                <option value="7">Distrito 7</option>
+                <option value="8">Distrito 8</option>
+                <option value="9">Distrito 9</option>
+                <option value="15">Distrito 15</option>
+              </select>
 
-      <!-- DERECHA (LISTA) -->
-      <div class="right-panel">
-        <div class="card">
+              <label>Zona:</label>
+              <select id="zona">
+                <option value="">Selecciona zona</option>
+              </select>
 
-          <h2>Registros</h2>
+              <label>Horario:</label>
+              <input type="time" id="schedule">
 
-          <div id="lista-registros" class="scroll-area">
-            <!-- aquí se insertan los registros -->
+              <label>Rutas:</label>
+              <div class="ruta-input">
+                <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
+                <button type="button" id="addRuta">+</button>
+              </div>
+
+              <ul id="lista-rutas" class="lista-rutas"></ul>
+
+              <button type="submit" class="btn-save">Guardar</button>
+            </form>
           </div>
-
-          <button id="guardarTodo" class="btn-save-all">
-            Guardar todo
-          </button>
-
         </div>
-      </div>
 
-    </div>
+        <div class="right-panel">
+          <div class="card glass-card">
+            <h2>Registros</h2>
+            <div id="lista-registros" class="scroll-area">
+              </div>
+            <button id="guardarTodo" class="btn-save-all">
+              Guardar todo
+            </button>
+          </div>
+        </div>
+
+      </div> </div>
 
     <script type="module" src="../functions/EMSA/Emsa.presenter.js"></script>
   </body>
