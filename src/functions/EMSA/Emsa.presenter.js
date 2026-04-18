@@ -163,7 +163,7 @@ form.addEventListener("submit", (e) => {
     District: District_input.value,
     Zone: Zone_input.value,
     Schedule: Schedule_input.value,
-    rutas: rutas.join(", ")
+    rutas: rutas
   };
 
    const validation = register_Route(data.Day, data.District, data.Zone, data.Schedule, data.rutas);
@@ -197,7 +197,7 @@ function renderRegistros() {
       <p>Distrito: ${item.District}</p>
       <p>Zona: ${item.Zone}</p>
       <p>Hora: ${item.Schedule}</p>
-      <p>Rutas: ${item.rutas}</p>
+      <p>Rutas: ${item.rutas.join(", ")}</p>
     `;
 
     lista.appendChild(div);

@@ -27,27 +27,35 @@ function register_schedule(day, distrito, zone, schedule)
 }
 
 function register_Route(day, distrito, zone, schedule, listaRutas) {
-    
-  if (day === "") { return "Please select a day"; }
-  if (distrito === "") { return "Please select a district"; }
-  if (zone === "") { return "Please select a zone"; }
-  if (schedule === "") { return "Please select a schedule"; }
-  if (listaRutas === "") { return "Please add at least one route"; }
+    let list_Services = JSON.parse(localStorage.getItem('services')) || [];
 
-  if (list_Services.length > 0 &&
-    list_Services.some(
-      service => service.day === day &&
-      service.distrito === distrito &&
-      service.zone === zone &&
-      service.schedule === schedule))
-       {
-    return "Service already exists";
-  }
+    if (day !== "" && distrito !== "" && zone !== "" && schedule !== "" && listaRutas.length !== 0) {
 
-  list_Services.push({ 
-    day, distrito, zone, schedule, listaRutas
- });
-  return "New Service was registered Successfully";
+        if (
+            list_Services.some(service =>
+                service.day === day &&
+                service.distrito === distrito &&
+                service.zone === zone &&
+                service.schedule === schedule
+            )
+        ) {
+            return "Service already exists";
+        }
+
+        list_Services.push({
+            day: day,
+            distrito: distrito,
+            zone: zone,
+            schedule: schedule,
+            listaRutas: listaRutas 
+        });
+
+        localStorage.setItem('services', JSON.stringify(list_Services));
+
+        return "New Service was registered Successfully";
+    }
+
+    return "All fields must be filled out";
 }
 
 function getServices() {
