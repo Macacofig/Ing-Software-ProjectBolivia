@@ -25,7 +25,7 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
             schedule: schedule,
             listaRutas: listaRutas
         });
-        saveServicesToLocalStorage();
+        localStorage.setItem('services', JSON.stringify(list_Services));
         return "New Service was registered Successfully";
     }
     return "All fields must be filled out";

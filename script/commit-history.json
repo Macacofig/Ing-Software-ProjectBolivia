@@ -399,12 +399,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "d8dfe58bfdd5eeafd2267a1f5af3aead95e30c1c",
     "author": "Alejandra",
     "commit": {
       "date": "2026-04-16T14:13:50.000Z",
       "message": "Test: Mensaje de error de campos vacios al usuario",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/d8dfe58bfdd5eeafd2267a1f5af3aead95e30c1c"
     },
     "stats": {
       "total": 114,
@@ -454,5 +454,24 @@
     "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-04-18T22:45:00.000Z",
+      "message": "fix : change the logic to user for the user can see the events",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 190,
+      "additions": 157,
+      "deletions": 33,
+      "date": "2026-04-18"
+    },
+    "coverage": 57.14,
+    "test_count": 11,
+    "failed_tests": 5,
+    "conclusion": "failure"
   }
 ]

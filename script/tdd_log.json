@@ -474,9 +474,15 @@
     "testId": 20
   },
   {
-    "commitId": "HEAD",
+    "commitId": "d8dfe58bfdd5eeafd2267a1f5af3aead95e30c1c",
     "commitName": "Merge branch 'main' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
     "commitTimestamp": 1776362918705,
     "testId": 21
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix : change the logic to user for the user can see the events",
+    "commitTimestamp": 1776552301495,
+    "testId": 22
   }
 ]
