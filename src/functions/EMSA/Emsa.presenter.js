@@ -44,6 +44,14 @@ District_input.addEventListener("change", function() {
 });
 /*****************************************************************/
 /*****************************************************************/
+// Clear error messages
+/*****************************************************************/
+/*****************************************************************/
+function clearErrors() {
+  document.querySelectorAll(".error").forEach(e => e.textContent = "");
+}
+/*****************************************************************/
+/*****************************************************************/
 
 // Form submission logic
 /*****************************************************************/
@@ -157,6 +165,8 @@ function updateArrayFromDOM() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  clearErrors();
+
   const data = {
     Day: Day_input.value,
     District: District_input.value,
@@ -165,10 +175,24 @@ form.addEventListener("submit", (e) => {
     rutas: rutas.join(", ")
   };
 
-   const validation = register_Route(data.Day, data.District, data.Zone, data.Schedule, data.rutas);
+  const validation = register_Route(
+    data.Day,
+    data.District,
+    data.Zone,
+    data.Schedule,
+    data.rutas
+  );
 
-  if (validation !== "New Service was registered Successfully") {
-    alert(validation);
+  if (!validation.success) {
+    const errorElement = document.getElementById(`error-${validation.field}`);
+    
+    if (errorElement) {
+      errorElement.textContent = validation.message;
+    } else {
+      // error general
+      alert(validation.message); 
+    }
+
     return;
   }
 

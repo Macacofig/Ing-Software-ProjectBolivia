@@ -26,42 +26,43 @@ function register_schedule(day, distrito, zone, schedule)
     return "Day, District, Zone or Schedule is empty";
 }
 
-
 function register_Route(day, distrito, zone, schedule, listaRutas) {
-  // 1. Nueva validación específica para hacer pasar tu test
-  if (day === "") {
-    return "Please select a day";
+  
+  if (!day) return { field: "day", message: "Selecciona un día" };
+
+  if (!distrito) return { field: "district", message: "Selecciona un distrito" };
+
+  if (!zone) return { field: "zone", message: "Selecciona una zona" };
+
+  if (!schedule) return { field: "schedule", message: "Selecciona un horario" };
+
+  if (!listaRutas || listaRutas.trim() === "") {
+    return { field: "rutas", message: "Debes agregar al menos una ruta" };
   }
 
-  // 2. Lógica original para el resto de los campos
-  if (distrito !== "" && zone !== "" && schedule !== "" && listaRutas !== "") {
-    
-    // Verificar si el servicio ya existe
-    if (list_Services.length > 0 && 
-        list_Services.some(
-          service => service.day === day && 
-          service.distrito === distrito && 
-          service.zone === zone && 
-          service.schedule === schedule
-        )) 
-    {
-        return "Service already exists";
-    }
-    
-    // Guardar el nuevo servicio
-    list_Services.push({
-        day: day,
-        distrito: distrito,
-        zone: zone,
-        schedule: schedule,
-        listaRutas: listaRutas
-    });
-    
-    return "New Service was registered Successfully";
+  // Verificar duplicados
+  if (list_Services.length > 0 &&
+    list_Services.some(
+      service =>
+        service.day === day &&
+        service.distrito === distrito &&
+        service.zone === zone &&
+        service.schedule === schedule
+    )
+  ) {
+    return { field: "general", message: "El servicio ya existe" };
   }
-  
-  // Mensaje genérico de respaldo para los demás campos vacíos
-  return "All fields must be filled out";
+
+  // Guardar
+  list_Services.push({
+    day,
+    distrito,
+    zone,
+    schedule,
+    listaRutas
+  });
+
+  return { success: true };
 }
 
 function getServices() {

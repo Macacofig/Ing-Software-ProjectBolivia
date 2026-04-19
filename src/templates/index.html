@@ -79,6 +79,7 @@
                 <option value="sábado">Sábado</option>
                 <option value="domingo">Domingo</option>
               </select>
+              <small class="error" id="error-day"></small>
 
               <label>Distrito:</label>
               <select id="distrito">
@@ -90,20 +91,24 @@
                 <option value="9">Distrito 9</option>
                 <option value="15">Distrito 15</option>
               </select>
+              <small class="error" id="error-district"></small>
 
               <label>Zona:</label>
               <select id="zona">
                 <option value="">Selecciona zona</option>
               </select>
+              <small class="error" id="error-zone"></small>
 
               <label>Horario:</label>
               <input type="time" id="schedule">
+              <small class="error" id="error-schedule"></small>
 
               <label>Rutas:</label>
               <div class="ruta-input">
                 <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
                 <button type="button" id="addRuta">+</button>
               </div>
+              <small class="error" id="error-rutas"></small>
 
               <ul id="lista-rutas" class="lista-rutas"></ul>
 

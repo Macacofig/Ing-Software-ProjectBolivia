@@ -16,15 +16,34 @@ describe("Service", () => {
   });
 
   it("Debería devolver éxito al recibir datos", () => {
-    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("New Service was registered Successfully");
+    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual({ success: true });
   });
   it("Debería devolver que ya existe ", () => {
     register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
-    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Service already exists");
+    expect(register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual({ field: "general", message: "El servicio ya existe" });
   });
   it("Debería devolver que error por campos vacíos", () => {
-  expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual("Please select a day");
-});
+  expect(register_Route("", "Pucara", "Zona 1", "08:00-12:00", "caracoles")).toEqual({ field: "day", message: "Selecciona un día" });
+  });
+  it("error cuando distrito vacío", () => {
+    expect(register_Route("Lunes", "", "Zona 1", "08:00-12:00", "ruta"))
+    .toEqual({ field: "district", message: "Selecciona un distrito" });
+  });
+
+  it("error cuando zona vacía", () => {
+    expect(register_Route("Lunes", "9", "", "08:00-12:00", "ruta"))
+    .toEqual({ field: "zone", message: "Selecciona una zona" });
+  });
+
+  it("error cuando horario vacío", () => {
+    expect(register_Route("Lunes", "9", "Zona 1", "", "ruta"))
+    .toEqual({ field: "schedule", message: "Selecciona un horario" });
+  });
+
+  it("error cuando rutas vacías", () => {
+    expect(register_Route("Lunes", "9", "Zona 1", "08:00-12:00", ""))
+    .toEqual({ field: "rutas", message: "Debes agregar al menos una ruta" });
+  });
   it("Debería devolver la lista de servicios", () => {
     register_Route("Lunes", "Pucara", "Zona 1", "08:00-12:00", "caracoles");
     expect(getServices()).toEqual([
