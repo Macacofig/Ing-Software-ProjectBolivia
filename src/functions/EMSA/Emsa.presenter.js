@@ -44,12 +44,26 @@ District_input.addEventListener("change", function() {
 });
 /*****************************************************************/
 /*****************************************************************/
-// Clear error messages
+// error messages
 /*****************************************************************/
 /*****************************************************************/
 function clearErrors() {
   document.querySelectorAll(".error").forEach(e => e.textContent = "");
 }
+
+const formMessage = document.getElementById("form-message");
+
+function showFormMessage(message, type = "error") {
+  formMessage.textContent = message;
+  formMessage.className = `form-message ${type}`;
+
+  // desaparecer después de 3 segundos
+  setTimeout(() => {
+    formMessage.textContent = "";
+    formMessage.className = "form-message";
+  }, 3000);
+}
+
 /*****************************************************************/
 /*****************************************************************/
 
@@ -184,19 +198,26 @@ form.addEventListener("submit", (e) => {
   );
 
   if (!validation.success) {
+
+    // ERROR GENERAL (ej: duplicado)
+    if (validation.field === "general") {
+      showFormMessage(validation.message, "error");
+      return;
+    }
+
+    // ERROR POR CAMPO
     const errorElement = document.getElementById(`error-${validation.field}`);
     
     if (errorElement) {
       errorElement.textContent = validation.message;
-    } else {
-      // error general
-      alert(validation.message); 
     }
 
     return;
   }
 
   registros.push(data);
+
+  showFormMessage("Servicio registrado correctamente", "success");
 
   form.reset();
   rutas = [];
