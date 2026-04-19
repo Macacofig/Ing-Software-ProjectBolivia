@@ -28,26 +28,31 @@
         <section class="filters">
             <form class="filter-bar">
 
+                <!-- DISTRITO -->
                 <label>
                     <span>Distrito</span>
                     <select id="filter-distrito">
                         <option value="">Seleccionar</option>
-                        <option value="1">Distrito 1</option>
                         <option value="2">Distrito 2</option>
+                        <option value="6">Distrito 6</option>
+                        <option value="7">Distrito 7</option>
+                        <option value="8">Distrito 8</option>
+                        <option value="9">Distrito 9</option>
+                        <option value="15">Distrito 15</option>
                     </select>
                 </label>
 
+                <!-- ZONA -->
                 <label>
                     <span>Zona</span>
                     <select id="filter-zona">
                         <option value="">Seleccionar</option>
-                        <option value="norte">Norte</option>
-                        <option value="sur">Sur</option>
                     </select>
                 </label>
 
+                <!-- DÍA -->
                 <label>
-                    <span>Fecha</span>
+                    <span>Día</span>
                     <select id="filter-dia">
                         <option value="">Seleccionar</option>
                         <option value="lunes">Lunes</option>
@@ -69,22 +74,13 @@
 
         <!-- RESULTADOS -->
         <section class="results">
-            <h2 class="subtitulo">Dias de Servicio</h2>
+            <h2 class="subtitulo">Días de Servicio</h2>
 
-            <div id="grid-cards" class="grid-cards">
-                <!-- Cards vacías por ahora -->
-                <article class="card">
-                    <p><strong>Distrito:</strong></p>
-                    <p><strong>Zona:</strong></p>
-                    <p><strong>Día:</strong></p>
-                    <p><strong>Hora:</strong></p>
-                </article>
-            </div>
+            <div id="grid-cards" class="grid-cards"></div>
         </section>
 
     </main>
 
-    <script src="../functions/EMSA/user.js"></script>
-
+    <script type="module" src="../functions/Citizen/Citizen.presenter.js"></script>
 </body>
 </html>
