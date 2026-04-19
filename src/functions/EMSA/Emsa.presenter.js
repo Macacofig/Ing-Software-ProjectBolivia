@@ -1,4 +1,4 @@
-import { register_Route } from "./Service.js";
+import { register_Route, addService,getServices } from "./service_real.js";
 
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
@@ -255,10 +255,19 @@ function renderRegistros() {
 /*****************************************************************/
 /*****************************************************************/
 guardarTodoBtn.addEventListener("click", () => {
-  console.log(registros);
-
-  // lógica para guardar en backend
-  // TODO: enviar registros a API
+  registros.forEach(registro => {
+    const result = addService(
+      {
+        day: registro.Day,
+        distrito: registro.District,
+        zone: registro.Zone,
+        schedule: registro.Schedule,
+        listaRutas: registro.rutas
+      }
+    );
+  });
+  showFormMessage("Todos los servicios han sido guardados", "success");
+  console.log("Servicios guardados:", );
 });
 /*****************************************************************/
 /*****************************************************************/
