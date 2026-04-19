@@ -7,7 +7,7 @@ function saveServicesToLocalStorage() {
 function register_Route(day, distrito, zone, schedule, listaRutas) {
     // Load existing services from localStorage
     let list_Services = JSON.parse(localStorage.getItem('services')) || [];
-    if (day !== "" && distrito !== "" && zone !== "" && schedule !== "" && listaRutas.length !== "" ) {
+    if (day !== "" && distrito !== "" && zone !== "" && schedule !== "" && listaRutas !== "" ) {
         //verify if the service already exists in the list_Services
         if(list_Services.length>0 && 
             list_Services.some(

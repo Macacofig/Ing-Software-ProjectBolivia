@@ -34,7 +34,7 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
   }
 
   // 2. Lógica original para el resto de los campos
-  if (distrito !== "" && zone !== "" && schedule !== "" && listaRutas.length !== "") {
+  if (distrito !== "" && zone !== "" && schedule !== "" && listaRutas !== "") {
     
     // Verificar si el servicio ya existe
     if (list_Services.length > 0 && 
