@@ -3,7 +3,7 @@ function saveServicesToLocalStorage(list_Services) {
     localStorage.setItem('services', JSON.stringify(list_Services));
 }
 
-function register_Route(day, distrito, zone, schedule, listaRutas) {
+function register_Route(day, distrito, zone, schedule, listaRutas, currentList = []) {
   let list_Services = getServices();
 
   if (!day) return { field: "day", message: "Selecciona un día" };
@@ -18,18 +18,26 @@ function register_Route(day, distrito, zone, schedule, listaRutas) {
     return { field: "rutas", message: "Debes agregar al menos una ruta" };
   }
 
-  // Verificar duplicados
-  if (list_Services.length > 0 &&
-    list_Services.some(
-      service =>
-        service.day === day &&
-        service.distrito === distrito &&
-        service.zone === zone &&
-        service.schedule === schedule
-    )
-  ) {
+  const isDuplicate = (s) => 
+    s.day === day && 
+    s.distrito === distrito && 
+    s.zone === zone && 
+    s.schedule === schedule;
+  
+  if (list_Services.some(isDuplicate)) {
     return { field: "general", message: "El servicio ya existe" };
   }
+  // Verificar duplicados
+  if (currentList.some(s => 
+      (s.Day || s.day) === day && 
+      (s.District || s.distrito) === distrito && 
+      (s.Zone || s.zone) === zone && 
+      (s.Schedule || s.schedule) === schedule
+    )) 
+  {
+    return { field: "general", message: "El servicio ya existe" };
+  }
+
   return { success: true };
 }
 

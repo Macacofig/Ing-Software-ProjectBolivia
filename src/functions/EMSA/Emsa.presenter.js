@@ -194,7 +194,8 @@ form.addEventListener("submit", (e) => {
     data.District,
     data.Zone,
     data.Schedule,
-    data.rutas
+    data.rutas,
+    registros
   );
 
   if (!validation.success) {
@@ -255,6 +256,10 @@ function renderRegistros() {
 /*****************************************************************/
 /*****************************************************************/
 guardarTodoBtn.addEventListener("click", () => {
+  if (registros.length === 0) {
+    showFormMessage("No hay registros para guardar", "error");
+    return;
+  }
   registros.forEach(registro => {
     const result = addService(
       {
@@ -266,8 +271,9 @@ guardarTodoBtn.addEventListener("click", () => {
       }
     );
   });
+  registros = []; 
+  renderRegistros();
   showFormMessage("Todos los servicios han sido guardados", "success");
-  console.log("Servicios guardados:", );
 });
 /*****************************************************************/
 /*****************************************************************/
