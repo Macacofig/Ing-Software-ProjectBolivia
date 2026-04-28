@@ -456,12 +456,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "a4e933d795b2014dfb49fdb588f0c15924c1e5db",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-17T02:20:24.000Z",
       "message": "feat:Integracion del SideBar",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/a4e933d795b2014dfb49fdb588f0c15924c1e5db"
     },
     "stats": {
       "total": 474,
@@ -511,5 +511,24 @@
     "test_count": 0,
     "failed_tests": 0,
     "conclusion": "neutral"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-28T14:03:44.000Z",
+      "message": "fix: Sidebar botones",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 48,
+      "additions": 33,
+      "deletions": 15,
+      "date": "2026-04-28"
+    },
+    "coverage": 100,
+    "test_count": 15,
+    "failed_tests": 0,
+    "conclusion": "success"
   }
 ]

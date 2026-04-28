@@ -73,7 +73,3 @@ function clearServices() {
     list_Services = [];
 }
 export { register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices};
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
