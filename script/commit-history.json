@@ -437,12 +437,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "ecbd743d88979c87916e9026bbe6ce0b61278d17",
     "author": "Nataly",
     "commit": {
       "date": "2026-04-16T18:08:37.000Z",
       "message": "Merge branch 'main' of https://github.com/Macacofig/Ing-Software-ProjectBolivia",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/ecbd743d88979c87916e9026bbe6ce0b61278d17"
     },
     "stats": {
       "total": 129,
@@ -492,5 +492,24 @@
     "test_count": 11,
     "failed_tests": 0,
     "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-04-28T13:05:28.000Z",
+      "message": "refact",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 4,
+      "additions": 4,
+      "deletions": 0,
+      "date": "2026-04-28"
+    },
+    "coverage": 0,
+    "test_count": 0,
+    "failed_tests": 0,
+    "conclusion": "neutral"
   }
 ]

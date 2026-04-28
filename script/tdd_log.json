@@ -502,7 +502,7 @@
     "testId": 23
   },
   {
-    "commitId": "HEAD",
+    "commitId": "ecbd743d88979c87916e9026bbe6ce0b61278d17",
     "commitName": "refact:error de test",
     "commitTimestamp": 1776397104556,
     "testId": 23
@@ -545,6 +545,12 @@
     "numTotalTests": 15,
     "timestamp": 1776657914875,
     "success": true,
+    "testId": 24
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refact",
+    "commitTimestamp": 1777381528981,
     "testId": 24
   }
 ]
