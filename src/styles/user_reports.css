@@ -1,0 +1,129 @@
+:root {
+  --primary: #FE8330;
+  --primary-soft: #FFD8B1;
+  --accent: #f39c12;
+  --success: #2ecc71;
+  --error: #e74c3c;
+}
+
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #FE8330, #FFD8B1);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.app-container {
+  display: flex;
+  width: 90%;
+  max-width: 1000px;
+  height: 600px;
+  gap: 20px;
+}
+
+/* ===== PANEL IZQUIERDO (INFO) ===== */
+.info-panel {
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-panel h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.info-panel p {
+  opacity: 0.8;
+}
+
+/* ===== FORMULARIO ===== */
+.form-panel {
+  flex: 1.2;
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* CAMPOS */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 5px rgba(243,156,18,0.4);
+}
+
+/* BOTÓN */
+.btn-submit {
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  background: #e76f1a;
+}
+
+/* MENSAJE */
+.message-box {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: none;
+}
+
+/* ESTADOS */
+.message-box.success {
+  background: rgba(46,204,113,0.15);
+  color: var(--success);
+  border: 1px solid var(--success);
+  display: block;
+}
+
+.message-box.error {
+  background: rgba(231,76,60,0.15);
+  color: var(--error);
+  border: 1px solid var(--error);
+  display: block;
+}

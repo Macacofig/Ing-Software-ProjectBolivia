@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Reportes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="../styles/user_reports.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- PANEL IZQUIERDO -->
+    <div class="info-panel">
+      <h1>Registro</h1>
+      <p>Completa los datos para generar un reporte ciudadano de forma rápida y sencilla.</p>
+    </div>
+
+    <!-- PANEL DERECHO -->
+    <div class="form-panel">
+
+      <form id="reportForm">
+
+        <div class="form-group">
+          <label for="idCitizen">ID Ciudadano</label>
+          <input type="text" id="idCitizen" name="idCitizen" placeholder="Ej: 12345">
+        </div>
+
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <input type="text" id="description" name="description" placeholder="Describe el problema">
+        </div>
+
+        <div class="form-group">
+          <label for="location">Ubicación</label>
+          <input type="text" id="location" name="location" placeholder="Ej: Calle 10, Zona Centro">
+        </div>
+
+        <button type="submit" class="btn-submit">Registrar</button>
+
+      </form>
+
+      <!-- Mensaje dinámico -->
+      <div id="messageBox" class="message-box"></div>
+
+    </div>
+
+  </div>
+
+  <!-- Presenter (maneja TODO con eventos) -->
+  <script type="module" src="../functions//Citizen/Citizen.Report.presenter.js"></script>
+
+</body>
+</html>
