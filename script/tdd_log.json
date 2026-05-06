@@ -558,5 +558,37 @@
     "commitName": "fix: Sidebar botones",
     "commitTimestamp": 1777385024779,
     "testId": 25
+  },
+  {
+    "numPassedTests": 0,
+    "failedTests": 1,
+    "numTotalTests": 1,
+    "timestamp": 1778039423014,
+    "success": false,
+    "testId": 25
+  },
+  {
+    "numPassedTests": 15,
+    "failedTests": 1,
+    "numTotalTests": 16,
+    "timestamp": 1778039507354,
+    "success": false,
+    "testId": 25
+  },
+  {
+    "numPassedTests": 15,
+    "failedTests": 1,
+    "numTotalTests": 16,
+    "timestamp": 1778039560604,
+    "success": false,
+    "testId": 25
+  },
+  {
+    "numPassedTests": 16,
+    "failedTests": 0,
+    "numTotalTests": 16,
+    "timestamp": 1778039581300,
+    "success": true,
+    "testId": 25
   }
 ]
