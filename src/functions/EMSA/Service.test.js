@@ -1,4 +1,5 @@
-import {register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices} from "./Service.js";
+import {register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices, 
+         select_collection_point} from "./Service.js";
 
 describe("Service", () => {
     
@@ -89,5 +90,19 @@ describe("Service", () => {
   it("should return error when schedule is empty", () => {
   expect(register_schedule("monday", "9", "Pucara", "")).toEqual("Day, District, Zone or Schedule is empty");
   });
+
+  it("should select a collection point successfully", () => {
+  const point = {
+    distrito: "9",
+    zone: "Pucara",
+    day: "lunes",
+    schedule: "08:00",
+    listaRutas: "Ruta Norte 1"
+  };
+  expect(select_collection_point(point)).toEqual({ 
+    success: true, 
+    message: "PUNTO de recolección seleccionado correctamente" 
+  });
+});
 
 });
