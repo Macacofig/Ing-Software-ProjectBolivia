@@ -103,6 +103,17 @@ describe("Service", () => {
     success: true, 
     message: "PUNTO de recolección seleccionado correctamente" 
   });
+
+  it("should return error when collection point is invalid", () => {
+  expect(select_collection_point(null)).toEqual({ 
+    success: false, 
+    message: "Punto de recolección inválido" 
+  });
+  
 });
+
+});
+
+
 
 });
