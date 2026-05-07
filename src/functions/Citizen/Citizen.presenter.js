@@ -1,6 +1,14 @@
-import { getServices } from "../EMSA/service_real.js";
+import { getServices, select_collection_point } from "../EMSA/service_real.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+
+
+    const confirmationBox = document.getElementById("confirmation-message");
+const confirmationText = document.getElementById("confirmation-text");
+const confirmBtn = document.getElementById("confirm-btn");
+const cancelBtn = document.getElementById("cancel-btn");
+let selectedPoint = null;
+
 
     const btnBuscar = document.querySelector(".search-btn");
     const gridCards = document.getElementById("grid-cards");
@@ -63,6 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Rutas:</strong> ${service.listaRutas}</p>
         `;
 
+        article.addEventListener("click", () => {
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        article.classList.add("selected");
+        selectedPoint = service;
+        confirmationText.textContent = 
+            `¿Confirmas el punto: Zona ${service.zone}, ${capitalize(service.day)} a las ${service.schedule}?`;
+        confirmationBox.style.display = "block";
+    });
+
         return article;
     }
 
@@ -118,4 +135,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== CARGA INICIAL =====
     renderServices(getServices());
+
+
+    confirmBtn.addEventListener("click", () => {
+    const result = select_collection_point(selectedPoint);
+    if (result.success) {
+        confirmationBox.style.display = "none";
+        confirmationText.textContent = "";
+        alert(result.message);
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        selectedPoint = null;
+    }
+});
+
+cancelBtn.addEventListener("click", () => {
+    confirmationBox.style.display = "none";
+    confirmationText.textContent = "";
+    document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+    selectedPoint = null;
+});
+
 });
