@@ -115,6 +115,19 @@ it("should return error when collection point is invalid", () => {
 
 });  
 
+it("should confirm the selected collection point", () => {
+  const point = {
+    distrito: "9",
+    zone: "Pucara",
+    day: "lunes",
+    schedule: "08:00",
+    listaRutas: "Ruta Norte 1"
+  };
+  const result = select_collection_point(point);
+  expect(result.success).toBe(true);
+  expect(result.message).toBe("PUNTO de recolección seleccionado correctamente");
+});
+
 
 
 
