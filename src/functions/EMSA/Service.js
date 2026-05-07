@@ -80,5 +80,7 @@ function select_collection_point(point) {
   return { success: true, message: "PUNTO de recolección seleccionado correctamente" };
 }
 
+
+
 export { register_day, register_district_zone, register_schedule, register_Route, 
   getServices,clearServices, select_collection_point};
