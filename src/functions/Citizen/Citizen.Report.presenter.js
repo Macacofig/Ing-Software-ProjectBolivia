@@ -1,8 +1,11 @@
-import { register_report } from './report.js';
+import { verify_report, register_report } from "./report_real.js";
 
 const form = document.getElementById("reportForm");
 const messageBox = document.getElementById("messageBox");
 
+// =======================
+// GUARDAR EN LOCAL STORAGE UN NUEVO REPORTE
+// =======================
 // Evento principal (submit del form)
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // evita recarga
@@ -11,20 +14,27 @@ form.addEventListener("submit", function (event) {
   const description = document.getElementById("description").value;
   const location = document.getElementById("location").value;
 
-  const result = register_report(idCitizen, description, location);
+  const verificationResult = verify_report(idCitizen, description, location);
+  if (!verificationResult.success) 
+  {
+    renderMessage(verificationResult);
+    return;
+  }
 
-  renderMessage(result);
+  const registrationResult = register_report(idCitizen, description, location);
+  renderMessage(registrationResult);
+  form.reset();
 });
 
 // Render del mensaje
-function renderMessage(message) {
+function renderMessage(result) {
   messageBox.className = "message-box"; // reset
 
-  if (message.includes("cannot")) {
+ if (!result.success) {
     messageBox.classList.add("error");
   } else {
     messageBox.classList.add("success");
   }
 
-  messageBox.textContent = message;
+  messageBox.textContent = result.message;
 }

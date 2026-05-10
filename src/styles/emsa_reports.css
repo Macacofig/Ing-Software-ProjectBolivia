@@ -1,0 +1,153 @@
+:root {
+  --primary: #FE8330;
+  --soft: #FFD8B1;
+  --success: #2ecc71;
+  --error: #e74c3c;
+  --dark: #2c3e50;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #FE8330, #FFD8B1);
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+.topbar {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.topbar p {
+  opacity: 0.8;
+}
+
+/* CONTENEDOR */
+.reports-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.report-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.report-card:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADER CARD */
+.report-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* INFO */
+.report-info {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 12px;
+  color: #777;
+}
+
+.value {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* STATUS */
+.status {
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pending {
+  background: rgba(231,76,60,0.15);
+  color: var(--error);
+}
+
+.completed {
+  background: rgba(46,204,113,0.15);
+  color: var(--success);
+}
+
+/* BOTÓN */
+.complete-btn {
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.complete-btn:hover {
+  background: #e76f1a;
+}
+
+/* DESCRIPCIÓN */
+.report-description {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #ddd;
+  display: none;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* EXPANDIDA */
+.report-card.expanded .report-description {
+  display: block;
+}
+
+.empty-state {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  padding: 60px 30px;
+  text-align: center;
+  color: #555;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.empty-state h2 {
+  margin: 0;
+  color: #FE8330;
+  font-size: 2rem;
+}
+
+.empty-state p {
+  margin-top: 10px;
+  opacity: 0.7;
+}
