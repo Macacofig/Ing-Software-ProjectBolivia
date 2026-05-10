@@ -40,8 +40,12 @@ function filter_reports2(status, date)
     {
         return reports.filter(report => report.status === status);
     }
-    
-  
 }
 
-export { filter_reports, filter_reports2 };
+function filter_reports3(status, date, location)
+{
+    return reports.filter(report => report.location === location);
+    
+}
+
+export { filter_reports, filter_reports2, filter_reports3 };

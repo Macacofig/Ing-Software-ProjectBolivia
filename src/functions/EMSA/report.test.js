@@ -1,4 +1,4 @@
-import { filter_reports, filter_reports2 } from "./report.js";
+import { filter_reports, filter_reports2, filter_reports3 } from "./report.js";
 
 describe("Reports", () => {
     
@@ -47,6 +47,7 @@ describe("Reports", () => {
     }
     ]);
   });
+
   it("It should filter reports by status and date ", () => {
     expect(filter_reports2("Completed", "2026-05-09")).toEqual([    
     {
@@ -64,4 +65,19 @@ describe("Reports", () => {
         status: "Completed"
     }]);
   });
+
+  it("It should filter reports by status, date and location ", () => {
+    expect(filter_reports3("", "", "Zona Norte - Avenida América")).toEqual([
+    {
+        idCitizen: "10234",
+        description: "Poste inclinado con riesgo de caída.",
+        location: "Zona Norte - Avenida América",
+        date: "2026-05-10",
+        status: "Completed"
+    }
+    ]);
+  });
+//   it("It should filter reports by status, date and location ", () => {
+//     expect(filter_reports3("Completed", "2026-05-11", "Zona Norte - Avenida América")).toEqual([]);
+//   });
 }); 
