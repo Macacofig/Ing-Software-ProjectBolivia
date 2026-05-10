@@ -44,6 +44,10 @@ function filter_reports2(status, date)
 
 function filter_reports3(status, date, location)
 {
+    if (status != "" && date != "" && location != "")
+    {
+        return reports.filter(report => report.status === status && report.date >= date && report.location === location);
+    }
     if (status != "" && location != "")
     {
         return reports.filter(report => report.status === status && report.location === location );
