@@ -44,8 +44,14 @@ function filter_reports2(status, date)
 
 function filter_reports3(status, date, location)
 {
-    return reports.filter(report => report.location === location);
-    
+    if (status != "" && location != "")
+    {
+        return reports.filter(report => report.status === status && report.location === location );
+    }
+    if (status == "")
+    {
+        return reports.filter(report => report.location === location);
+    }
 }
 
 export { filter_reports, filter_reports2, filter_reports3 };
