@@ -77,10 +77,23 @@ function select_collection_point(point) {
   if (!point || !point.distrito || !point.zone || !point.day || !point.schedule) {
     return { success: false, message: "Punto de recolección inválido" };
   }
-  return { success: true, message: "PUNTO de recolección seleccionado correctamente" };
+  return { success: true, message: "Punto de recolección seleccionado correctamente" };
+}
+
+function filter_by_route(services, routes, strict = false) {
+  if (!routes || routes.length === 0) return services;
+
+  return services.filter(service => {
+    const serviceRoutes = service.listaRutas.toLowerCase();
+    if (strict) {
+      return routes.every(route => serviceRoutes.includes(route.toLowerCase()));
+    } else {
+      return routes.some(route => serviceRoutes.includes(route.toLowerCase()));
+    }
+  });
 }
 
 
 
 export { register_day, register_district_zone, register_schedule, register_Route, 
-  getServices,clearServices, select_collection_point};
+  getServices,clearServices, select_collection_point, filter_by_route};
