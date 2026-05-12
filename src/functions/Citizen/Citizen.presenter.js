@@ -1,4 +1,4 @@
-import { getServices, select_collection_point } from "../EMSA/service_real.js";
+import { getServices, select_collection_point, filter_by_route } from "../EMSA/service_real.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const confirmationText = document.getElementById("confirmation-text");
 const confirmBtn = document.getElementById("confirm-btn");
 const cancelBtn = document.getElementById("cancel-btn");
+
+
+
 let selectedPoint = null;
 
 
@@ -16,6 +19,10 @@ let selectedPoint = null;
     const selectDistrito = document.getElementById("filter-distrito");
     const selectZona = document.getElementById("filter-zona");
     const selectDia = document.getElementById("filter-dia");
+
+
+    const inputRuta = document.getElementById("filter-ruta");
+const checkEstricto = document.getElementById("filter-estricto");
 
     const Zones_by_district = {
         "2": ["Barrio Policial", "Colquiri", "Ticti Norte"],
@@ -109,22 +116,29 @@ let selectedPoint = null;
 
     // ===== FILTRO =====
     function filterServices() {
-        const distrito = selectDistrito.value;
-        const zona = selectZona.value;
-        const dia = selectDia.value;
+    const distrito = selectDistrito.value;
+    const zona = selectZona.value;
+    const dia = selectDia.value;
+    const rutaInput = inputRuta.value.trim();
+    const estricto = checkEstricto.checked;
 
-        const services = getServices();
+    let services = getServices();
 
-        const filtered = services.filter(service => {
-            return (
-                (!distrito || service.distrito === distrito) &&
-                (!zona || service.zone === zona) &&
-                (!dia || service.day.toLowerCase().includes(dia.toLowerCase()))
-            );
-        });
+    services = services.filter(service => {
+        return (
+            (!distrito || service.distrito === distrito) &&
+            (!zona || service.zone === zona) &&
+            (!dia || service.day.toLowerCase().includes(dia.toLowerCase()))
+        );
+    });
 
-        renderServices(filtered);
+    if (rutaInput) {
+        const routes = rutaInput.split(",").map(r => r.trim()).filter(r => r !== "");
+        services = filter_by_route(services, routes, estricto);
     }
+
+    renderServices(services);
+}
 
     // ===== EVENTOS =====
     btnBuscar.addEventListener("click", filterServices);
@@ -132,6 +146,9 @@ let selectedPoint = null;
     // filtros automáticos (UX pro)
     selectZona.addEventListener("change", filterServices);
     selectDia.addEventListener("change", filterServices);
+
+    inputRuta.addEventListener("input", filterServices);
+checkEstricto.addEventListener("change", filterServices);
 
     // ===== CARGA INICIAL =====
     renderServices(getServices());

@@ -60,5 +60,17 @@ function select_collection_point(point) {
     return { success: true, message: "Punto de recolección seleccionado correctamente" };
 }
 
+function filter_by_route(services, routes, strict = false) {
+  if (!routes || routes.length === 0) return services;
 
-export { register_Route, addService, getServices, select_collection_point  };
+  return services.filter(service => {
+    const serviceRoutes = service.listaRutas.toLowerCase();
+    if (strict) {
+      return routes.every(route => serviceRoutes.includes(route.toLowerCase()));
+    } else {
+      return routes.some(route => serviceRoutes.includes(route.toLowerCase()));
+    }
+  });
+}
+
+export { register_Route, addService, getServices, select_collection_point, filter_by_route };
