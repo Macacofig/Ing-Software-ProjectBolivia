@@ -1,5 +1,6 @@
-import {register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices, 
-         select_collection_point} from "./Service.js";
+import {register_day, register_district_zone, register_schedule, 
+         register_Route, getServices, clearServices, 
+         select_collection_point, filter_by_route} from "./Service.js";
 
 describe("Service", () => {
     
@@ -101,7 +102,7 @@ describe("Service", () => {
   };
   expect(select_collection_point(point)).toEqual({ 
     success: true, 
-    message: "PUNTO de recolección seleccionado correctamente" 
+    message: "Punto de recolección seleccionado correctamente" 
   });
 
 });
@@ -116,17 +117,40 @@ it("should return error when collection point is invalid", () => {
 });  
 
 it("should confirm the selected collection point", () => {
-  const point = {
-    distrito: "9",
-    zone: "Pucara",
-    day: "lunes",
-    schedule: "08:00",
-    listaRutas: "Ruta Norte 1"
-  };
-  const result = select_collection_point(point);
-  expect(result.success).toBe(true);
-  expect(result.message).toBe("PUNTO de recolección seleccionado correctamente");
+    const point = {
+      distrito: "9",
+      zone: "Pucara",
+      day: "lunes",
+      schedule: "08:00",
+      listaRutas: "Ruta Norte 1"
+    };
+    const result = select_collection_point(point);
+    expect(result.success).toBe(true);
+    expect(result.message).toBe("Punto de recolección seleccionado correctamente");
+  });
+
+it("should filter services by one route", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  expect(filter_by_route(getServices(), ["CALA CALA"])).toHaveLength(1);
 });
+
+it("should filter services by many routes showing services with at least one", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  register_Route("Miércoles", "7", "Villa Venezuela", "10:00", "Av.Pando");
+  expect(filter_by_route(getServices(), ["CALA CALA", "Circunvalacion"])).toHaveLength(2);
+});
+
+it("should filter services strictly by all routes", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA, Circunvalacion");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  expect(filter_by_route(getServices(), ["CALA CALA", "Circunvalacion"], true)).toHaveLength(1);
+});
+
 
 
 
