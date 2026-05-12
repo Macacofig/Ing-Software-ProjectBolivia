@@ -151,3 +151,98 @@ body {
   margin-top: 10px;
   opacity: 0.7;
 }
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters-section {
+  margin-bottom: 25px;
+}
+
+.filters-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-group label {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.filter-group input,
+.filter-group select {
+
+  padding: 12px;
+
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255,255,255,0.9);
+
+  font-family: inherit;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: 2px solid #FE8330;
+}
+
+.filter-btn {
+
+  align-self: flex-end;
+
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #FE8330;
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #e76f1a;
+}
+
+.clear-btn {
+  align-self: flex-end;
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #e74c3c;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.2s;
+}
+
+.clear-btn:hover {
+  background: #c0392b;
+}

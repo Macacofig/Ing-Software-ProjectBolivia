@@ -1,35 +1,128 @@
-import { getServices } from '../../utils/localStorage.js';
+import {
+  getServices,
+  saveServicesToLocalStorage
+} from '../../utils/localStorage.js';
 
-const reportsContainer = document.getElementById("reportsContainer");
+import {
+  filter_reports
+} from '../EMSA/report_real.js';
 
-// Obtener reportes
-let reports = getServices("reports");
+// =========================
+// ELEMENTOS
+// =========================
+const reportsContainer =
+  document.getElementById("reportsContainer");
 
-// Render inicial
-renderReports();
+const statusFilter =
+  document.getElementById("statusFilter");
+
+const dateFilter =
+  document.getElementById("dateFilter");
+
+const locationFilter =
+  document.getElementById("locationFilter");
+
+const filterButton =
+  document.getElementById("filterButton");
+
+const clearButton =
+  document.getElementById("clearButton");
+
+// =========================
+// DATA
+// =========================
+let reports = [];
+
+// =========================
+// INIT
+// =========================
+loadReports();
+
+// =========================
+// EVENTOS
+// =========================
+
+// Aplicar filtros manualmente
+filterButton.addEventListener("click", applyFilters);
+
+// Búsqueda dinámica
+locationFilter.addEventListener("input", applyFilters);
+
+// Limpiar filtros
+clearButton.addEventListener("click", clearFilters);
+
+// =========================
+// CARGAR REPORTES
+// =========================
+function loadReports() {
+
+  reports = getServices("reports");
+
+  renderReports(reports);
+
+}
+
+// =========================
+// FILTRAR
+// =========================
+function applyFilters() {
+
+  const filteredReports = filter_reports(
+    reports,
+    {
+
+    status: statusFilter.value,
+
+    date: dateFilter.value,
+
+    location: locationFilter.value
+
+  });
+
+  renderReports(filteredReports);
+
+}
+
+// =========================
+// LIMPIAR FILTROS
+// =========================
+function clearFilters() {
+
+  statusFilter.value = "";
+
+  dateFilter.value = "";
+
+  locationFilter.value = "";
+
+  renderReports(reports);
+
+}
 
 // =========================
 // RENDER
 // =========================
-function renderReports() {
+function renderReports(reportsToRender) {
 
   reportsContainer.innerHTML = "";
 
-  if (reports.length === 0) {
+  // SIN REPORTES
+  if (reportsToRender.length === 0) {
 
     reportsContainer.innerHTML = `
       <div class="empty-state">
         <h2>No hay reportes</h2>
-        <p>Aún no se han registrado incidencias.</p>
+        <p>No se encontraron incidencias.</p>
       </div>
     `;
 
     return;
   }
-  
-  reports.forEach((report, index) => {
+
+  // CARDS
+  reportsToRender.forEach(report => {
 
     const card = document.createElement("div");
+
     card.classList.add("report-card");
 
     card.innerHTML = `
@@ -39,35 +132,50 @@ function renderReports() {
 
           <div class="info-block">
             <span class="label">Ubicación</span>
-            <span class="value">${report.location}</span>
+            <span class="value">
+              ${report.location}
+            </span>
           </div>
 
           <div class="info-block">
             <span class="label">Ciudadano</span>
-            <span class="value">${report.idCitizen}</span>
+            <span class="value">
+              ${report.idCitizen}
+            </span>
           </div>
 
           <div class="info-block">
             <span class="label">Fecha</span>
-            <span class="value">${report.date}</span>
+            <span class="value">
+              ${formatDate(report.date)}
+            </span>
           </div>
 
           <div class="info-block">
             <span class="label">Estado</span>
-            <span class="status ${report.status === 'completed' ? 'completed' : 'pending'}">
+
+            <span class="
+              status
+              ${report.status === 'Completed'
+                ? 'completed'
+                : 'pending'}
+            ">
               ${report.status}
             </span>
           </div>
 
         </div>
 
-        ${
-          report.status !== "completed"
-          ? `<button class="complete-btn" data-index="${index}">
-              Completar
-            </button>`
-          : ""
-        }
+        <button
+          class="complete-btn"
+          data-id="${report.id}"
+        >
+          ${
+            report.status === "Completed"
+            ? "Pendiente"
+            : "Completar"
+          }
+        </button>
 
       </div>
 
@@ -76,27 +184,32 @@ function renderReports() {
       </div>
     `;
 
-    // Expandir card
+    // Expandir
     card.addEventListener("click", (e) => {
 
-      // evitar conflicto con botón
-      if (e.target.classList.contains("complete-btn")) return;
+      if (
+        e.target.classList.contains("complete-btn")
+      ) return;
 
       card.classList.toggle("expanded");
+
     });
 
     reportsContainer.appendChild(card);
+
   });
 
   activateCompleteButtons();
+
 }
 
 // =========================
-// BOTONES COMPLETAR
+// TOGGLE STATUS
 // =========================
 function activateCompleteButtons() {
 
-  const buttons = document.querySelectorAll(".complete-btn");
+  const buttons =
+    document.querySelectorAll(".complete-btn");
 
   buttons.forEach(button => {
 
@@ -104,15 +217,44 @@ function activateCompleteButtons() {
 
       e.stopPropagation();
 
-      const index = e.target.dataset.index;
+      const reportId =
+        Number(e.target.dataset.id);
 
-      reports[index].status = "completed";
+      const reportToUpdate =
+        reports.find(
+          report => report.id === reportId
+        );
 
-      localStorage.setItem("reports", JSON.stringify(reports));
+      if (!reportToUpdate) return;
 
-      renderReports();
+      // TOGGLE
+      reportToUpdate.status =
+        reportToUpdate.status === "Completed"
+          ? "Pending"
+          : "Completed";
+
+      // GUARDAR
+      saveServicesToLocalStorage(
+        reports,
+        "reports"
+      );
+
+      // REAPLICAR FILTROS
+      applyFilters();
+
     });
 
   });
+
+}
+
+// =========================
+// FORMATO FECHA
+// =========================
+function formatDate(dateString) {
+
+  const date = new Date(dateString);
+
+  return date.toLocaleDateString("es-ES");
 
 }
