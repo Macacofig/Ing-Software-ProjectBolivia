@@ -1,4 +1,4 @@
-import { saveServicesToLocalStorage } from "../../utils/localStorage.js";
+import { saveServicesToLocalStorage, getServices } from "../../utils/localStorage.js";
 
 function register_Route(day, distrito, zone, schedule, listaRutas, currentList = []) {
   let list_Services = getServices('services');
