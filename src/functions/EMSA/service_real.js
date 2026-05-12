@@ -1,10 +1,7 @@
-// Use localStorage to store the list of services
-function saveServicesToLocalStorage(list_Services) {
-    localStorage.setItem('services', JSON.stringify(list_Services));
-}
+import { saveServicesToLocalStorage } from "../../utils/localStorage.js";
 
 function register_Route(day, distrito, zone, schedule, listaRutas, currentList = []) {
-  let list_Services = getServices();
+  let list_Services = getServices('services');
 
   if (!day) return { field: "day", message: "Selecciona un día" };
 
@@ -42,15 +39,11 @@ function register_Route(day, distrito, zone, schedule, listaRutas, currentList =
 }
 
 function addService(service) {
-    let list_Services = getServices();
+    let list_Services = getServices('services');
     list_Services.push(service);
-    saveServicesToLocalStorage(list_Services);
+    saveServicesToLocalStorage(list_Services, 'services');
 }
 
-function getServices() {
-    // Load existing services from localStorage
-    let list_Services = JSON.parse(localStorage.getItem('services')) || [];
-    return list_Services;
-}
 
-export { register_Route, addService, getServices };
+
+export { register_Route, addService};

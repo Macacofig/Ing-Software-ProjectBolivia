@@ -1,4 +1,4 @@
-import { getServices } from "../EMSA/service_real.js";
+import { getServices } from "../../utils/localStorage.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const zona = selectZona.value;
         const dia = selectDia.value;
 
-        const services = getServices();
+        const services = getServices('services');
 
         const filtered = services.filter(service => {
             return (
@@ -117,5 +117,5 @@ document.addEventListener("DOMContentLoaded", () => {
     selectDia.addEventListener("change", filterServices);
 
     // ===== CARGA INICIAL =====
-    renderServices(getServices());
+    renderServices(getServices('services'));
 });
