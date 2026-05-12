@@ -3,7 +3,8 @@ function filter_reports(
   {
     status = "",
     date = "",
-    location = ""
+    location = "",
+    idCitizen = "",
   } = {}
 ) {
 
@@ -27,10 +28,15 @@ function filter_reports(
         .toLowerCase()
         .includes(location.toLowerCase());
 
+    const matchesIdCitizen =
+      !idCitizen ||
+      report.idCitizen === idCitizen;
+
     return (
       matchesStatus &&
       matchesDate &&
-      matchesLocation
+      matchesLocation &&
+      matchesIdCitizen
     );
 
   });
