@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectZona = document.getElementById("filter-zona");
     const selectDia = document.getElementById("filter-dia");
 
+    const inputRuta = document.getElementById("filter-ruta");
+const checkEstricto = document.getElementById("filter-estricto");
+const confirmationBox = document.getElementById("confirmation-message");
+const confirmationText = document.getElementById("confirmation-text");
+const confirmBtn = document.getElementById("confirm-btn");
+const cancelBtn = document.getElementById("cancel-btn");
+
+let selectedPoint = null;
+
     const Zones_by_district = {
         "2": ["Barrio Policial", "Colquiri", "Ticti Norte"],
         "6": ["Alto Cochabamba"],
@@ -64,6 +73,15 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Rutas:</strong> ${service.listaRutas}</p>
         `;
 
+        article.addEventListener("click", () => {
+    document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+    article.classList.add("selected");
+    selectedPoint = service;
+    confirmationText.textContent =
+        `¿Confirmas: Zona ${service.zone}, ${capitalize(service.day)} a las ${service.schedule}?`;
+    confirmationBox.style.display = "block";
+});
+
         return article;
     }
 
@@ -93,22 +111,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== FILTRO =====
     function filterServices() {
-        const distrito = selectDistrito.value;
-        const zona = selectZona.value;
-        const dia = selectDia.value;
+    const distrito = selectDistrito.value;
+    const zona = selectZona.value;
+    const dia = selectDia.value;
+    const rutaInput = inputRuta.value.trim();
+    const estricto = checkEstricto.checked;
 
-        const services = getServices('services');
+    let services = getServices('services');
 
-        const filtered = services.filter(service => {
-            return (
-                (!distrito || service.distrito === distrito) &&
-                (!zona || service.zone === zona) &&
-                (!dia || service.day.toLowerCase().includes(dia.toLowerCase()))
-            );
-        });
+    services = services.filter(service => {
+        return (
+            (!distrito || service.distrito === distrito) &&
+            (!zona || service.zone === zona) &&
+            (!dia || service.day.toLowerCase().includes(dia.toLowerCase()))
+        );
+    });
 
-        renderServices(filtered);
+    if (rutaInput) {
+        const routes = rutaInput.split(",").map(r => r.trim()).filter(r => r !== "");
+        services = filter_by_route(services, routes, estricto);
     }
+
+    renderServices(services);
+}
 
     // ===== EVENTOS =====
     btnBuscar.addEventListener("click", filterServices);
@@ -116,6 +141,28 @@ document.addEventListener("DOMContentLoaded", () => {
     // filtros automáticos (UX pro)
     selectZona.addEventListener("change", filterServices);
     selectDia.addEventListener("change", filterServices);
+
+inputRuta.addEventListener("input", filterServices);
+checkEstricto.addEventListener("change", filterServices);
+
+confirmBtn.addEventListener("click", () => {
+    const result = select_collection_point(selectedPoint);
+    if (result.success) {
+        confirmationBox.style.display = "none";
+        confirmationText.textContent = "";
+        alert(result.message);
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        selectedPoint = null;
+    }
+});
+
+cancelBtn.addEventListener("click", () => {
+    confirmationBox.style.display = "none";
+    confirmationText.textContent = "";
+    document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+    selectedPoint = null;
+});
+
 
     // ===== CARGA INICIAL =====
     renderServices(getServices('services'));
