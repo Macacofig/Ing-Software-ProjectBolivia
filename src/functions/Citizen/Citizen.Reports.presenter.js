@@ -4,7 +4,7 @@ import {
 
 import {
   verify_report,ModelReport
-} from '../../Models/Report.ts';
+} from '../../Models/Report.js';
 
 // =========================
 // ELEMENTOS
@@ -28,6 +28,7 @@ const clearButton =
 // DATA
 // =========================
 let reports = new ModelReport();
+
 
 // =========================
 // EVENTOS
@@ -53,8 +54,7 @@ clearButton.addEventListener(
 function applyFilters() {
 
   const filteredReports =
-    filter_reports(
-      reports,
+    reports.filterReports(
       {
         idCitizen:
           idCitizenFilter.value,
@@ -77,7 +77,7 @@ function clearFilters() {
 
   dateFilter.value = "";
 
-  renderReports(reports);
+  renderReports(reports.getReports());
 
 }
 
@@ -197,3 +197,4 @@ function formatDate(dateString) {
   );
 
 }
+renderReports(reports.getReports());
