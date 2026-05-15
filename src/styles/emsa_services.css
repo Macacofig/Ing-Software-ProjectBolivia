@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --orange-primary: #FE8330;
+    --transition: 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--orange-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-layout {
+    display: flex;
+    height: 100vh;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 260px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 25px;
+    color: white;
+    position: relative;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 25px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.menu-item {
+    display: flex;
+    gap: 15px;
+    padding: 14px;
+    border-radius: 14px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* CONTENT */
+
+.content-area {
+    flex: 1;
+    background: rgba(255,255,255,0.96);
+    border-radius: 24px;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.main-header {
+    margin-bottom: 30px;
+}
+
+.titulo {
+    font-family: 'Poppins';
+    font-size: 2.3rem;
+    margin: 0;
+}
+
+.subtitle {
+    color: #777;
+}
+
+/* FILTER BAR */
+
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+    align-items: center;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-box i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 15px 15px 50px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.filter-bar select {
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    outline: none;
+    min-width: 170px;
+}
+
+.search-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    border: none;
+    background: var(--orange-primary);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* CARDS */
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--orange-primary);
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.rutas {
+    margin-top: 15px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-edit,
+.btn-delete {
+    flex: 1;
+    border: none;
+    padding: 12px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-edit {
+    background: #f4f4f4;
+}
+
+.btn-delete {
+    background: #ff4d4d;
+    color: white;
+}
+
+.btn-edit:hover,
+.btn-delete:hover {
+    transform: translateY(-2px);
+}
+
+/* MODAL */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background: white;
+    width: 400px;
+    padding: 30px;
+    border-radius: 24px;
+}
+
+.modal input {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.cancel-btn,
+.save-btn,
+.delete-btn-modal {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background: var(--orange-primary);
+    color: white;
+}
+
+.delete-btn-modal {
+    background: #ff4d4d;
+    color: white;
+}
+
+.large-modal {
+    width: 500px;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-family: inherit;
+    resize: none;
+}
+
+.input-group textarea {
+    min-height: 100px;
+}
+
+/* STATUS */
+
+.card-status {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: #2ecc71;
+    box-shadow: 0 0 10px rgba(46,204,113,0.5);
+}
+
+.status-dot.offline {
+    background: #ff4d4d;
+    box-shadow: 0 0 10px rgba(255,77,77,0.5);
+}
+
+.status-text {
+    color: #666;
+}
