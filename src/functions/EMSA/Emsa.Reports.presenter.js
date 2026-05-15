@@ -4,8 +4,8 @@ import {
 } from '../../utils/localStorage.js';
 
 import {
-  filter_reports
-} from '../EMSA/report_real.js';
+  ModelReport
+} from '../../Models/Report.js';
 
 // =========================
 // ELEMENTOS
@@ -31,12 +31,7 @@ const clearButton =
 // =========================
 // DATA
 // =========================
-let reports = [];
-
-// =========================
-// INIT
-// =========================
-loadReports();
+let reports = new ModelReport();
 
 // =========================
 // EVENTOS
@@ -52,23 +47,11 @@ locationFilter.addEventListener("input", applyFilters);
 clearButton.addEventListener("click", clearFilters);
 
 // =========================
-// CARGAR REPORTES
-// =========================
-function loadReports() {
-
-  reports = getServices("reports");
-
-  renderReports(reports);
-
-}
-
-// =========================
 // FILTRAR
 // =========================
 function applyFilters() {
 
-  const filteredReports = filter_reports(
-    reports,
+  const filteredReports = reports.filterReports(
     {
 
     status: statusFilter.value,
@@ -94,7 +77,7 @@ function clearFilters() {
 
   locationFilter.value = "";
 
-  renderReports(reports);
+  renderReports(reports.getReports());
 
 }
 
@@ -258,3 +241,5 @@ function formatDate(dateString) {
   return date.toLocaleDateString("es-ES");
 
 }
+
+renderReports(reports.getReports());
