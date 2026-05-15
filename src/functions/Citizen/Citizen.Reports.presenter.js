@@ -3,8 +3,8 @@ import {
 } from '../../utils/localStorage.js';
 
 import {
-  filter_reports
-} from '../EMSA/report_real.js';
+  verify_report,ModelReport
+} from '../../Models/Report.ts';
 
 // =========================
 // ELEMENTOS
@@ -27,12 +27,7 @@ const clearButton =
 // =========================
 // DATA
 // =========================
-let reports = [];
-
-// =========================
-// INIT
-// =========================
-loadReports();
+let reports = new ModelReport();
 
 // =========================
 // EVENTOS
@@ -51,17 +46,6 @@ clearButton.addEventListener(
   "click",
   clearFilters
 );
-
-// =========================
-// LOAD REPORTS
-// =========================
-function loadReports() {
-
-  reports = getServices("reports");
-
-  renderReports(reports);
-
-}
 
 // =========================
 // FILTRAR

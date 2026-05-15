@@ -1,12 +1,15 @@
-import { verify_report, register_report } from "./report_real.js";
+import { ModelReport, verify_report } from "../../Models/Report.js";
 
 const form = document.getElementById("reportForm");
 const messageBox = document.getElementById("messageBox");
 
+
+const modelReport = new ModelReport();
+
 // =======================
 // GUARDAR EN LOCAL STORAGE UN NUEVO REPORTE
 // =======================
-// Evento principal (submit del form)
+
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // evita recarga
 
@@ -14,14 +17,14 @@ form.addEventListener("submit", function (event) {
   const description = document.getElementById("description").value;
   const location = document.getElementById("location").value;
 
-  const verificationResult = verify_report(idCitizen, description, location);
+  const verificationResult = verify_report(description, location);
   if (!verificationResult.success) 
   {
     renderMessage(verificationResult);
     return;
   }
 
-  const registrationResult = register_report(idCitizen, description, location);
+  const registrationResult = modelReport.addReport(idCitizen, description, location);
   renderMessage(registrationResult);
   form.reset();
 });
