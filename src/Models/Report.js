@@ -136,6 +136,53 @@ class ModelReport {
     getReports() {
         return this.reports;
     }
+
+    filterReports({
+        status = "",
+        date = "",
+        location = "",
+        idCitizen = ""
+    } = {}) {
+
+        return this.reports.filter(
+            report => {
+
+                const matchesStatus =
+                    !status ||
+                    report.getStatus() === status;
+
+                const reportDate =
+                    report
+                        .getDate()
+                        .toISOString()
+                        .split("T")[0];
+
+                const matchesDate =
+                    !date ||
+                    reportDate >= date;
+
+                const matchesLocation =
+                    !location ||
+                    report
+                        .getLocation()
+                        .toLowerCase()
+                        .includes(
+                            location.toLowerCase()
+                        );
+
+                const matchesIdCitizen =
+                    !idCitizen ||
+                    report.getIdCitizen() == idCitizen;
+
+                return (
+                    matchesStatus &&
+                    matchesDate &&
+                    matchesLocation &&
+                    matchesIdCitizen
+                );
+            }
+        );
+    }
 }
 
 function verify_report(
