@@ -494,12 +494,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "09f178947da8e1e19161341b3675d6cb3db8df99",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-28T13:05:28.000Z",
       "message": "refact",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/09f178947da8e1e19161341b3675d6cb3db8df99"
     },
     "stats": {
       "total": 4,
@@ -513,12 +513,12 @@
     "conclusion": "neutral"
   },
   {
-    "sha": "HEAD",
+    "sha": "7bc6554257f34cefceee407c347c122e8c420b73",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-28T14:03:44.000Z",
       "message": "fix: Sidebar botones",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/7bc6554257f34cefceee407c347c122e8c420b73"
     },
     "stats": {
       "total": 48,
@@ -532,18 +532,113 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "62fe6b9a5b2537f581f442d72cbe3bb77af395c0",
     "author": "Nataly",
     "commit": {
       "date": "2026-05-15T00:32:31.000Z",
       "message": "feat: creation about the  emsa_service page and refact de errors",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/62fe6b9a5b2537f581f442d72cbe3bb77af395c0"
     },
     "stats": {
       "total": 933,
       "additions": 933,
       "deletions": 0,
       "date": "2026-05-15"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5bcaf331ff65cc9ffa911c0880e95e15a8cf7577",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T00:20:48.000Z",
+      "message": "feat: New sidebars",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/5bcaf331ff65cc9ffa911c0880e95e15a8cf7577"
+    },
+    "stats": {
+      "total": 177,
+      "additions": 177,
+      "deletions": 0,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "1fa631b7e71a72942ffbcdd02cb9f2ccb13db3cf",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T00:57:07.000Z",
+      "message": "refactor: todos los templates",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/1fa631b7e71a72942ffbcdd02cb9f2ccb13db3cf"
+    },
+    "stats": {
+      "total": 754,
+      "additions": 302,
+      "deletions": 452,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T03:14:34.000Z",
+      "message": "refact:sidebars terminados",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 1162,
+      "additions": 803,
+      "deletions": 359,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T06:14:10.000Z",
+      "message": "fix: side bar citizen",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 371,
+      "additions": 308,
+      "deletions": 63,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T06:22:15.000Z",
+      "message": "fix: botones sidebar emsa",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 5,
+      "deletions": 7,
+      "date": "2026-05-16"
     },
     "coverage": 100,
     "test_count": 26,

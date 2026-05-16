@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMSA Services - Admin</title>
 
-    <!-- Estilos -->
+    <!-- 1. Agregamos el CSS base y el CSS modular del Sidebar de EMSA -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/emsa_sidebar.css">
+    
+    <!-- Estilos específicos de esta vista -->
     <link rel="stylesheet" href="../styles/emsa_services.css">
 
-    <!-- Fuentes -->
+    <!-- Fuentes e Iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -19,43 +21,10 @@
 
 <div class="main-layout">
 
-    <!-- SIDEBAR -->
-    <nav class="sidebar" id="sidebar">
+    <!-- 2. AQUÍ SE INYECTA EL SIDEBAR DE EMSA -->
+    <div id="sidebar-container"></div>
 
-        <button class="toggle-btn" id="toggle-btn">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-
-        <div class="sidebar-inner">
-
-            <div class="sidebar-logo">
-                <i class="fas fa-truck-container"></i>
-                <span class="logo-text">EMSA Admin</span>
-            </div>
-
-            <ul class="sidebar-menu">
-
-                <li>
-                    <a href="user_home.html" class="menu-item">
-                        <i class="fas fa-list"></i>
-                        <span class="menu-text">Services List</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html" class="menu-item">
-                        <i class="fas fa-plus-circle"></i>
-                        <span class="menu-text">Register New</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </nav>
-
-    <!-- CONTENT -->
+    <!-- 3. CONTENT: Todo tu contenido original queda intacto -->
     <main class="content-area">
 
         <header class="main-header">
@@ -113,16 +82,11 @@
 
 <!-- EDIT MODAL -->
 <div class="modal-overlay" id="edit-modal">
-
     <div class="modal large-modal">
-
         <h2>Edit Service</h2>
-
         <div class="modal-form">
-
             <div class="input-group">
                 <label>Distrito</label>
-
                 <select id="edit-distrito">
                     <option value="2">Distrito 2</option>
                     <option value="6">Distrito 6</option>
@@ -132,17 +96,14 @@
                     <option value="15">Distrito 15</option>
                 </select>
             </div>
-
             <div class="input-group">
                 <label>Zona</label>
                 <select id="edit-zona">
                     <option value="">Zona</option>
                 </select>
             </div>
-
             <div class="input-group">
                 <label>Día</label>
-
                 <select id="edit-dia">
                     <option value="Lunes">Lunes</option>
                     <option value="Martes">Martes</option>
@@ -153,68 +114,47 @@
                     <option value="Domingo">Domingo</option>
                 </select>
             </div>
-
             <div class="input-group">
                 <label>Horario</label>
                 <input type="text" id="edit-horario">
             </div>
-
             <div class="input-group">
                 <label>Status</label>
-
                 <select id="edit-status">
                     <option value="available">Available</option>
                     <option value="unavailable">Unavailable</option>
                 </select>
             </div>
-
             <div class="input-group">
                 <label>Rutas</label>
                 <textarea id="edit-rutas"></textarea>
             </div>
-
         </div>
-
         <div class="modal-actions">
-
-            <button class="cancel-btn" id="cancel-edit">
-                Cancel
-            </button>
-
-            <button class="save-btn" id="save-edit">
-                Save Changes
-            </button>
-
+            <button class="cancel-btn" id="cancel-edit">Cancel</button>
+            <button class="save-btn" id="save-edit">Save Changes</button>
         </div>
-
     </div>
-
 </div>
 
 <!-- DELETE MODAL -->
 <div class="modal-overlay" id="delete-modal">
-
     <div class="modal">
-
         <h2>Delete Service</h2>
-
         <p>Are you sure you want to delete this service?</p>
-
         <div class="modal-actions">
-
-            <button class="cancel-btn" id="cancel-delete">
-                Cancel
-            </button>
-
-            <button class="delete-btn-modal" id="confirm-delete">
-                Delete
-            </button>
-
+            <button class="cancel-btn" id="cancel-delete">Cancel</button>
+            <button class="delete-btn-modal" id="confirm-delete">Delete</button>
         </div>
-
     </div>
-
 </div>
+
+<!-- 4. Llamamos al script que inyecta el sidebar y resalta "Services List" -->
+<script type="module">
+    // ¡RUTA CORREGIDA AQUÍ!
+    import { loadSidebar } from '../utils/sidebar_loader.js';
+    loadSidebar('emsa', 'menu-emsa-services');
+</script>
 
 <script type="module" src="../functions/EMSA/emsa_services.js"></script>
 

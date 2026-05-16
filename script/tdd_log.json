@@ -792,9 +792,39 @@
     "testId": 25
   },
   {
-    "commitId": "HEAD",
+    "commitId": "09f178947da8e1e19161341b3675d6cb3db8df99",
     "commitName": "feat: creation about the  emsa_service page and refact de errors",
     "commitTimestamp": 1778805152979,
     "testId": 25
+  },
+  {
+    "commitId": "7bc6554257f34cefceee407c347c122e8c420b73",
+    "commitName": "feat: New sidebars",
+    "commitTimestamp": 1778890850623,
+    "testId": 26
+  },
+  {
+    "commitId": "62fe6b9a5b2537f581f442d72cbe3bb77af395c0",
+    "commitName": "refactor: todos los templates",
+    "commitTimestamp": 1778893028163,
+    "testId": 27
+  },
+  {
+    "commitId": "5bcaf331ff65cc9ffa911c0880e95e15a8cf7577",
+    "commitName": "refact:sidebars terminados",
+    "commitTimestamp": 1778901275033,
+    "testId": 28
+  },
+  {
+    "commitId": "1fa631b7e71a72942ffbcdd02cb9f2ccb13db3cf",
+    "commitName": "fix: side bar citizen",
+    "commitTimestamp": 1778912050543,
+    "testId": 29
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: botones sidebar emsa",
+    "commitTimestamp": 1778912535981,
+    "testId": 30
   }
 ]

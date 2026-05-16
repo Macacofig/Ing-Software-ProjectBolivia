@@ -1,0 +1,176 @@
+/* EMSA: Naranja Corporativo Corregido y Responsive con EFECTO LIQUID GLASS */
+.sidebar.emsa-theme {
+  /* EFECTO LIQUID GLASS PURIFICADO: 100% FLOTANTE TIPO PÍLDORA */
+  background: rgba(254, 131, 48, 0.15); /* Ligero tinte sobre transparente */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  height: 100%; /* Flota por el padding del grid */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* CORRECCIÓN 3: Al colapsar, reducimos todos los candados de ancho en sincronía */
+.sidebar.emsa-theme.collapsed {
+  width: 85px;
+  min-width: 85px;
+  max-width: 85px;
+}
+
+.sidebar-inner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Botón Flotante */
+.toggle-btn {
+  position: absolute;
+  top: 60px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.sidebar.emsa-theme.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* Perfil de Usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+/* CORRECCIÓN 4: Ocultación limpia e inmediata del texto para que no flote de forma fea en la transición */
+.sidebar.emsa-theme.collapsed .user-info,
+.sidebar.emsa-theme.collapsed .text,
+.sidebar.emsa-theme.collapsed .menu-label {
+  display: none !important;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  /* Evita que el avatar se vuelva un óvalo al colapsar */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-role {
+  font-size: 10px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.menu-label {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 18px; /* Redondeo tipo botón */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-bottom: 8px;
+  opacity: 0.85;
+  border: 1px solid transparent;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+.menu-item.active {
+  font-weight: 600;
+  /* Degradado luminoso tipo "pill button" de la imagen de referencia */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+  opacity: 1;
+  /* Borde cristalino rodeando el ítem */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   RESPONSIVIDAD PARA PANTALLAS CHICAS 
+========================================= */
+@media (max-width: 1024px) {
+  .sidebar.emsa-theme {
+    position: relative;
+    /* Sale del flujo para proteger tus tarjetas blancas? NO, lo mantenemos en flujo para que no sobreponga */
+    z-index: 100;
+  }
+
+  /* Lo mantenemos colapsado a 85px en lugar de esconderlo completamente */
+  .sidebar.emsa-theme.collapsed {
+    transform: none;
+    width: 85px;
+    min-width: 85px;
+    max-width: 85px;
+  }
+
+  /* Desplazamos la flecha a su posición normal */
+  .sidebar.emsa-theme.collapsed .toggle-btn {
+    right: -15px;
+    transform: rotate(180deg);
+  }
+}
