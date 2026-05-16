@@ -5,77 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reportes EMSA</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- 1. Estilos base y el nuevo CSS modular de EMSA -->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/emsa_sidebar.css">
+  
+  <!-- Estilos específicos de esta vista -->
   <link rel="stylesheet" href="../styles/emsa_reports.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- IMPORTANTE: Agregamos FontAwesome para que los íconos del sidebar carguen bien en esta vista -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body>
+<!-- Quitamos el padding del body para que el sidebar se pegue al borde izquierdo -->
+<body style="padding: 0;">
 
-  <div class="page-container">
+  <!-- 2. Envolvemos todo en el layout principal -->
+  <div class="main-layout" style="padding: 0; gap: 0;">
 
-    <!-- HEADER -->
-    <header class="topbar">
-      <h1>Reportes EMSA</h1>
-      <p>Gestión de incidencias ciudadanas</p>
-    </header>
+    <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DE EMSA -->
+    <div id="sidebar-container"></div>
 
-    <!-- FILTROS -->
-    <section class="filters-section">
+    <!-- 4. Contenido original: lo hacemos flexible, scrolleable y le devolvemos su padding original -->
+    <div class="page-container" style="flex: 1; height: 100vh; overflow-y: auto; padding: 40px; box-sizing: border-box;">
 
-      <div class="filters-container">
+      <!-- HEADER -->
+      <header class="topbar">
+        <h1>Reportes EMSA</h1>
+        <p>Gestión de incidencias ciudadanas</p>
+      </header>
 
-        <!-- STATUS -->
-        <div class="filter-group">
-          <label>Estado</label>
+      <!-- FILTROS -->
+      <section class="filters-section">
+        <div class="filters-container">
 
-          <select id="statusFilter">
-            <option value="">Todos</option>
-            <option value="Pending">Pendiente</option>
-            <option value="Completed">Completado</option>
-          </select>
+          <!-- STATUS -->
+          <div class="filter-group">
+            <label>Estado</label>
+            <select id="statusFilter">
+              <option value="">Todos</option>
+              <option value="Pending">Pendiente</option>
+              <option value="Completed">Completado</option>
+            </select>
+          </div>
+
+          <!-- FECHA -->
+          <div class="filter-group">
+            <label>Fecha mínima</label>
+            <input type="date" id="dateFilter">
+          </div>
+
+          <!-- UBICACIÓN -->
+          <div class="filter-group">
+            <label>Ubicación</label>
+            <input type="text" id="locationFilter" placeholder="Ej: Zona Norte">
+          </div>
+
+          <!-- BOTONES -->
+          <button id="filterButton" class="filter-btn">Filtrar</button>
+          <button id="clearButton" class="clear-btn">Limpiar</button>
+          
         </div>
+      </section>
 
-        <!-- FECHA -->
-        <div class="filter-group">
-          <label>Fecha mínima</label>
+      <!-- REPORTES -->
+      <main>
+        <div id="reportsContainer" class="reports-container"></div>
+      </main>
 
-          <input type="date" id="dateFilter">
-        </div>
-
-        <!-- UBICACIÓN -->
-        <div class="filter-group">
-          <label>Ubicación</label>
-
-          <input
-            type="text"
-            id="locationFilter"
-            placeholder="Ej: Zona Norte"
-          >
-        </div>
-
-        <!-- BOTÓN -->
-        <button id="filterButton" class="filter-btn">
-          Filtrar
-        </button>
-        
-        <button id="clearButton" class="clear-btn">
-          Limpiar
-        </button>
-      </div>
-
-    </section>
-
-    <!-- REPORTES -->
-    <main>
-      <div id="reportsContainer" class="reports-container"></div>
-    </main>
-
+    </div>
   </div>
 
-  <script
-    type="module"
-    src="../functions/EMSA/Emsa.Reports.presenter.js">
+  <!-- 5. Llamamos al script que inyecta el sidebar y le pedimos que resalte "Gestión Reportes" -->
+  <script type="module">
+    import { loadSidebar } from '../functions/utils/sidebar_loader.js';
+    loadSidebar('emsa', 'menu-emsa-reports');
   </script>
+
+  <!-- Presentador original -->
+  <script type="module" src="../functions/EMSA/Emsa.Reports.presenter.js"></script>
 
 </body>
 </html>

@@ -513,12 +513,12 @@
     "conclusion": "neutral"
   },
   {
-    "sha": "HEAD",
+    "sha": "7bc6554257f34cefceee407c347c122e8c420b73",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-28T14:03:44.000Z",
       "message": "fix: Sidebar botones",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/7bc6554257f34cefceee407c347c122e8c420b73"
     },
     "stats": {
       "total": 48,
@@ -562,6 +562,25 @@
       "total": 177,
       "additions": 177,
       "deletions": 0,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T00:57:07.000Z",
+      "message": "refactor: todos los templates",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 754,
+      "additions": 302,
+      "deletions": 452,
       "date": "2026-05-16"
     },
     "coverage": 100,

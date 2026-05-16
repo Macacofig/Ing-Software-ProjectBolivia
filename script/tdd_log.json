@@ -798,9 +798,15 @@
     "testId": 25
   },
   {
-    "commitId": "HEAD",
+    "commitId": "7bc6554257f34cefceee407c347c122e8c420b73",
     "commitName": "feat: New sidebars",
     "commitTimestamp": 1778890850623,
     "testId": 26
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refactor: todos los templates",
+    "commitTimestamp": 1778893028163,
+    "testId": 27
   }
 ]

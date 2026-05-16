@@ -4,52 +4,18 @@
     <meta charset="UTF-8">
     <title>EMSA PROYECT</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Mantenemos el estilo base y agregamos el nuevo CSS modular de EMSA -->
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/emsa_sidebar.css">
   </head>
   <body>
     <div class="main-layout">
 
-      <aside class="sidebar expanded" id="appSidebar">
-        <div class="mac-controls">
-          <span class="dot close"></span>
-          <span class="dot minimize"></span>
-          <span class="dot expand"></span>
-        </div>
+      <!-- AQUÍ ESTÁ LA MAGIA: El contenedor vacío que recibirá el Sidebar dinámicamente -->
+      <div id="sidebar-container"></div>
 
-        <button id="toggleSidebar" class="toggle-btn">◀</button>
-
-        <div class="sidebar-inner">
-          <div class="user-profile">
-            <img src="https://ui-avatars.com/api/?name=Ruben+Cordero&background=f39c12&color=fff" alt="User" class="avatar">
-            <div class="user-info">
-              <span class="user-role">ADMINISTRADOR</span>
-              <span class="user-name">Rubén Cordero</span>
-            </div>
-          </div>
-
-          <nav class="sidebar-menu">
-            <span class="menu-label">MAIN</span>
-            <ul>
-              <li class="menu-item">
-                <span class="icon">👥</span>
-                <a href="user_home.html" class="text">Citizen: Show Services</a>
-              </li>
-              <li class="menu-item">
-                <span class="icon">📝</span>
-                <a href="index.html" class="text">EMSA: Register a Service</a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="sidebar-footer">
-            <button class="btn-logout">
-              <span class="icon">🚪</span>
-              <span class="text">Cerrar Sesión</span>
-            </button>
-          </div>
-        </div>
-      </aside>
-
+      <!-- Todo tu contenido funcional queda exactamente igual, no se toca nada de la lógica -->
       <div class="content-wrapper">
         
         <div class="left-panel">
@@ -113,8 +79,7 @@
         <div class="right-panel">
           <div class="card glass-card">
             <h2>Registros Nuevos</h2>
-            <div id="lista-registros" class="scroll-area">
-              </div>
+            <div id="lista-registros" class="scroll-area"></div>
             <button id="guardarTodo" class="btn-save-all">
               Guardar todo
             </button>
@@ -124,6 +89,13 @@
       </div> 
     </div>
 
+    <!-- NUEVO: Llamamos al script que inyecta el sidebar de EMSA y resalta la pestaña "Register New" -->
+    <script type="module">
+      import { loadSidebar } from '../functions/utils/sidebar_loader.js';
+      loadSidebar('emsa', 'menu-emsa-register');
+    </script>
+    
+    <!-- Tu presentador original -->
     <script type="module" src="../functions/EMSA/Emsa.Service.presenter.js"></script>
   </body>
 </html>
