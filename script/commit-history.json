@@ -494,12 +494,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "09f178947da8e1e19161341b3675d6cb3db8df99",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-04-28T13:05:28.000Z",
       "message": "refact",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/09f178947da8e1e19161341b3675d6cb3db8df99"
     },
     "stats": {
       "total": 4,
@@ -544,6 +544,25 @@
       "additions": 933,
       "deletions": 0,
       "date": "2026-05-15"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T00:20:48.000Z",
+      "message": "feat: New sidebars",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 177,
+      "additions": 177,
+      "deletions": 0,
+      "date": "2026-05-16"
     },
     "coverage": 100,
     "test_count": 26,
