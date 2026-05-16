@@ -810,9 +810,15 @@
     "testId": 27
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5bcaf331ff65cc9ffa911c0880e95e15a8cf7577",
     "commitName": "refact:sidebars terminados",
     "commitTimestamp": 1778901275033,
     "testId": 28
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "fix: side bar citizen",
+    "commitTimestamp": 1778912050543,
+    "testId": 29
   }
 ]

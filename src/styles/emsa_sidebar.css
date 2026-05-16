@@ -1,28 +1,22 @@
 /* EMSA: Naranja Corporativo Corregido y Responsive con EFECTO LIQUID GLASS */
 .sidebar.emsa-theme {
-  background: rgba(254, 131, 48, 0.75);
-  /* Naranja semitransparente */
+  /* EFECTO LIQUID GLASS PURIFICADO: 100% FLOTANTE TIPO PÍLDORA */
+  background: rgba(254, 131, 48, 0.15); /* Ligero tinte sobre transparente */
   color: #ffffff;
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(254, 131, 48, 0.3);
-
-  /* Forzamos el ancho máximo y mínimo para que NADA lo pueda aplastar o desbordar */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.2);
   width: 260px;
   min-width: 260px;
   max-width: 260px;
-  height: 100vh;
-
+  height: 100%; /* Flota por el padding del grid */
   display: flex;
   flex-direction: column;
-
-  /* CORRECCIÓN 2: Cambiamos a transiciones completas para que el navegador recalcule el espacio */
   transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-
   position: relative;
   flex-shrink: 0;
-  /* Evita que el contenedor derecho lo empuje hacia afuera */
   box-sizing: border-box;
 }
 
@@ -123,12 +117,13 @@
 .menu-item {
   display: flex;
   align-items: center;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 14px 16px;
+  border-radius: 18px; /* Redondeo tipo botón */
   cursor: pointer;
-  transition: 0.2s;
-  margin-bottom: 5px;
-  opacity: 0.8;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  margin-bottom: 8px;
+  opacity: 0.85;
+  border: 1px solid transparent;
 }
 
 .menu-item a {
@@ -142,8 +137,13 @@
 
 .menu-item:hover,
 .menu-item.active {
-  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  /* Degradado luminoso tipo "pill button" de la imagen de referencia */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
   opacity: 1;
+  /* Borde cristalino rodeando el ítem */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .menu-item.active {

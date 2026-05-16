@@ -21,8 +21,8 @@ body {
 }
 
 /* SOPORTE PARA TODAS TUS VARIANTES DE CLASES EN LOS HTML */
-.content-wrapper, 
-.content-area, 
+.content-wrapper,
+.content-area,
 .main-content,
 .page-container {
   display: flex !important;
@@ -40,7 +40,7 @@ body {
 
   background: rgba(255, 255, 255, 0.96) !important;
   border-radius: 24px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
 }
 
 /* PANEL IZQUIERDO Y DERECHO */

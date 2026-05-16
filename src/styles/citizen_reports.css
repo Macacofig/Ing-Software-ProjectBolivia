@@ -35,10 +35,9 @@
   gap: 15px;
   flex-wrap: wrap;
 
-  background:
-    rgba(255, 255, 255, 0.15);
+  /* background rem */
 
-  backdrop-filter: blur(20px);
+  
 
   padding: 18px;
 

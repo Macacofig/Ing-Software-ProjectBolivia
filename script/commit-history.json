@@ -551,12 +551,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5bcaf331ff65cc9ffa911c0880e95e15a8cf7577",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-16T00:20:48.000Z",
       "message": "feat: New sidebars",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/5bcaf331ff65cc9ffa911c0880e95e15a8cf7577"
     },
     "stats": {
       "total": 177,
@@ -600,6 +600,25 @@
       "total": 1162,
       "additions": 803,
       "deletions": 359,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T06:14:10.000Z",
+      "message": "fix: side bar citizen",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 371,
+      "additions": 308,
+      "deletions": 63,
       "date": "2026-05-16"
     },
     "coverage": 100,

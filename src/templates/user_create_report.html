@@ -30,16 +30,16 @@
 
     <!-- 4. Contenedor flexible que centra tu .app-container en el resto de la pantalla -->
     <main class="content-area">
-      <div class="app-container" style="margin: auto;">
+      <div class="app-container" style="display: flex; flex-direction: column; width: 100%; max-width: 100%; height: auto;">
 
         <!-- PANEL IZQUIERDO -->
-        <div class="info-panel">
-          <h1>Registro</h1>
+        <header class="page-header" style="width: 100%; box-sizing: border-box; margin-bottom: 20px;">
+          <h1>Crear Reporte</h1>
           <p>Completa los datos para generar un reporte ciudadano de forma rápida y sencilla.</p>
-        </div>
+        </header>
 
         <!-- PANEL DERECHO -->
-        <div class="form-panel">
+        <div class="form-panel glass-container" style="width: 100%; box-sizing: border-box; box-shadow: none;">
 
           <form id="reportForm">
             <div class="form-group">
