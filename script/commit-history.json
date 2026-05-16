@@ -570,12 +570,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "1fa631b7e71a72942ffbcdd02cb9f2ccb13db3cf",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-16T00:57:07.000Z",
       "message": "refactor: todos los templates",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/1fa631b7e71a72942ffbcdd02cb9f2ccb13db3cf"
     },
     "stats": {
       "total": 754,
@@ -619,6 +619,25 @@
       "total": 371,
       "additions": 308,
       "deletions": 63,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T06:22:15.000Z",
+      "message": "fix: botones sidebar emsa",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 12,
+      "additions": 5,
+      "deletions": 7,
       "date": "2026-05-16"
     },
     "coverage": 100,
