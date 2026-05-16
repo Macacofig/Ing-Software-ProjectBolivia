@@ -1,31 +1,178 @@
-/* EMSA: Naranja Corporativo */
+/* EMSA: Naranja Corporativo Corregido y Responsive con EFECTO LIQUID GLASS */
 .sidebar.emsa-theme {
-  background: #FE8330;
+  background: rgba(254, 131, 48, 0.75);
+  /* Naranja semitransparente */
   color: #ffffff;
-  border-right: 1px solid rgba(255,255,255,0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(254, 131, 48, 0.3);
+
+  /* Forzamos el ancho máximo y mínimo para que NADA lo pueda aplastar o desbordar */
   width: 260px;
+  min-width: 260px;
+  max-width: 260px;
   height: 100vh;
+
   display: flex;
   flex-direction: column;
-  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* CORRECCIÓN 2: Cambiamos a transiciones completas para que el navegador recalcule el espacio */
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
   position: relative;
   flex-shrink: 0;
+  /* Evita que el contenedor derecho lo empuje hacia afuera */
   box-sizing: border-box;
 }
-.sidebar.emsa-theme.collapsed { width: 85px; }
-.sidebar-inner { padding: 20px; display: flex; flex-direction: column; height: 100%; overflow: hidden; white-space: nowrap; }
-.toggle-btn { position: absolute; top: 60px; right: -15px; width: 30px; height: 30px; background: #fff; border: 1px solid #ddd; border-radius: 50%; cursor: pointer; z-index: 10; color: #333; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.3s; }
-.sidebar.emsa-theme.collapsed .toggle-btn { transform: rotate(180deg); }
-.user-profile { display: flex; align-items: center; gap: 15px; margin: 30px 0; }
-.sidebar.emsa-theme.collapsed .user-info, .sidebar.emsa-theme.collapsed .text, .sidebar.emsa-theme.collapsed .menu-label { display: none; }
-.avatar { width: 45px; height: 45px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.5); }
-.user-info { display: flex; flex-direction: column; }
-.user-role { font-size: 10px; opacity: 0.8; letter-spacing: 1px; }
-.user-name { font-size: 15px; font-weight: 600; }
-.menu-label { font-size: 10px; opacity: 0.6; margin-bottom: 10px; display: block; letter-spacing: 1px; }
-.sidebar-menu ul { list-style: none; padding: 0; margin: 0; }
-.menu-item { display: flex; align-items: center; padding: 12px; border-radius: 12px; cursor: pointer; transition: 0.2s; margin-bottom: 5px; opacity: 0.8; }
-.menu-item a { color: white; text-decoration: none; display: flex; align-items: center; gap: 15px; width: 100%; }
-.menu-item:hover, .menu-item.active { background: rgba(255, 255, 255, 0.2); opacity: 1; }
-.menu-item.active { font-weight: bold; background: rgba(255, 255, 255, 0.3); border-left: 4px solid #fff; }
+
+/* CORRECCIÓN 3: Al colapsar, reducimos todos los candados de ancho en sincronía */
+.sidebar.emsa-theme.collapsed {
+  width: 85px;
+  min-width: 85px;
+  max-width: 85px;
+}
+
+.sidebar-inner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Botón Flotante */
+.toggle-btn {
+  position: absolute;
+  top: 60px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.sidebar.emsa-theme.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* Perfil de Usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+/* CORRECCIÓN 4: Ocultación limpia e inmediata del texto para que no flote de forma fea en la transición */
+.sidebar.emsa-theme.collapsed .user-info,
+.sidebar.emsa-theme.collapsed .text,
+.sidebar.emsa-theme.collapsed .menu-label {
+  display: none !important;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+  /* Evita que el avatar se vuelva un óvalo al colapsar */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-role {
+  font-size: 10px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.user-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.menu-label {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.menu-item a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+.menu-item.active {
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.3);
+  border-left: 4px solid #fff;
+}
+
+/* =========================================
+   RESPONSIVIDAD PARA PANTALLAS CHICAS 
+========================================= */
+@media (max-width: 1024px) {
+  .sidebar.emsa-theme {
+    position: relative;
+    /* Sale del flujo para proteger tus tarjetas blancas? NO, lo mantenemos en flujo para que no sobreponga */
+    z-index: 100;
+  }
+
+  /* Lo mantenemos colapsado a 85px en lugar de esconderlo completamente */
+  .sidebar.emsa-theme.collapsed {
+    transform: none;
+    width: 85px;
+    min-width: 85px;
+    max-width: 85px;
+  }
+
+  /* Desplazamos la flecha a su posición normal */
+  .sidebar.emsa-theme.collapsed .toggle-btn {
+    right: -15px;
+    transform: rotate(180deg);
+  }
+}

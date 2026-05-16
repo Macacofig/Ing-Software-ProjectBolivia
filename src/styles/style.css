@@ -1,39 +1,69 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: #FE8330;  /* fallback for old browsers */
+  background: linear-gradient(135deg, #FE8330, #FFD8B1);
   color: #333;
   overflow: hidden;
 }
 
-/* LAYOUT PRINCIPAL */
+/* LAYOUT PRINCIPAL RE-DISEÑADO CON GRID DINÁMICO */
 .main-layout {
-  display: flex;
-  height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  gap: 20px;
+  display: grid !important;
+  /* !important obliga a Parcel a usar Grid sí o sí */
+  /* El sidebar se adapta a su contenido (260px o 85px) y el formulario toma el resto (1fr) */
+  grid-template-columns: auto 1fr !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  gap: 20px !important;
+  overflow: hidden !important;
 }
 
-.content-wrapper {
-  flex: 1;
-  display: flex;
-  gap: 20px;
-  overflow-y: auto;
-  padding-right: 5px; /* Para el scroll */
+/* SOPORTE PARA TODAS TUS VARIANTES DE CLASES EN LOS HTML */
+.content-wrapper, 
+.content-area, 
+.main-content,
+.page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  /* Fuerza a que los bloques vayan de arriba a abajo */
+  gap: 20px !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  /* CRÍTICO: Evita que la tarjeta blanca empuje al menú */
+  height: 100% !important;
+  /* Mantiene el tamaño dentro del Grid */
+  flex: 1 !important;
+
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
 }
 
 /* PANEL IZQUIERDO Y DERECHO */
-.left-panel { flex: 3; min-width: 300px; }
-.right-panel { flex: 2; display: flex; flex-direction: column; min-width: 250px; }
+.left-panel {
+  flex: 3 !important;
+  min-width: 300px !important;
+}
 
-.card, .glass-card {
-  background: rgba(255, 255, 255, 0.85); /* Semitransparente para ver un poco el fondo */
+.right-panel {
+  flex: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 250px !important;
+}
+
+.card,
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 25px;
   height: 100%;
   display: flex;
@@ -41,36 +71,149 @@ body {
   box-sizing: border-box;
 }
 
-.card-header { display: flex; justify-content: space-between; align-items: center; }
-.card-header h2 { margin: 0; color: #222; }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  color: #222;
+}
 
 /* SCROLL AREA */
-.scroll-area { flex: 1; overflow-y: auto; margin-top: 10px; padding-right: 5px; }
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+}
 
 /* FORMULARIO Y CAMPOS */
-label { margin-top: 12px; font-size: 13px; color: #555; font-weight: 500; display: block; }
-select, input { width: 100%; padding: 12px; margin-top: 5px; border-radius: 10px; border: 1px solid #ddd; background: #fff; box-sizing: border-box; transition: 0.2s; }
-select:focus, input:focus { outline: none; border-color: #f39c12; }
+label {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+  display: block;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: #f39c12;
+}
 
 /* BOTONES */
-button { border: none; border-radius: 10px; padding: 12px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-.btn-save { margin-top: 20px; background: #f39c12; color: white; width: 100%; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); }
-.btn-save:hover { background: #e67e22; }
-.btn-clear { background: #ff5f56; color: white; width: auto; padding: 8px 15px; font-size: 13px; }
-.btn-save-all { margin-top: 15px; background: #3498db; color: white; width: 100%; }
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-save {
+  margin-top: 20px;
+  background: #f39c12;
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-save:hover {
+  background: #e67e22;
+}
+
+.btn-clear {
+  background: #ff5f56;
+  color: white;
+  width: auto;
+  padding: 8px 15px;
+  font-size: 13px;
+}
+
+.btn-save-all {
+  margin-top: 15px;
+  background: #3498db;
+  color: white;
+  width: 100%;
+}
 
 /* RUTAS UI */
-.ruta-input { display: flex; gap: 8px; margin-top: 5px; }
-.ruta-input input { flex: 1; }
-.ruta-input button { width: 45px; background: #2ecc71; color: white; font-size: 18px; display: flex; align-items: center; justify-content: center; }
-.lista-rutas { list-style: none; padding: 0; margin-top: 10px; }
-.ruta-item { display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; padding: 10px; margin-top: 5px; border-radius: 8px; font-size: 14px; border: 1px solid #eee; }
-.ruta-item button { background: #ff5f56; color: white; padding: 4px 8px; font-size: 12px; border-radius: 6px; }
+.ruta-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.ruta-input input {
+  flex: 1;
+}
+
+.ruta-input button {
+  width: 45px;
+  background: #2ecc71;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lista-rutas {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.ruta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #eee;
+}
+
+.ruta-item button {
+  background: #ff5f56;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+}
 
 /* Scrollbar moderno */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.1); border-radius: 10px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
 
 /* MENSAJES Y ERRORES */
 .error {
@@ -92,4 +235,13 @@ button { border: none; border-radius: 10px; padding: 12px; cursor: pointer; font
 
 .form-message.success {
   color: #2ecc71;
+}
+
+/* RESPONSIVIDAD EN MÓVILES */
+@media (max-width: 1024px) {
+  .main-layout {
+    /* Keep the grid to prevent overlap, just reduce gap and padding */
+    padding: 10px !important;
+    gap: 10px !important;
+  }
 }

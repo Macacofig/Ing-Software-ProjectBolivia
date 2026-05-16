@@ -804,9 +804,15 @@
     "testId": 26
   },
   {
-    "commitId": "HEAD",
+    "commitId": "62fe6b9a5b2537f581f442d72cbe3bb77af395c0",
     "commitName": "refactor: todos los templates",
     "commitTimestamp": 1778893028163,
     "testId": 27
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "refact:sidebars terminados",
+    "commitTimestamp": 1778901275033,
+    "testId": 28
   }
 ]

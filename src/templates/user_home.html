@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
     <!-- 1. Agregamos el CSS base y el nuevo CSS oscuro del Sidebar Ciudadano -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/citizen_sidebar.css">
-    
+
     <!-- Tu CSS específico de esta vista -->
     <link rel="stylesheet" href="../styles/user_home.css">
 
@@ -20,13 +21,13 @@
 <body class="citizen-theme">
 
     <!-- 2. Envolvemos todo en el layout principal -->
-    <div class="main-layout" style="padding: 0; gap: 0;">
+    <div class="main-layout">
 
         <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
         <div id="sidebar-container"></div>
 
         <!-- 4. Contenido original, lo hacemos flexible y scrolleable -->
-        <main class="main-content" style="flex: 1; height: 100vh; overflow-y: auto; padding: 20px;">
+        <main class="content-area">
 
             <!-- HEADER -->
             <header class="main-header">
@@ -92,8 +93,9 @@
 
     <!-- 5. Script para cargar el sidebar y resaltar "Rutas y Horarios" -->
     <script type="module">
-        import { loadSidebar } from '../functions/utils/sidebar_loader.js';
-        
+        // ¡RUTA CORREGIDA AQUÍ!
+        import { loadSidebar } from '../utils/sidebar_loader.js';
+
         // El motor busca el ID 'menu-citizen-home' en tu archivo citizen_sidebar.html y lo ilumina
         loadSidebar('citizen', 'menu-citizen-home');
     </script>
@@ -101,4 +103,5 @@
     <!-- Tu presentador original -->
     <script type="module" src="../functions/Citizen/Citizen.Service.presenter.js"></script>
 </body>
+
 </html>

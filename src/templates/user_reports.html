@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +19,18 @@
 </head>
 
 <!-- Bloqueamos márgenes/padding del body para que el sidebar empiece desde el borde absoluto -->
-<body class="citizen-theme" style="margin: 0; padding: 0;">
+
+<body class="citizen-theme">
 
   <!-- 2. Layout principal -->
-  <div class="main-layout" style="padding: 0; gap: 0;">
+  <div class="main-layout">
 
     <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
     <div id="sidebar-container"></div>
 
     <!-- 4. Contenedor que ocupa el resto de la pantalla, permite scroll, y le devolvemos el padding de 25px que tenía originalmente -->
-    <div class="page-container" style="flex: 1; height: 100vh; overflow-y: auto; padding: 25px; box-sizing: border-box;">
+    <div class="page-container"
+      style="flex: 1; height: 100vh; overflow-y: auto; padding: 25px; box-sizing: border-box;">
 
       <!-- HEADER -->
       <header class="topbar">
@@ -59,16 +62,16 @@
       </section>
 
       <!-- REPORTES -->
-      <main>
+      <section>
         <div id="reportsContainer" class="reports-container"></div>
-      </main>
-
-    </div>
+      </section>
+    </main>
   </div>
 
   <!-- 5. Llamamos al motorcito y le decimos que resalte "Mis Reportes" -->
   <script type="module">
-    import { loadSidebar } from '../functions/utils/sidebar_loader.js';
+    // ¡RUTA CORREGIDA AQUÍ!
+    import { loadSidebar } from '../utils/sidebar_loader.js';
     loadSidebar('citizen', 'menu-citizen-reports');
   </script>
 
@@ -76,4 +79,5 @@
   <script type="module" src="../functions/Citizen/Citizen.Reports.presenter.js"></script>
 
 </body>
+
 </html>

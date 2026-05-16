@@ -5,13 +5,7 @@
     --transition: 0.3s ease;
 }
 
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--orange-primary);
-    height: 100vh;
-    overflow: hidden;
-}
+
 
 .main-layout {
     display: flex;
@@ -21,58 +15,16 @@ body {
     box-sizing: border-box;
 }
 
-/* SIDEBAR */
-
-.sidebar {
-    width: 260px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 25px;
-    color: white;
-    position: relative;
-}
-
-.toggle-btn {
-    position: absolute;
-    top: 25px;
-    right: -15px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-}
-
-.sidebar-menu {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-}
-
-.menu-item {
-    display: flex;
-    gap: 15px;
-    padding: 14px;
-    border-radius: 14px;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 10px;
-    transition: var(--transition);
-}
-
-.menu-item:hover {
-    background: rgba(255,255,255,0.15);
-}
-
 /* CONTENT */
 
 .content-area {
     flex: 1;
-    background: rgba(255,255,255,0.96);
+    background: rgba(255, 255, 255, 0.96);
     border-radius: 24px;
     padding: 40px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-header {
@@ -145,7 +97,7 @@ body {
 
 .grid-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(320px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
 }
 
@@ -155,7 +107,7 @@ body {
     padding: 25px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .card::before {
@@ -212,7 +164,7 @@ body {
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(0, 0, 0, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -329,12 +281,12 @@ body {
 
 .status-dot.online {
     background: #2ecc71;
-    box-shadow: 0 0 10px rgba(46,204,113,0.5);
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
 }
 
 .status-dot.offline {
     background: #ff4d4d;
-    box-shadow: 0 0 10px rgba(255,77,77,0.5);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
 }
 
 .status-text {

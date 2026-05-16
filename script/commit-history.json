@@ -532,12 +532,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "62fe6b9a5b2537f581f442d72cbe3bb77af395c0",
     "author": "Nataly",
     "commit": {
       "date": "2026-05-15T00:32:31.000Z",
       "message": "feat: creation about the  emsa_service page and refact de errors",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/62fe6b9a5b2537f581f442d72cbe3bb77af395c0"
     },
     "stats": {
       "total": 933,
@@ -581,6 +581,25 @@
       "total": 754,
       "additions": 302,
       "deletions": 452,
+      "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-16T03:14:34.000Z",
+      "message": "refact:sidebars terminados",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 1162,
+      "additions": 803,
+      "deletions": 359,
       "date": "2026-05-16"
     },
     "coverage": 100,

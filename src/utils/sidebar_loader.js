@@ -7,10 +7,12 @@ export async function loadSidebar(type, activeMenuId) {
   const container = document.getElementById('sidebar-container');
   if (!container) return;
 
-  // Parcel permite importar recursos estáticos usando URL
-  const url = type === 'emsa' 
-    ? new URL('../../components/emsa_sidebar.html', import.meta.url)
-    : new URL('../../components/citizen_sidebar.html', import.meta.url);
+  // Declaramos ambas URLs de forma estática para que Parcel las detecte sin problemas
+  const emsaUrl = new URL('../components/emsa_sidebar.html', import.meta.url);
+  const citizenUrl = new URL('../components/citizen_sidebar.html', import.meta.url);
+
+  // Elegimos la ruta correcta según el parámetro
+  const url = type === 'emsa' ? emsaUrl : citizenUrl;
 
   try {
     const response = await fetch(url);
@@ -25,7 +27,7 @@ export async function loadSidebar(type, activeMenuId) {
       activeItem.classList.add('active');
     }
 
-    // Activar el botón de colapsar
+    // Activar la funcionalidad de colapsar e interactuar con el Grid
     setupToggle();
 
   } catch (error) {
@@ -39,7 +41,10 @@ function setupToggle() {
 
   if (sidebar && toggleBtn) {
     toggleBtn.addEventListener('click', () => {
+      // 1. Contraemos o expandimos el sidebar visualmente
       sidebar.classList.toggle('collapsed');
+      
+      // 2. Cambiamos el ícono de la flecha según el estado del colapso
       toggleBtn.textContent = sidebar.classList.contains('collapsed') ? "▶" : "◀";
     });
   }

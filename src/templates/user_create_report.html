@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Registro de Reportes</title>
@@ -18,18 +19,18 @@
 </head>
 
 <!-- Bloqueamos el flex original del body para que no interfiera con el layout principal -->
-<body class="citizen-theme" style="display: block; margin: 0; padding: 0;">
+
+<body class="citizen-theme">
 
   <!-- 2. Envolvemos todo en el layout principal -->
-  <div class="main-layout" style="padding: 0; gap: 0;">
+  <div class="main-layout">
 
     <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
     <div id="sidebar-container"></div>
 
     <!-- 4. Contenedor flexible que centra tu .app-container en el resto de la pantalla -->
-    <div style="flex: 1; display: flex; align-items: center; justify-content: center; height: 100vh; overflow-y: auto;">
-      
-      <div class="app-container">
+    <main class="content-area">
+      <div class="app-container" style="margin: auto;">
 
         <!-- PANEL IZQUIERDO -->
         <div class="info-panel">
@@ -61,17 +62,16 @@
 
           <!-- Mensaje dinámico -->
           <div id="messageBox" class="message-box"></div>
-
-        </div>
-
-      </div>
+    </main>
+  </div>
 
     </div>
   </div>
 
   <!-- 5. Llamamos al script que inyecta el sidebar y resalta "Reportar Incidencia" -->
   <script type="module">
-    import { loadSidebar } from '../functions/utils/sidebar_loader.js';
+    // ¡RUTA CORREGIDA AQUÍ!
+    import { loadSidebar } from '../utils/sidebar_loader.js';
     loadSidebar('citizen', 'menu-citizen-create');
   </script>
 
@@ -79,4 +79,5 @@
   <script type="module" src="../functions/Citizen/Citizen.Report.presenter.js"></script>
 
 </body>
+
 </html>
