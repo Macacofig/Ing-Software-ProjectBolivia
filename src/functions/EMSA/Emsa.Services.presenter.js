@@ -1,3 +1,7 @@
+import {ModelService, Service, filter_services } from "../../Models/Service.js";
+
+const model = new ModelService();
+
 const gridCards = document.getElementById("grid-cards");
 
 const btnBuscar = document.querySelector(".search-btn");
@@ -27,6 +31,8 @@ const cancelEdit = document.getElementById("cancel-edit");
 const cancelDelete = document.getElementById("cancel-delete");
 
 const confirmDelete = document.getElementById("confirm-delete");
+
+
 
 let currentEditIndex = null;
 let currentDeleteIndex = null;
@@ -69,16 +75,6 @@ selectDistrito.addEventListener("change", function () {
 
 });
 
-/* STORAGE */
-
-function getServices() {
-    return JSON.parse(localStorage.getItem("services")) || [];
-}
-
-function saveServices(services) {
-    localStorage.setItem("services", JSON.stringify(services));
-}
-
 /* RENDER */
 
 function createCard(service, index) {
@@ -88,22 +84,16 @@ function createCard(service, index) {
     article.className = "card";
 
     article.innerHTML = `
-        <div class="card-status">
 
-            <span class="status-dot ${
-                service.status === "unavailable"
-                    ? "offline"
-                    : "online"
-            }"></span>
-
-            <span class="status-text">
-                ${
-                    service.status === "unavailable"
-                        ? "Unavailable"
-                        : "Available"
-                }
-            </span>
-
+        <div class="
+            card-status
+            ${service.status}
+        ">
+            ${
+                service.status === "available"
+                    ? "Disponible"
+                    : "No disponible"
+            }
         </div>
 
         <p><strong>Distrito:</strong> ${service.distrito}</p>
@@ -114,36 +104,37 @@ function createCard(service, index) {
 
         <p><strong>Hora:</strong> ${service.schedule}</p>
 
-        <div class="rutas">
-
+        <p>
             <strong>Rutas:</strong>
-
-            <p>${
-                Array.isArray(service.listaRutas)
-                    ? service.listaRutas.join(", ")
-                    : service.listaRutas || "No routes"
-            }</p>
-
-        </div>
+            ${service.routes.join(", ")}
+        </p>
 
         <div class="actions">
 
             <button class="btn-edit">
-                <i class="fas fa-pen"></i> Edit
+                Edit
             </button>
 
             <button class="btn-delete">
-                <i class="fas fa-trash"></i> Delete
+                Delete
             </button>
 
         </div>
     `;
 
-    article.querySelector(".btn-edit")
-        .addEventListener("click", () => openEditModal(index));
+    article
+        .querySelector(".btn-edit")
+        .addEventListener(
+            "click",
+            () => openEditModal(index)
+        );
 
-    article.querySelector(".btn-delete")
-        .addEventListener("click", () => openDeleteModal(index));
+    article
+        .querySelector(".btn-delete")
+        .addEventListener(
+            "click",
+            () => openDeleteModal(index)
+        );
 
     return article;
 }
@@ -182,22 +173,7 @@ function filterServices() {
     const dia = selectDia.value;
     const search = searchInput.value.toLowerCase();
 
-    const services = getServices();
-
-    const filtered = services.filter(service => {
-
-        return (
-            (!distrito || service.distrito === distrito) &&
-            (!zona || service.zone === zona) &&
-            (!dia || service.day.toLowerCase() === dia.toLowerCase()) &&
-            (
-                service.zone.toLowerCase().includes(search) ||
-                service.distrito.toLowerCase().includes(search)
-            )
-        );
-
-    });
-
+    const filtered = filter_services(model.getServices(), { distrito, zone: zona, day: dia, search });
     renderServices(filtered);
 
 }
@@ -208,7 +184,7 @@ btnBuscar.addEventListener("click", filterServices);
 
 function openEditModal(index) {
 
-    const services = getServices();
+    const services = model.getServices();
 
     const service = services[index];
 
@@ -242,9 +218,7 @@ function openEditModal(index) {
     editHorario.value = service.schedule;
     editStatus.value = service.status || "available";
 
-    editRutas.value = Array.isArray(service.listaRutas)
-        ? service.listaRutas.join(", ")
-        : service.listaRutas;
+    editRutas.value = service.routes.join(", ");
 
     editModal.classList.add("active");
 
@@ -256,29 +230,34 @@ function closeEditModal() {
 
 saveEdit.addEventListener("click", () => {
 
-    const services = getServices();
+    const updatedService =
+        new Service(
 
-    services[currentEditIndex] = {
-        status: editStatus.value,
-        ...services[currentEditIndex],
+            editDia.value,
 
-        distrito: editDistrito.value,
+            editDistrito.value,
 
-        zone: editZona.value,
+            editZona.value,
 
-        day: editDia.value,
+            editHorario.value,
 
-        schedule: editHorario.value,
+            editRutas.value
+                .split(",")
+                .map(r => r.trim())
+                .filter(r => r !== ""),
 
-        listaRutas: editRutas.value
-            .split(",")
-            .map(ruta => ruta.trim())
+            editStatus.value
 
-    };
+        );
 
-    saveServices(services);
+    model.updateService(
+        currentEditIndex,
+        updatedService
+    );
 
-    renderServices(services);
+    renderServices(
+        model.getServices()
+    );
 
     closeEditModal();
 
@@ -304,13 +283,11 @@ function closeDeleteModal() {
 
 confirmDelete.addEventListener("click", () => {
 
-    const services = getServices();
+    model.deleteService(currentDeleteIndex);
 
-    services.splice(currentDeleteIndex, 1);
-
-    saveServices(services);
-
-    renderServices(services);
+    renderServices(
+        model.getServices()
+    );
 
     closeDeleteModal();
 
@@ -320,26 +297,7 @@ cancelDelete.addEventListener("click", closeDeleteModal);
 
 /* INITIAL */
 
-renderServices(getServices());
-
-/* SIDEBAR */
-
-const sidebar = document.getElementById('sidebar');
-const toggleBtn = document.getElementById('toggle-btn');
-
-toggleBtn.addEventListener('click', () => {
-
-    sidebar.classList.toggle('collapsed');
-
-    const icon = toggleBtn.querySelector('i');
-
-    if (sidebar.classList.contains('collapsed')) {
-        icon.classList.replace('fa-chevron-left', 'fa-chevron-right');
-    } else {
-        icon.classList.replace('fa-chevron-right', 'fa-chevron-left');
-    }
-
-});
+renderServices(model.getServices());
 
 /* =========================
    EDIT MODAL ZONAS
@@ -367,3 +325,4 @@ editDistrito.addEventListener("change", function () {
     }
 
 });
+

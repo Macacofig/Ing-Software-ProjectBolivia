@@ -1,18 +1,23 @@
+import {
+    saveServicesToLocalStorage,
+    getServices
+} from "../utils/localStorage.js";
+
 class Service{
     constructor(
         day, 
         distrito, 
         zone, 
         schedule, 
-        listaRutas, 
-        currentList
+        routes = [],
+        status = "available"
     ){
         this.day = day;
         this.distrito = distrito;
         this.zone = zone;
         this.schedule = schedule;
-        this.listaRutas = listaRutas;
-        this.currentList = currentList;
+        this.routes = routes;
+        this.status = status;
     }
 
     getDay() {
@@ -27,11 +32,11 @@ class Service{
     getSchedule() {
         return this.schedule;
     }
-    getListaRutas() {
-        return this.listaRutas;
+    getRoutes() {
+        return this.routes;
     }
-    getCurrentList() {
-        return this.currentList;
+    getStatus() {
+        return this.status;
     }
     toJSON() {
         return {
@@ -39,8 +44,8 @@ class Service{
             distrito: this.distrito,
             zone: this.zone,
             schedule: this.schedule,
-            listaRutas: this.listaRutas,
-            currentList: this.currentList
+            routes: this.routes,
+            status: this.status
         };
     }
 }
@@ -52,14 +57,14 @@ class ModelService {
         this.loadServices();
     }
     loadServices() {
-        const servicesData = JSON.parse(localStorage.getItem('services')) || [];
+        const servicesData = getServices('services');
         this.services = servicesData.map(s => new Service(
             s.day,
             s.distrito,
             s.zone,
             s.schedule,
-            s.listaRutas,
-            s.currentList.split(",")
+            s.routes || [],
+            s.status || "available"
         ));
     }
     getServices() {
@@ -71,8 +76,69 @@ class ModelService {
     }
     saveServices() {
         const servicesJSON = this.services.map(s => s.toJSON());
-        localStorage.setItem('services', JSON.stringify(servicesJSON));
+        saveServicesToLocalStorage(servicesJSON, 'services');
+    }
+
+    updateService(index, updatedService) {
+
+        this.services[index] = updatedService;
+
+        this.saveServices();
+
+    }
+
+    deleteService(index) {
+
+        this.services.splice(index, 1);
+
+        this.saveServices();
+
     }
 }
 
-export { Service, ModelService };
+function isDuplicateService(service, servicesList) {
+    return servicesList.some(s =>
+        s.day === service.day &&
+        s.distrito === service.distrito &&
+        s.zone === service.zone &&
+        s.schedule === service.schedule
+    );
+}
+
+function verify_service(service, servicesList = [], currentList = []) 
+{
+
+  if (!service.day) return {field: "day",message: "Selecciona un día"};
+
+  if (!service.distrito) return {field: "district",message: "Selecciona un distrito"};
+
+  if (!service.zone) return {field: "zone",message: "Selecciona una zona"};
+
+  if (!service.schedule) return {field: "schedule",message: "Selecciona un horario"};
+
+  if (!service.routes ||service.routes.length === 0) return {field: "rutas",message: "Debes agregar al menos una ruta"};
+
+  if (isDuplicateService(service, servicesList)) return {field: "general",message:"El servicio ya existe"};
+
+  if (isDuplicateService(service, currentList)) return {field: "general",message:"El servicio ya existe"};
+    
+  return {success: true};
+}
+
+function filter_services(services,{distrito = "", zone = "", day = "", search = ""} = {}) 
+{
+    return services.filter(service => {
+
+        const matchesDistrito = !distrito || service.distrito === distrito;
+
+        const matchesZone = !zone || service.zone === zone;
+
+        const matchesDay = !day || service.day.toLowerCase().includes(day.toLowerCase());
+
+        const matchesSearch = !search || service.routes.some(route => route.toLowerCase().includes(search.toLowerCase()));
+
+        return ( matchesDistrito && matchesZone && matchesDay && matchesSearch);
+    });
+}
+
+export { Service, ModelService, verify_service, filter_services };
