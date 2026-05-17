@@ -75,6 +75,18 @@
                         </select>
                     </label>
 
+                    <!-- RUTA -->
+                    <label>
+                        <span>Ruta</span>
+                        <input type="text" id="filter-ruta" placeholder="Ej: CALA CALA">
+                    </label>
+
+                    <!-- FILTRO ESTRICTO -->
+                    <label style="flex-direction: row; align-items: center; gap: 6px;">
+                        <input type="checkbox" id="filter-estricto" style="width:auto; padding:0;">
+                        <span>Estricto</span>
+                    </label>
+
                     <button type="button" class="search-btn">
                         <i class="fas fa-search"></i>
                     </button>
@@ -86,6 +98,13 @@
             <section class="results">
                 <h2 class="subtitulo">Días de Servicio</h2>
                 <div id="grid-cards" class="grid-cards"></div>
+                <div id="confirmation-message" style="display:none;" class="confirmation-box">
+                    <p id="confirmation-text"></p>
+                    <button id="confirm-btn">Confirmar selección</button>
+                    <button id="cancel-btn">Cancelar</button>
+                </div>
+
+
             </section>
         </main>
     </div>

@@ -83,7 +83,9 @@ function select_collection_point(point) {
 function filter_by_route(services, routes, strict = false) {
   if (!routes || routes.length === 0) return services;
   return services.filter(service => {
-    const serviceRoutes = service.listaRutas.toLowerCase();
+    const serviceRoutes = service.listaRutas
+      ? service.listaRutas.toLowerCase()
+      : (service.routes || []).join(", ").toLowerCase();
     if (strict) {
       return routes.every(route => serviceRoutes.includes(route.toLowerCase()));
     } else {
