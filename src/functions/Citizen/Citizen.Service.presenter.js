@@ -1,5 +1,5 @@
 import { getServices } from "../../utils/localStorage.js";
-
+import { filter_services } from "../../Models/Service.js";
 document.addEventListener("DOMContentLoaded", () => {
 
     const btnBuscar = document.querySelector(".search-btn");
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Zona:</strong> ${service.zone}</p>
             <p><strong>Día:</strong> ${capitalize(service.day)}</p>
             <p><strong>Hora:</strong> ${service.schedule}</p>
-            <p><strong>Rutas:</strong> ${service.listaRutas}</p>
+            <p><strong>Rutas:</strong> ${service.routes.join(", ")  }</p>
         `;
 
         return article;
@@ -98,13 +98,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const services = getServices('services');
 
-        const filtered = services.filter(service => {
-            return (
-                (!distrito || service.distrito === distrito) &&
-                (!zona || service.zone === zona) &&
-                (!dia || service.day.toLowerCase().includes(dia.toLowerCase()))
-            );
-        });
+        const filtered =
+        filter_services(
+            services,
+            {
+                distrito,
+                zone: zona,
+                day: dia
+            }
+        );
 
         renderServices(filtered);
     }
