@@ -72,4 +72,13 @@ function getServices() {
 function clearServices() {
     list_Services = [];
 }
-export { register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices};
+
+function select_collection_point(point) {
+  if (!point || !point.distrito || !point.zone || !point.day || !point.schedule) {
+    return { success: false, message: "Punto de recolección inválido" };
+  }
+  return { success: true, message: "Punto de recolección seleccionado correctamente" };
+}
+
+export { register_day, register_district_zone, register_schedule, 
+         register_Route, getServices, clearServices, select_collection_point };
