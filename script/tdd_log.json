@@ -826,5 +826,29 @@
     "commitName": "fix: botones sidebar emsa",
     "commitTimestamp": 1778912535981,
     "testId": 30
+  },
+  {
+    "numPassedTests": 26,
+    "failedTests": 1,
+    "numTotalTests": 27,
+    "timestamp": 1779057237079,
+    "success": false,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 27,
+    "failedTests": 0,
+    "numTotalTests": 27,
+    "timestamp": 1779058281749,
+    "success": true,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 27,
+    "failedTests": 0,
+    "numTotalTests": 27,
+    "timestamp": 1779058281749,
+    "success": true,
+    "testId": 31
   }
 ]

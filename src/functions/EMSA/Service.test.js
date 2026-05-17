@@ -104,4 +104,11 @@ describe("Service", () => {
   });
 });
 
+it("filtra por una ruta", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  expect(filter_by_route(getServices(), ["CALA CALA"])).toHaveLength(1);
+});
+
 });
