@@ -111,4 +111,12 @@ it("filtra por una ruta", () => {
   expect(filter_by_route(getServices(), ["CALA CALA"])).toHaveLength(1);
 });
 
+it("filtra por varias rutas con al menos una", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  register_Route("Miercoles", "7", "Villa Venezuela", "10:00", "Av.Pando");
+  expect(filter_by_route(getServices(), ["CALA CALA", "Circunvalacion"])).toHaveLength(2);
+});
+
 });
