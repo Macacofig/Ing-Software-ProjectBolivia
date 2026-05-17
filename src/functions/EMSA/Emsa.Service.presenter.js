@@ -1,5 +1,5 @@
-import { register_Route, addService} from "./service_real.js";
-
+import { Service,ModelService, verify_service } from "../../Models/Service.js";
+import { getServices } from "../../utils/localStorage.js";
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
 const District_input = document.getElementById("distrito"); // DISTRICT INPUT
@@ -181,42 +181,36 @@ form.addEventListener("submit", (e) => {
 
   clearErrors();
 
-  const data = {
-    Day: Day_input.value,
-    District: District_input.value,
-    Zone: Zone_input.value,
-    Schedule: Schedule_input.value,
-    rutas: rutas.join(", ")
-  };
+  const service = new Service(
+    Day_input.value,
+    District_input.value,
+    Zone_input.value,
+    Schedule_input.value,
+    [...rutas]
+  );
 
-  const validation = register_Route(
-    data.Day,
-    data.District,
-    data.Zone,
-    data.Schedule,
-    data.rutas,
+  const validation = verify_service(
+    service,
+    getServices("services"),
     registros
   );
 
   if (!validation.success) {
 
-    // ERROR GENERAL (ej: duplicado)
     if (validation.field === "general") {
       showFormMessage(validation.message, "error");
       return;
     }
 
-    // ERROR POR CAMPO
     const errorElement = document.getElementById(`error-${validation.field}`);
     
     if (errorElement) {
       errorElement.textContent = validation.message;
     }
-
     return;
   }
 
-  registros.push(data);
+  registros.push(service);
 
   showFormMessage("Servicio registrado correctamente", "success");
 
@@ -233,16 +227,16 @@ form.addEventListener("submit", (e) => {
 function renderRegistros() {
   lista.innerHTML = "";
 
-  registros.forEach(item => {
+  registros.forEach(service  => {
     const div = document.createElement("div");
     div.className = "registro-card";
 
     div.innerHTML = `
-      <p><b>${item.Day}</b></p>
-      <p>Distrito: ${item.District}</p>
-      <p>Zona: ${item.Zone}</p>
-      <p>Hora: ${item.Schedule}</p>
-      <p>Rutas: ${item.rutas}</p>
+      <p><b>${service.day}</b></p>
+      <p>Distrito: ${service.distrito}</p>
+      <p>Zona: ${service.zone}</p>
+      <p>Hora: ${service.schedule}</p>
+      <p>Rutas: ${service.routes.join(", ")}</p>
     `;
 
     lista.appendChild(div);
@@ -260,21 +254,15 @@ guardarTodoBtn.addEventListener("click", () => {
     showFormMessage("No hay registros para guardar", "error");
     return;
   }
-  registros.forEach(registro => {
-    const result = addService(
-      {
-        day: registro.Day,
-        distrito: registro.District,
-        zone: registro.Zone,
-        schedule: registro.Schedule,
-        listaRutas: registro.rutas
-      }
-    );
-  });
+
+   const model = new ModelService();
+
+  registros.forEach(service  => { model.addService(service); });
   registros = []; 
   renderRegistros();
   showFormMessage("Todos los servicios han sido guardados", "success");
 });
+
 /*****************************************************************/
 /*****************************************************************/
 
