@@ -9,13 +9,15 @@ class Service{
         distrito, 
         zone, 
         schedule, 
-        routes = []
+        routes = [],
+        status = "available"
     ){
         this.day = day;
         this.distrito = distrito;
         this.zone = zone;
         this.schedule = schedule;
         this.routes = routes;
+        this.status = status;
     }
 
     getDay() {
@@ -33,6 +35,9 @@ class Service{
     getRoutes() {
         return this.routes;
     }
+    getStatus() {
+        return this.status;
+    }
     toJSON() {
         return {
             day: this.day,
@@ -40,6 +45,7 @@ class Service{
             zone: this.zone,
             schedule: this.schedule,
             routes: this.routes,
+            status: this.status
         };
     }
 }
@@ -57,7 +63,8 @@ class ModelService {
             s.distrito,
             s.zone,
             s.schedule,
-            s.routes || []
+            s.routes || [],
+            s.status || "available"
         ));
     }
     getServices() {
@@ -70,6 +77,22 @@ class ModelService {
     saveServices() {
         const servicesJSON = this.services.map(s => s.toJSON());
         saveServicesToLocalStorage(servicesJSON, 'services');
+    }
+
+    updateService(index, updatedService) {
+
+        this.services[index] = updatedService;
+
+        this.saveServices();
+
+    }
+
+    deleteService(index) {
+
+        this.services.splice(index, 1);
+
+        this.saveServices();
+
     }
 }
 
@@ -102,7 +125,7 @@ function verify_service(service, servicesList = [], currentList = [])
   return {success: true};
 }
 
-function filter_services(services,{distrito = "", zone = "", day = ""} = {}) 
+function filter_services(services,{distrito = "", zone = "", day = "", search = ""} = {}) 
 {
     return services.filter(service => {
 
@@ -112,7 +135,9 @@ function filter_services(services,{distrito = "", zone = "", day = ""} = {})
 
         const matchesDay = !day || service.day.toLowerCase().includes(day.toLowerCase());
 
-        return ( matchesDistrito && matchesZone && matchesDay);
+        const matchesSearch = !search || service.routes.some(route => route.toLowerCase().includes(search.toLowerCase()));
+
+        return ( matchesDistrito && matchesZone && matchesDay && matchesSearch);
     });
 }
 

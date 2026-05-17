@@ -56,11 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
         article.className = `card ${getColorByDay(service.day)}`;
 
         article.innerHTML = `
+            <div class="card-status
+            ${service.status}">
+                ${
+                    service.status === "available"
+                        ? "Disponible"
+                        : "No disponible"
+                }
+            </div>
             <p><strong>Distrito:</strong> ${service.distrito}</p>
             <p><strong>Zona:</strong> ${service.zone}</p>
             <p><strong>Día:</strong> ${capitalize(service.day)}</p>
             <p><strong>Hora:</strong> ${service.schedule}</p>
-            <p><strong>Rutas:</strong> ${service.routes.join(", ")  }</p>
+            <p><strong>Rutas:</strong> ${service.routes.join(", ")}</p>
         `;
 
         return article;

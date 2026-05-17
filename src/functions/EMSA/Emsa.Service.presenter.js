@@ -186,7 +186,8 @@ form.addEventListener("submit", (e) => {
     District_input.value,
     Zone_input.value,
     Schedule_input.value,
-    [...rutas]
+    [...rutas],
+    "available"
   );
 
   const validation = verify_service(
