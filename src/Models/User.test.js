@@ -33,4 +33,14 @@ describe("User", () => {
     });
   });
 
+  it("login success for admin", () => {
+    const model = new ModelUser();
+    model.addUser({ id: 2, nombre: "Admin", correo: "admin@gmail.com", password: "admin123", role: "admin" });
+    expect(login_user("admin@gmail.com", "admin123", model.getUsers())).toEqual({
+      success: true,
+      role: "admin",
+      id: 2
+    });
+  });
+
 });
