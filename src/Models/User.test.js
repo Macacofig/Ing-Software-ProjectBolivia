@@ -23,4 +23,14 @@ describe("User", () => {
     });
   });
 
+  it("login success for citizen", () => {
+    const model = new ModelUser();
+    model.addUser({ id: 1, nombre: "Ale", correo: "ale@gmail.com", password: "1234", role: "citizen" });
+    expect(login_user("ale@gmail.com", "1234", model.getUsers())).toEqual({
+      success: true,
+      role: "citizen",
+      id: 1
+    });
+  });
+
 });
