@@ -1,5 +1,7 @@
 import { getServices } from "../../utils/localStorage.js";
 import { filter_services } from "../../Models/Service.js";
+import { select_collection_point, filter_by_route } from "../EMSA/Service.js";
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const btnBuscar = document.querySelector(".search-btn");
@@ -8,6 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectDistrito = document.getElementById("filter-distrito");
     const selectZona = document.getElementById("filter-zona");
     const selectDia = document.getElementById("filter-dia");
+    const inputRuta = document.getElementById("filter-ruta");
+    const checkEstricto = document.getElementById("filter-estricto");
+
+    const confirmationBox = document.getElementById("confirmation-message");
+    const confirmationText = document.getElementById("confirmation-text");
+    const confirmBtn = document.getElementById("confirm-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
+
+    let selectedPoint = null;
 
     const Zones_by_district = {
         "2": ["Barrio Policial", "Colquiri", "Ticti Norte"],
@@ -23,10 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectDistrito.addEventListener("change", function () {
         const distrito = this.value;
-
         selectZona.innerHTML = '<option value="">Seleccionar</option>';
         selectZona.disabled = !distrito;
-
         if (Zones_by_district[distrito]) {
             Zones_by_district[distrito].forEach(zona => {
                 const option = document.createElement("option");
@@ -35,18 +44,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 selectZona.appendChild(option);
             });
         }
-
         filterServices();
     });
+
 
     // ===== COLORES POR DÍA =====
     function getColorByDay(day) {
         day = day.toLowerCase();
-
         if (day === "lunes" || day === "martes") return "bg-green";
         if (day === "miercoles" || day === "miércoles" || day === "jueves") return "bg-orange";
         if (day === "viernes" || day === "sabado" || day === "sábado" || day === "domingo") return "bg-red";
-
         return "";
     }
 
@@ -56,13 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
         article.className = `card ${getColorByDay(service.day)}`;
 
         article.innerHTML = `
-            <div class="card-status
-            ${service.status}">
-                ${
-                    service.status === "available"
-                        ? "Disponible"
-                        : "No disponible"
-                }
+            <div class="card-status ${service.status}">
+                ${service.status === "available" ? "Disponible" : "No disponible"}
             </div>
             <p><strong>Distrito:</strong> ${service.distrito}</p>
             <p><strong>Zona:</strong> ${service.zone}</p>
@@ -70,6 +72,21 @@ document.addEventListener("DOMContentLoaded", () => {
             <p><strong>Hora:</strong> ${service.schedule}</p>
             <p><strong>Rutas:</strong> ${service.routes.join(", ")}</p>
         `;
+
+        article.addEventListener("click", () => {
+            document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+            article.classList.add("selected");
+            selectedPoint = {
+                distrito: service.distrito,
+                zone: service.zone,
+                day: service.day,
+                schedule: service.schedule,
+                listaRutas: service.routes.join(", ")
+            };
+            confirmationText.textContent =
+                `¿Confirmas: Zona ${service.zone}, ${capitalize(service.day)} a las ${service.schedule}?`;
+            confirmationBox.style.display = "block";
+        });
 
         return article;
     }
@@ -82,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===== RENDER =====
     function renderServices(services) {
         gridCards.innerHTML = "";
-
         if (services.length === 0) {
             gridCards.innerHTML = `
                 <article class="card bg-orange">
@@ -92,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             return;
         }
-
         services.forEach(service => {
             gridCards.appendChild(createCard(service));
         });
@@ -103,28 +118,47 @@ document.addEventListener("DOMContentLoaded", () => {
         const distrito = selectDistrito.value;
         const zona = selectZona.value;
         const dia = selectDia.value;
+        const rutaInput = inputRuta.value.trim();
+        const estricto = checkEstricto.checked;
 
-        const services = getServices('services');
+        let services = getServices('services');
 
-        const filtered =
-        filter_services(
-            services,
-            {
-                distrito,
-                zone: zona,
-                day: dia
-            }
-        );
+        services = filter_services(services, { distrito, zone: zona, day: dia });
 
-        renderServices(filtered);
+        if (rutaInput) {
+            const routes = rutaInput.split(",").map(r => r.trim()).filter(r => r !== "");
+            services = filter_by_route(services, routes, estricto);
+        }
+
+        renderServices(services);
     }
 
     // ===== EVENTOS =====
     btnBuscar.addEventListener("click", filterServices);
-
+    
     // filtros automáticos (UX pro)
     selectZona.addEventListener("change", filterServices);
     selectDia.addEventListener("change", filterServices);
+    inputRuta.addEventListener("input", filterServices);
+    checkEstricto.addEventListener("change", filterServices);
+
+    confirmBtn.addEventListener("click", () => {
+        const result = select_collection_point(selectedPoint);
+        if (result.success) {
+            confirmationBox.style.display = "none";
+            confirmationText.textContent = "";
+            alert(result.message);
+            document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+            selectedPoint = null;
+        }
+    });
+
+    cancelBtn.addEventListener("click", () => {
+        confirmationBox.style.display = "none";
+        confirmationText.textContent = "";
+        document.querySelectorAll(".card").forEach(c => c.classList.remove("selected"));
+        selectedPoint = null;
+    });
 
     // ===== CARGA INICIAL =====
     renderServices(getServices('services'));

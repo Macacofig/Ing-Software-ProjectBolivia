@@ -1,3 +1,27 @@
+
+editDistrito.addEventListener("change", function () {
+
+    const distrito = this.value;
+
+    editZona.innerHTML = '<option value="">Zona</option>';
+
+    if (Zones_by_district[distrito]) {
+
+        Zones_by_district[distrito].forEach(zona => {
+
+            const option = document.createElement("option");
+
+            option.value = zona;
+            option.textContent = zona;
+
+            editZona.appendChild(option);
+
+        });
+
+    }
+
+});
+
 import {ModelService, Service, filter_services } from "../../Models/Service.js";
 
 const model = new ModelService();
@@ -344,7 +368,6 @@ renderServices(model.getServices());
 
 /* =========================
    EDIT MODAL ZONAS
-========================= */
 
 editDistrito.addEventListener("change", function () {
 

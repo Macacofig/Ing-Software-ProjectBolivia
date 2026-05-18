@@ -1,4 +1,6 @@
-import {register_day, register_district_zone, register_schedule, register_Route, getServices,clearServices} from "./Service.js";
+import {register_day, register_district_zone, register_schedule, 
+        register_Route, getServices, clearServices,
+        select_collection_point, filter_by_route} from "./Service.js";
 
 describe("Service", () => {
     
@@ -89,5 +91,39 @@ describe("Service", () => {
   it("should return error when schedule is empty", () => {
   expect(register_schedule("monday", "9", "Pucara", "")).toEqual("Day, District, Zone or Schedule is empty");
   });
+
+  it("selecciona punto valido", () => {
+  const point = {
+    distrito: "9", zone: "Pucara",
+    day: "lunes", schedule: "08:00",
+    listaRutas: "Ruta Norte"
+  };
+  expect(select_collection_point(point)).toEqual({
+    success: true,
+    message: "Punto de recolección seleccionado correctamente"
+  });
+});
+
+it("filtra por una ruta", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  expect(filter_by_route(getServices(), ["CALA CALA"])).toHaveLength(1);
+});
+
+it("filtra por varias rutas con al menos una", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  register_Route("Miercoles", "7", "Villa Venezuela", "10:00", "Av.Pando");
+  expect(filter_by_route(getServices(), ["CALA CALA", "Circunvalacion"])).toHaveLength(2);
+});
+
+it("filtra de forma estricta por todas las rutas", () => {
+  clearServices();
+  register_Route("Lunes", "2", "Barrio Policial", "08:00", "CALA CALA, Circunvalacion");
+  register_Route("Martes", "6", "Alto Cochabamba", "09:00", "Circunvalacion");
+  expect(filter_by_route(getServices(), ["CALA CALA", "Circunvalacion"], true)).toHaveLength(1);
+});
 
 });

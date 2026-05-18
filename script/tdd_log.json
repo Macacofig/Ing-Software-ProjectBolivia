@@ -828,6 +828,51 @@
     "testId": 30
   },
   {
+    "numPassedTests": 26,
+    "failedTests": 1,
+    "numTotalTests": 27,
+    "timestamp": 1779057237079,
+    "success": false,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 27,
+    "failedTests": 0,
+    "numTotalTests": 27,
+    "timestamp": 1779058281749,
+    "success": true,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 27,
+    "failedTests": 0,
+    "numTotalTests": 27,
+    "timestamp": 1779058281749,
+    "success": true,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 28,
+    "failedTests": 0,
+    "numTotalTests": 28,
+    "timestamp": 1779059996911,
+    "success": true,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 29,
+    "failedTests": 0,
+    "numTotalTests": 29,
+    "timestamp": 1779060196512,
+    "success": true,
+    "testId": 31
+  },
+  {
+    "numPassedTests": 30,
+    "failedTests": 0,
+    "numTotalTests": 30,
+    "timestamp": 1779060410298,
+    "success": true,
     "commitId": "HEAD",
     "commitName": "refac: I added the clear button and refac the search bar",
     "commitTimestamp": 1779061388501,
