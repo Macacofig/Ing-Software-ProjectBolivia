@@ -11,6 +11,7 @@ const selectZona = document.getElementById("filter-zona");
 const selectDia = document.getElementById("filter-dia");
 
 const searchInput = document.getElementById("search-input");
+const clearFiltersBtn = document.getElementById("clear-filters");
 
 /* MODALS */
 
@@ -178,7 +179,49 @@ function filterServices() {
 
 }
 
+function clearFilters() {
+
+    selectDistrito.value = "";
+    selectZona.value = "";
+    selectDia.value = "";
+    searchInput.value = "";
+
+    selectZona.disabled = true;
+    
+    selectZona.innerHTML = '<option value="">Zona</option>';
+
+    renderServices(
+        model.getServices()
+    );
+
+}
+
 btnBuscar.addEventListener("click", filterServices);
+
+searchInput.addEventListener(
+    "input",
+    filterServices
+);
+
+selectDistrito.addEventListener(
+    "change",
+    filterServices
+);
+
+selectZona.addEventListener(
+    "change",
+    filterServices
+);
+
+selectDia.addEventListener(
+    "change",
+    filterServices
+);
+
+clearFiltersBtn.addEventListener(
+    "click",
+    clearFilters
+);
 
 /* EDIT MODAL */
 
@@ -218,7 +261,7 @@ function openEditModal(index) {
     editHorario.value = service.schedule;
     editStatus.value = service.status || "available";
 
-    editRutas.value = service.routes.join(", ");
+    editRutas.value = (service.routes || []).join(", ");
 
     editModal.classList.add("active");
 

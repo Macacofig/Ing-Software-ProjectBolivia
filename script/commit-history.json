@@ -589,12 +589,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "5077692383d4cc992532a66c1259e32a9188819f",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-16T03:14:34.000Z",
       "message": "refact:sidebars terminados",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/5077692383d4cc992532a66c1259e32a9188819f"
     },
     "stats": {
       "total": 1162,
@@ -639,6 +639,25 @@
       "additions": 5,
       "deletions": 7,
       "date": "2026-05-16"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-17T23:43:07.000Z",
+      "message": "refac: I added the clear button and refac the search bar",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 69,
+      "additions": 66,
+      "deletions": 3,
+      "date": "2026-05-17"
     },
     "coverage": 100,
     "test_count": 26,
