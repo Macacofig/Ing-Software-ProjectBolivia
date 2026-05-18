@@ -1,3 +1,27 @@
+
+editDistrito.addEventListener("change", function () {
+
+    const distrito = this.value;
+
+    editZona.innerHTML = '<option value="">Zona</option>';
+
+    if (Zones_by_district[distrito]) {
+
+        Zones_by_district[distrito].forEach(zona => {
+
+            const option = document.createElement("option");
+
+            option.value = zona;
+            option.textContent = zona;
+
+            editZona.appendChild(option);
+
+        });
+
+    }
+
+});
+
 import {ModelService, Service, filter_services } from "../../Models/Service.js";
 
 const model = new ModelService();
@@ -11,6 +35,7 @@ const selectZona = document.getElementById("filter-zona");
 const selectDia = document.getElementById("filter-dia");
 
 const searchInput = document.getElementById("search-input");
+const clearFiltersBtn = document.getElementById("clear-filters");
 
 /* MODALS */
 
@@ -178,7 +203,49 @@ function filterServices() {
 
 }
 
+function clearFilters() {
+
+    selectDistrito.value = "";
+    selectZona.value = "";
+    selectDia.value = "";
+    searchInput.value = "";
+
+    selectZona.disabled = true;
+    
+    selectZona.innerHTML = '<option value="">Zona</option>';
+
+    renderServices(
+        model.getServices()
+    );
+
+}
+
 btnBuscar.addEventListener("click", filterServices);
+
+searchInput.addEventListener(
+    "input",
+    filterServices
+);
+
+selectDistrito.addEventListener(
+    "change",
+    filterServices
+);
+
+selectZona.addEventListener(
+    "change",
+    filterServices
+);
+
+selectDia.addEventListener(
+    "change",
+    filterServices
+);
+
+clearFiltersBtn.addEventListener(
+    "click",
+    clearFilters
+);
 
 /* EDIT MODAL */
 
@@ -218,7 +285,7 @@ function openEditModal(index) {
     editHorario.value = service.schedule;
     editStatus.value = service.status || "available";
 
-    editRutas.value = service.routes.join(", ");
+    editRutas.value = (service.routes || []).join(", ");
 
     editModal.classList.add("active");
 
@@ -301,7 +368,6 @@ renderServices(model.getServices());
 
 /* =========================
    EDIT MODAL ZONAS
-========================= */
 
 editDistrito.addEventListener("change", function () {
 

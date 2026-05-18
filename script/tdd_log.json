@@ -822,7 +822,7 @@
     "testId": 29
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5077692383d4cc992532a66c1259e32a9188819f",
     "commitName": "fix: botones sidebar emsa",
     "commitTimestamp": 1778912535981,
     "testId": 30
@@ -873,6 +873,9 @@
     "numTotalTests": 30,
     "timestamp": 1779060410298,
     "success": true,
+    "commitId": "HEAD",
+    "commitName": "refac: I added the clear button and refac the search bar",
+    "commitTimestamp": 1779061388501,
     "testId": 31
   }
 ]
