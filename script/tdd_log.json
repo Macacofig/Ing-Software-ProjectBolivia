@@ -822,9 +822,15 @@
     "testId": 29
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5077692383d4cc992532a66c1259e32a9188819f",
     "commitName": "fix: botones sidebar emsa",
     "commitTimestamp": 1778912535981,
     "testId": 30
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: Editar perfil(update)",
+    "commitTimestamp": 1779073782741,
+    "testId": 31
   }
 ]
