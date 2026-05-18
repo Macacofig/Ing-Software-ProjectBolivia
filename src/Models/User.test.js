@@ -15,5 +15,12 @@ describe("User", () => {
       message: "Email y contraseña requeridos"
     });
   });
-  
+
+   it("login fails if user not found", () => {
+    expect(login_user("noexiste@gmail.com", "1234")).toEqual({
+      success: false,
+      message: "Credenciales incorrectas"
+    });
+  });
+
 });
