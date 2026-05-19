@@ -836,12 +836,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "96bfdb83e34d85e4274181bd4d56ddb8a1b02629",
     "author": "Nataly",
     "commit": {
       "date": "2026-05-19T14:29:53.000Z",
       "message": "feat: user logic without any field",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/96bfdb83e34d85e4274181bd4d56ddb8a1b02629"
     },
     "stats": {
       "total": 8,
@@ -885,6 +885,25 @@
       "total": 768,
       "additions": 665,
       "deletions": 103,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T20:01:57.000Z",
+      "message": "refact: Join files (user, moduleuser), fix references",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 392,
+      "additions": 288,
+      "deletions": 104,
       "date": "2026-05-19"
     },
     "coverage": 97.47,
