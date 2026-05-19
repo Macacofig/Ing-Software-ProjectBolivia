@@ -11,6 +11,9 @@ function register_report(idCitizen, description, location)
 
 function register_user(name, email, password, role)
 {
+    if(name === "" && email === "" && password === "" && role === "") {
+        return "The all field is required";
+    }
     if(name === "") {
         return "The name field is required";
     }
