@@ -159,6 +159,49 @@ class ModelUser {
         return ids[ids.length - 1] + 1;
 
     }
+
+    getCurrentUserId() 
+    {
+        return getServices("currentUserId");
+    }
+
+    getCurrentUser() 
+    {
+        const currentUserId = this.getCurrentUserId();
+
+        if (!currentUserId) return null;
+
+        return this.users.find(
+            user =>
+                String(user.getId()) ===
+                String(currentUserId)
+        );
+    }
+
+    updateUser(updatedUser) 
+    {
+        const index =
+            this.users.findIndex(
+                user =>
+                    String(user.getId()) ===
+                    String(updatedUser.id)
+            );
+
+        if (index === -1) return {success: false,message:"Usuario no encontrado"};
+
+        this.users[index] =
+            new User(
+                updatedUser.id,
+                updatedUser.name,
+                updatedUser.email,
+                updatedUser.password,
+                updatedUser.role
+            );
+
+        this.saveUsers();
+
+        return {success: true,message:"Perfil actualizado correctamente"};
+    }
 }
 
 function verify_emsa_key(key) {
@@ -205,8 +248,32 @@ function verify_user(
 
 }
 
+function verify_update_user(user,usersList = []) 
+{
+
+    if (!user.name)return {field: "name",message:"Ingresa un nombre"};
+
+    if (!user.email)return {field: "email",message:"Ingresa un correo"};
+
+    if (!user.password) return {field: "password",message:"Ingresa una contraseña"};
+
+    const duplicateEmail =
+        usersList.some(
+            u =>
+                u.email === user.email &&
+                u.id !== user.id
+        );
+
+    if (duplicateEmail) return {field: "email",message:"El correo ya existe"};
+
+    return {success: true};
+
+}
+
+
 export {
     User,
     ModelUser,
-    verify_user
+    verify_user,
+    verify_update_user
 };

@@ -1,0 +1,218 @@
+import {
+    ModelUser,
+    verify_update_user
+} from "../../Models/User.js";
+
+const form =
+    document.getElementById(
+        "updateProfileForm"
+    );
+
+const messageBox =
+    document.getElementById(
+        "messageBox"
+    );
+
+const modelUser =
+    new ModelUser();
+
+// ==========================================
+// LOAD CURRENT USER
+// ==========================================
+
+loadCurrentUser();
+
+// ==========================================
+// UPDATE USER
+// ==========================================
+
+form.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        clearErrors();
+
+        const currentUser =
+            modelUser.getCurrentUser();
+
+        if (!currentUser) {
+
+            renderMessage({
+
+                success: false,
+
+                message:
+                    "Usuario no encontrado"
+
+            });
+
+            return;
+
+        }
+
+        const userData = {
+
+            id:
+                currentUser.getId(),
+
+            name:
+                document
+                    .getElementById("name")
+                    .value,
+
+            email:
+                document
+                    .getElementById("email")
+                    .value,
+
+            password:
+                document
+                    .getElementById("password")
+                    .value,
+
+            role:
+                currentUser.getRole()
+
+        };
+
+        // ==========================
+        // VERIFY
+        // ==========================
+
+        const verifyResult =
+            verify_update_user(
+                userData,
+                modelUser.getUsers()
+            );
+
+        if (
+            !verifyResult.success
+        ) {
+
+            renderMessage(
+                verifyResult
+            );
+
+            showFieldError(
+                verifyResult.field
+            );
+
+            return;
+
+        }
+
+        // ==========================
+        // UPDATE
+        // ==========================
+
+        const updateResult =
+            modelUser.updateUser(
+                userData
+            );
+
+        renderMessage(
+            updateResult
+        );
+
+    }
+);
+
+// ==========================================
+// LOAD USER DATA
+// ==========================================
+
+function loadCurrentUser() {
+
+    const currentUser =
+        modelUser.getCurrentUser();
+
+    if (!currentUser) return;
+
+    document
+        .getElementById("name")
+        .value =
+        currentUser.getName();
+
+    document
+        .getElementById("email")
+        .value =
+        currentUser.getEmail();
+
+    document
+        .getElementById("password")
+        .value =
+        currentUser.getPassword();
+
+}
+
+// ==========================================
+// RENDER MESSAGE
+// ==========================================
+
+function renderMessage(result) {
+
+    messageBox.className =
+        "message-box";
+
+    if (!result.success) {
+
+        messageBox
+            .classList
+            .add("error");
+
+    } else {
+
+        messageBox
+            .classList
+            .add("success");
+
+    }
+
+    messageBox.textContent =
+        result.message;
+
+}
+
+// ==========================================
+// FIELD ERROR
+// ==========================================
+
+function showFieldError(field) {
+
+    const input =
+        document.getElementById(
+            field
+        );
+
+    if (input) {
+
+        input.classList.add(
+            "input-error"
+        );
+
+    }
+
+}
+
+// ==========================================
+// CLEAR ERRORS
+// ==========================================
+
+function clearErrors() {
+
+    const inputs =
+        document.querySelectorAll(
+            "input"
+        );
+
+    inputs.forEach(input => {
+
+        input.classList.remove(
+            "input-error"
+        );
+
+    });
+
+}
