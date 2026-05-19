@@ -817,12 +817,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "144d0dd9bca88abc66a702494fd808adc6e65a76",
     "author": "Nataly",
     "commit": {
       "date": "2026-05-19T14:27:34.000Z",
       "message": "feat: user logic without password",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/144d0dd9bca88abc66a702494fd808adc6e65a76"
     },
     "stats": {
       "total": 20,
@@ -866,6 +866,25 @@
       "total": 87,
       "additions": 48,
       "deletions": 39,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:40:39.000Z",
+      "message": "feat: Register Users",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 768,
+      "additions": 665,
+      "deletions": 103,
       "date": "2026-05-19"
     },
     "coverage": 97.47,
