@@ -368,7 +368,9 @@ renderServices(model.getServices());
 
 /* =========================
    EDIT MODAL ZONAS
+========================= */
 
+/*
 editDistrito.addEventListener("change", function () {
 
     const distrito = this.value;
@@ -391,4 +393,5 @@ editDistrito.addEventListener("change", function () {
     }
 
 });
+*/
 
