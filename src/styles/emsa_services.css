@@ -322,3 +322,36 @@
 .status-text {
     color: #666;
 }
+
+/* RESPONSIVIDAD MÓVIL PARA SERVICIOS */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filter-bar select {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .modal, .large-modal {
+        width: 95% !important;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 20px;
+    }
+}

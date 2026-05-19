@@ -608,12 +608,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8bc745ff94c327d064023eeb6a79d8de5a5180a9",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-16T06:14:10.000Z",
       "message": "fix: side bar citizen",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/8bc745ff94c327d064023eeb6a79d8de5a5180a9"
     },
     "stats": {
       "total": 371,
@@ -658,6 +658,25 @@
       "additions": 471,
       "deletions": 6,
       "date": "2026-05-18"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-19T03:48:44.000Z",
+      "message": "Fix: Implementacion de barra oculta y responsividad",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 294,
+      "additions": 286,
+      "deletions": 8,
+      "date": "2026-05-19"
     },
     "coverage": 100,
     "test_count": 26,

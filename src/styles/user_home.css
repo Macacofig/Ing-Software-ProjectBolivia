@@ -204,3 +204,43 @@
     color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
 }
+
+/* RESPONSIVIDAD MÓVIL PARA HOME */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .titulo {
+        font-size: 2.5rem;
+        padding: 10px 20px;
+        letter-spacing: 5px;
+    }
+
+    .filter-bar {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .filter-bar label,
+    .filter-bar select, 
+    .filter-bar input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .search-btn {
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+
+    .subtitulo {
+        font-size: 2rem;
+    }
+}
