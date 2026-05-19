@@ -27,7 +27,10 @@
         <div id="sidebar-container"></div>
 
         <!-- 4. Contenido original, lo hacemos flexible y scrolleable -->
-        <main class="content-area">
+        <main class="content-area split-layout">
+            
+            <!-- PANEL IZQUIERDO: Búsqueda y Resultados -->
+            <div class="left-panel">
 
             <!-- HEADER -->
             <header class="main-header">
@@ -87,7 +90,29 @@
                 <h2 class="subtitulo">Días de Servicio</h2>
                 <div id="grid-cards" class="grid-cards"></div>
             </section>
+            </div>
+
+            <!-- PANEL DERECHO: Mapa de Distritos -->
+            <div class="right-panel">
+                <div class="map-card glass-card">
+                    <h2 class="map-title"><i class="fas fa-map-marked-alt"></i> Zonas y Distritos</h2>
+                    <p class="map-desc">Encuentra tu distrito en el mapa para usar los filtros correctamente.</p>
+                    <div class="map-image-container" onclick="openMapModal()">
+                        <img src="../assets/mapa_distritos.jpg" alt="Mapa de Distritos EMSA" class="map-image" id="sourceMapImage">
+                        <div class="map-overlay">
+                            <i class="fas fa-search-plus"></i> Ampliar
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </main>
+    </div>
+
+    <!-- Modal del Mapa -->
+    <div id="mapModal" class="map-modal-overlay">
+        <span class="close-modal" onclick="closeMapModal()">&times;</span>
+        <img class="modal-content-img" id="expandedImg">
     </div>
 
     <!-- 5. Script para cargar el sidebar y resaltar "Rutas y Horarios" -->
@@ -101,6 +126,37 @@
 
     <!-- Tu presentador original -->
     <script type="module" src="../functions/Citizen/Citizen.Service.presenter.js"></script>
+
+    <!-- Script del Modal del Mapa -->
+    <script>
+        function openMapModal() {
+            const modal = document.getElementById("mapModal");
+            const modalImg = document.getElementById("expandedImg");
+            const sourceImg = document.getElementById("sourceMapImage");
+            
+            modal.style.display = "flex";
+            // Forzar reflow para animación
+            setTimeout(() => {
+                modal.classList.add("show");
+            }, 10);
+            modalImg.src = sourceImg.src;
+        }
+
+        function closeMapModal() {
+            const modal = document.getElementById("mapModal");
+            modal.classList.remove("show");
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);
+        }
+
+        // Cerrar al hacer clic fuera de la imagen
+        document.getElementById("mapModal").addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMapModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
