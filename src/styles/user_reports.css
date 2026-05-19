@@ -118,3 +118,24 @@
   border: 1px solid var(--error);
   display: block;
 }
+
+/* RESPONSIVIDAD MÓVIL PARA CREAR REPORTE */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .info-panel {
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+  }
+  
+  .form-panel {
+    border-radius: 0 0 20px 20px;
+    padding: 20px;
+  }
+}

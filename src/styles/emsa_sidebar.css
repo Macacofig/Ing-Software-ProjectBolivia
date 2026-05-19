@@ -174,3 +174,28 @@
     transform: rotate(180deg);
   }
 }
+
+@media (max-width: 768px) {
+  .sidebar.emsa-theme {
+    position: fixed !important;
+    left: -100%;
+    top: 0;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    border-radius: 0;
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    background: rgba(254, 131, 48, 0.95); /* Menos transparente en móvil para legibilidad */
+  }
+
+  .sidebar.emsa-theme.mobile-open {
+    left: 0;
+  }
+
+  /* Ocultamos el botón de colapsar en móviles porque usamos el hamburguesa */
+  .sidebar.emsa-theme .toggle-btn {
+    display: none !important;
+  }
+}

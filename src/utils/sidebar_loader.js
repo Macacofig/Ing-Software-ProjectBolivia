@@ -31,7 +31,23 @@ export async function loadSidebar(type, activeMenuId) {
     setupToggle();
 
     // Activar la redirección forzada a la vista de perfil
-    setupProfileRedirect();
+    setupProfileRedirect(type);
+
+    // Inyectar el botón hamburguesa para móviles si no existe
+    if (!document.querySelector('.mobile-header')) {
+      const mobileHeader = document.createElement('div');
+      mobileHeader.className = 'mobile-header';
+      mobileHeader.innerHTML = `
+        <button class="mobile-menu-toggle">☰</button>
+        <span style="color: white; font-weight: bold; margin-left: 15px; font-size: 1.2rem;">Menú</span>
+      `;
+      document.body.insertBefore(mobileHeader, document.body.firstChild);
+      
+      mobileHeader.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+        const sidebar = document.getElementById('appSidebar');
+        if (sidebar) sidebar.classList.toggle('mobile-open');
+      });
+    }
 
   } catch (error) {
     console.error("Fallo la carga del sidebar dinámico:", error);
@@ -53,9 +69,9 @@ function setupToggle() {
   }
 }
 
-function setupProfileRedirect() {
+function setupProfileRedirect(type) {
   // Buscamos el ítem del menú de perfil (si usas el ID menu-profile)
-  const profileMenuBtn = document.getElementById('menu-profile');
+  const profileMenuBtn = document.getElementById('menu-user-profile') || document.getElementById('menu-profile');
   // También volvemos clickeable toda el área de la foto/nombre del usuario
   const userProfileArea = document.querySelector('.user-profile');
 

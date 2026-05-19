@@ -828,9 +828,15 @@
     "testId": 30
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8bc745ff94c327d064023eeb6a79d8de5a5180a9",
     "commitName": "feat: Editar perfil(update)",
     "commitTimestamp": 1779073782741,
     "testId": 31
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Fix: Implementacion de barra oculta y responsividad",
+    "commitTimestamp": 1779162524235,
+    "testId": 32
   }
 ]
