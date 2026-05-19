@@ -1,0 +1,95 @@
+/* CSS para Editar Perfil (Estética Estandarizada EMSA/Citizen) */
+
+.edit-profile-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Formularios - Estética compartida estilo beige/naranja claro */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: rgb(4, 4, 4);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.form-group input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1px solid #FE8330;
+  box-shadow: 0 0 0 3px rgba(254, 131, 48, 0.1);
+}
+
+.form-actions {
+  margin-top: 30px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #FE8330;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.btn-submit:hover {
+  background: #e76f1a;
+}
+
+/* Mensajes de feedback */
+.message {
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  display: none;
+}
+
+.message.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.message.success {
+  background: rgba(46, 204, 113, 0.15);
+  color: #2ecc71;
+  border: 1px solid rgba(46, 204, 113, 0.5);
+}
+
+.message.error {
+  background: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+  border: 1px solid rgba(231, 76, 60, 0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
