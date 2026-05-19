@@ -17,4 +17,7 @@ describe("Reports", () => {
   it("It should show an error if name is empty", () => {
     expect(register_user("","nramirezmachicado@gmail.com", "citizien")).toEqual("The name field is required");
   });
+  it("It should show an error if email is empty", () => {
+    expect(register_user("nataly","", "citizien")).toEqual("The email field is required");
+  });
 });
