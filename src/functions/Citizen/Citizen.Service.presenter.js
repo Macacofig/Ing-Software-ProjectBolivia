@@ -162,4 +162,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== CARGA INICIAL =====
     renderServices(getServices('services'));
+
+    // ===== MAPA - MODAL =====
+    const mapContainer = document.getElementById("map-container");
+    const modal = document.getElementById("map-modal");
+    const closeModal = document.getElementById("close-modal");
+
+    mapContainer.addEventListener("click", () => {
+        modal.style.display = "flex";
+        requestAnimationFrame(() => modal.classList.add("show"));
+    });
+
+    closeModal.addEventListener("click", closeMapModal);
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeMapModal();
+    });
+
+    function closeMapModal() {
+        modal.classList.remove("show");
+        setTimeout(() => modal.style.display = "none", 300);
+    }
 });

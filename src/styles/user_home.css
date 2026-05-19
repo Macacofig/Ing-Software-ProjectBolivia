@@ -35,8 +35,18 @@
 
 /* ===== MAIN ===== */
 .content-area {
-    align-items: center;
+    flex-direction: row !important;
+    align-items: flex-start;
     text-align: center;
+    gap: 30px;
+}
+
+.left-panel {
+    flex: 3;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-content {
@@ -205,6 +215,14 @@
 
 /* RESPONSIVIDAD MÓVIL PARA HOME */
 @media (max-width: 768px) {
+    .content-area {
+        flex-direction: column !important;
+    }
+
+    .left-panel {
+        width: 100%;
+    }
+
     .main-header {
         flex-direction: column;
         gap: 20px;
