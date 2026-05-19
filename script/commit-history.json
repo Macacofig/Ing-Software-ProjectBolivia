@@ -684,12 +684,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "8bfa078697ac4dc98954157fa51da33de71f179f",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-19T03:53:03.000Z",
       "message": "Fix: Pagina de registrar servicio de emsa",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/8bfa078697ac4dc98954157fa51da33de71f179f"
     },
     "stats": {
       "total": 6,
@@ -703,12 +703,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "eeeffc34605d3282e3efb70e4bf4b65bda3f62f4",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-19T04:16:36.000Z",
       "message": "Fix: Pagina de home de usuario + imagen de distritos",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/eeeffc34605d3282e3efb70e4bf4b65bda3f62f4"
     },
     "stats": {
       "total": 210,
@@ -722,12 +722,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "7fccdf41e44b1d8844c366d497e42c5cb4665be2",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-19T13:13:09.000Z",
       "message": "Refact: cambio de diseno total",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/7fccdf41e44b1d8844c366d497e42c5cb4665be2"
     },
     "stats": {
       "total": 892,
@@ -735,8 +735,160 @@
       "deletions": 423,
       "date": "2026-05-19"
     },
-    "coverage": 100,
-    "test_count": 26,
+    "coverage": 97.06,
+    "test_count": 30,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "4d6733c793e73c900107232512d0525897121f3d",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:12:47.000Z",
+      "message": "Complete merge",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/4d6733c793e73c900107232512d0525897121f3d"
+    },
+    "stats": {
+      "total": 4855,
+      "additions": 2878,
+      "deletions": 1977,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.06,
+    "test_count": 30,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "5121601fd651be6b64fa79ab33e7f10f5f35297c",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:22:37.000Z",
+      "message": "feat: user logic",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/5121601fd651be6b64fa79ab33e7f10f5f35297c"
+    },
+    "stats": {
+      "total": 16,
+      "additions": 14,
+      "deletions": 2,
+      "date": "2026-05-19"
+    },
+    "coverage": 95.77,
+    "test_count": 31,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "3340e1f851058aa46fb843c1768f622b3fd72e1f",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:23:51.000Z",
+      "message": "feat: user logic without name",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/3340e1f851058aa46fb843c1768f622b3fd72e1f"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 5,
+      "deletions": 3,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.18,
+    "test_count": 32,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "0ab2f00c76fe325a2748a33759d72d1e50482473",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:24:41.000Z",
+      "message": "feat: user logic without email",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/0ab2f00c76fe325a2748a33759d72d1e50482473"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 6,
+      "deletions": 0,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.26,
+    "test_count": 33,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "144d0dd9bca88abc66a702494fd808adc6e65a76",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:27:34.000Z",
+      "message": "feat: user logic without password",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/144d0dd9bca88abc66a702494fd808adc6e65a76"
+    },
+    "stats": {
+      "total": 20,
+      "additions": 16,
+      "deletions": 4,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.4,
+    "test_count": 35,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:29:53.000Z",
+      "message": "feat: user logic without any field",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 8,
+      "additions": 7,
+      "deletions": 1,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:32:43.000Z",
+      "message": "fix: Put user functions in correct place",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 87,
+      "additions": 48,
+      "deletions": 39,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:40:39.000Z",
+      "message": "feat: Register Users",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 768,
+      "additions": 665,
+      "deletions": 103,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
     "failed_tests": 0,
     "conclusion": "success"
   }

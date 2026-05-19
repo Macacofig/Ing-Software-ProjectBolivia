@@ -1,4 +1,4 @@
-import { register_report } from "./report.js";
+import { register_report  } from "./report.js";
 
 describe("Reports", () => {
     
@@ -11,4 +11,5 @@ describe("Reports", () => {
   it("It should show an error if location is empty", () => {
     expect(register_report(1,"There is accumulated garbage", "")).toEqual("Location cannot be empty");
   });
+
 });

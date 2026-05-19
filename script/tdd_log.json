@@ -852,9 +852,199 @@
     "testId": 34
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8e004f9acad54347b8800a46b561a89e3a1b0c5e",
     "commitName": "Refact: cambio de diseno total",
     "commitTimestamp": 1779196389267,
     "testId": 35
+  },
+  {
+    "commitId": "8bfa078697ac4dc98954157fa51da33de71f179f",
+    "commitName": "Fix: commentary",
+    "commitTimestamp": 1779199773721,
+    "testId": 32
+  },
+  {
+    "commitId": "eeeffc34605d3282e3efb70e4bf4b65bda3f62f4",
+    "commitName": "Complete merge",
+    "commitTimestamp": 1779199968474,
+    "testId": 33
+  },
+  {
+    "numPassedTests": 30,
+    "failedTests": 1,
+    "numTotalTests": 31,
+    "timestamp": 1779200298708,
+    "success": false,
+    "testId": 34
+  },
+  {
+    "numPassedTests": 30,
+    "failedTests": 1,
+    "numTotalTests": 31,
+    "timestamp": 1779200386020,
+    "success": false,
+    "testId": 34
+  },
+  {
+    "numPassedTests": 31,
+    "failedTests": 0,
+    "numTotalTests": 31,
+    "timestamp": 1779200403420,
+    "success": true,
+    "testId": 34
+  },
+  {
+    "numPassedTests": 32,
+    "failedTests": 0,
+    "numTotalTests": 32,
+    "timestamp": 1779200475581,
+    "success": true,
+    "testId": 34
+  },
+  {
+    "commitId": "7fccdf41e44b1d8844c366d497e42c5cb4665be2",
+    "commitName": "feat: user logic",
+    "commitTimestamp": 1779200557884,
+    "testId": 34
+  },
+  {
+    "numPassedTests": 31,
+    "failedTests": 1,
+    "numTotalTests": 32,
+    "timestamp": 1779200586702,
+    "success": false,
+    "testId": 35
+  },
+  {
+    "numPassedTests": 32,
+    "failedTests": 0,
+    "numTotalTests": 32,
+    "timestamp": 1779200601297,
+    "success": true,
+    "testId": 35
+  },
+  {
+    "commitId": "4d6733c793e73c900107232512d0525897121f3d",
+    "commitName": "feat: user logic without name",
+    "commitTimestamp": 1779200632399,
+    "testId": 35
+  },
+  {
+    "numPassedTests": 33,
+    "failedTests": 0,
+    "numTotalTests": 33,
+    "timestamp": 1779200651942,
+    "success": true,
+    "testId": 36
+  },
+  {
+    "numPassedTests": 32,
+    "failedTests": 1,
+    "numTotalTests": 33,
+    "timestamp": 1779200660438,
+    "success": false,
+    "testId": 36
+  },
+  {
+    "numPassedTests": 33,
+    "failedTests": 0,
+    "numTotalTests": 33,
+    "timestamp": 1779200674237,
+    "success": true,
+    "testId": 36
+  },
+  {
+    "commitId": "5121601fd651be6b64fa79ab33e7f10f5f35297c",
+    "commitName": "feat: user logic without email",
+    "commitTimestamp": 1779200682666,
+    "testId": 36
+  },
+  {
+    "numPassedTests": 33,
+    "failedTests": 1,
+    "numTotalTests": 34,
+    "timestamp": 1779200723822,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 34,
+    "failedTests": 0,
+    "numTotalTests": 34,
+    "timestamp": 1779200737748,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 34,
+    "failedTests": 1,
+    "numTotalTests": 35,
+    "timestamp": 1779200818524,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 35,
+    "failedTests": 0,
+    "numTotalTests": 35,
+    "timestamp": 1779200844906,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "commitId": "3340e1f851058aa46fb843c1768f622b3fd72e1f",
+    "commitName": "feat: user logic without password",
+    "commitTimestamp": 1779200855080,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 35,
+    "failedTests": 1,
+    "numTotalTests": 36,
+    "timestamp": 1779200916448,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 35,
+    "failedTests": 1,
+    "numTotalTests": 36,
+    "timestamp": 1779200937208,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 35,
+    "failedTests": 1,
+    "numTotalTests": 36,
+    "timestamp": 1779200963680,
+    "success": false,
+    "testId": 38
+  },
+  {
+    "numPassedTests": 36,
+    "failedTests": 0,
+    "numTotalTests": 36,
+    "timestamp": 1779200980408,
+    "success": true,
+    "testId": 38
+  },
+  {
+    "commitId": "0ab2f00c76fe325a2748a33759d72d1e50482473",
+    "commitName": "feat: user logic without any field",
+    "commitTimestamp": 1779200994473,
+    "testId": 38
+  },
+  {
+    "commitId": "144d0dd9bca88abc66a702494fd808adc6e65a76",
+    "commitName": "fix: Put user functions in correct place",
+    "commitTimestamp": 1779201164677,
+    "testId": 39
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: Register Users",
+    "commitTimestamp": 1779201639813,
+    "testId": 40
   }
 ]
