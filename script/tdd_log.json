@@ -954,9 +954,47 @@
     "testId": 36
   },
   {
-    "commitId": "HEAD",
+    "commitId": "5121601fd651be6b64fa79ab33e7f10f5f35297c",
     "commitName": "feat: user logic without email",
     "commitTimestamp": 1779200682666,
     "testId": 36
+  },
+  {
+    "numPassedTests": 33,
+    "failedTests": 1,
+    "numTotalTests": 34,
+    "timestamp": 1779200723822,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 34,
+    "failedTests": 0,
+    "numTotalTests": 34,
+    "timestamp": 1779200737748,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 34,
+    "failedTests": 1,
+    "numTotalTests": 35,
+    "timestamp": 1779200818524,
+    "success": false,
+    "testId": 37
+  },
+  {
+    "numPassedTests": 35,
+    "failedTests": 0,
+    "numTotalTests": 35,
+    "timestamp": 1779200844906,
+    "success": true,
+    "testId": 37
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "feat: user logic without password",
+    "commitTimestamp": 1779200855080,
+    "testId": 37
   }
 ]

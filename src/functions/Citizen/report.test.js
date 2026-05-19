@@ -12,12 +12,18 @@ describe("Reports", () => {
     expect(register_report(1,"There is accumulated garbage", "")).toEqual("Location cannot be empty");
   });
   it("It should show a registered user", () => {
-    expect(register_user("nataly","nramirezmachicado@gmail.com", "citizien")).toEqual("User Successfully registered");
+    expect(register_user("nataly","nramirezmachicado@gmail.com","password","citizen")).toEqual("User Successfully registered");
   });
   it("It should show an error if name is empty", () => {
-    expect(register_user("","nramirezmachicado@gmail.com", "citizien")).toEqual("The name field is required");
+    expect(register_user("","nramirezmachicado@gmail.com","password", "citizen")).toEqual("The name field is required");
   });
   it("It should show an error if email is empty", () => {
-    expect(register_user("nataly","", "citizien")).toEqual("The email field is required");
+    expect(register_user("nataly","", "citizen")).toEqual("The email field is required");
+  });
+  it("It should show an error if role is empty", () => {
+    expect(register_user("nataly","nramirezmachicado@gmail.com", "password", "")).toEqual("The role field is required");
+  });
+  it("It should show an error if password is empty", () => {
+    expect(register_user("nataly","nramirezmachicado@gmail.com", "", "citizen")).toEqual("The password field is required");
   });
 });
