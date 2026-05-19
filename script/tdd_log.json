@@ -834,9 +834,15 @@
     "testId": 31
   },
   {
-    "commitId": "HEAD",
+    "commitId": "9ea8f12a2663ece9e5b73febfe1913095e90f510",
     "commitName": "Fix: Implementacion de barra oculta y responsividad",
     "commitTimestamp": 1779162524235,
     "testId": 32
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Fix: Pagina de registrar servicio de emsa",
+    "commitTimestamp": 1779162783983,
+    "testId": 33
   }
 ]

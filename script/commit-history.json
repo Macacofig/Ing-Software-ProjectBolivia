@@ -627,12 +627,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "9ea8f12a2663ece9e5b73febfe1913095e90f510",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-16T06:22:15.000Z",
       "message": "fix: botones sidebar emsa",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/9ea8f12a2663ece9e5b73febfe1913095e90f510"
     },
     "stats": {
       "total": 12,
@@ -676,6 +676,25 @@
       "total": 294,
       "additions": 286,
       "deletions": 8,
+      "date": "2026-05-19"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-19T03:53:03.000Z",
+      "message": "Fix: Pagina de registrar servicio de emsa",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 6,
+      "additions": 3,
+      "deletions": 3,
       "date": "2026-05-19"
     },
     "coverage": 100,
