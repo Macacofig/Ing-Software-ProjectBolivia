@@ -665,12 +665,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "30a87b3d3c61905045feaa72068edc3fadc8518c",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-19T03:48:44.000Z",
       "message": "Fix: Implementacion de barra oculta y responsividad",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/30a87b3d3c61905045feaa72068edc3fadc8518c"
     },
     "stats": {
       "total": 294,
@@ -714,6 +714,25 @@
       "total": 210,
       "additions": 209,
       "deletions": 1,
+      "date": "2026-05-19"
+    },
+    "coverage": 100,
+    "test_count": 26,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Ruben Cordero",
+    "commit": {
+      "date": "2026-05-19T13:13:09.000Z",
+      "message": "Refact: cambio de diseno total",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 892,
+      "additions": 469,
+      "deletions": 423,
       "date": "2026-05-19"
     },
     "coverage": 100,

@@ -1,16 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #FE8330, #FFD8B1);
-  color: #333;
+  background: #121212; /* Dark charcoal background */
+  color: #F4F4F0; /* Off-white text */
   overflow: hidden;
+}
+
+/* Títulos con tipografía brutalista */
+h1, h2, h3, h4, .titulo, .subtitulo {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #F4F4F0;
 }
 
 /* LAYOUT PRINCIPAL RE-DISEÑADO CON GRID DINÁMICO */
 .main-layout {
   display: grid !important;
-  /* !important obliga a Parcel a usar Grid sí o sí */
-  /* El sidebar se adapta a su contenido (260px o 85px) y el formulario toma el resto (1fr) */
   grid-template-columns: auto 1fr !important;
   height: 100vh !important;
   width: 100vw !important;
@@ -20,27 +29,25 @@ body {
   overflow: hidden !important;
 }
 
-/* SOPORTE PARA TODAS TUS VARIANTES DE CLASES EN LOS HTML */
+/* CONTENEDORES PRINCIPALES (BRUTALISTAS) */
 .content-wrapper,
 .content-area,
 .main-content,
 .page-container {
   display: flex !important;
   flex-direction: column !important;
-  /* Fuerza a que los bloques vayan de arriba a abajo */
   gap: 20px !important;
   overflow-y: auto !important;
   padding: 20px !important;
   box-sizing: border-box !important;
   min-width: 0 !important;
-  /* CRÍTICO: Evita que la tarjeta blanca empuje al menú */
   height: 100% !important;
-  /* Mantiene el tamaño dentro del Grid */
   flex: 1 !important;
 
-  background: rgba(255, 255, 255, 0.96) !important;
-  border-radius: 24px !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  background: #1A1A1A !important;
+  border-radius: 8px !important;
+  border: 2px solid #333 !important;
+  box-shadow: none !important;
 }
 
 /* PANEL IZQUIERDO Y DERECHO */
@@ -58,12 +65,12 @@ body {
 
 .card,
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: #1A1A1A;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 2px solid #333;
   padding: 25px;
   height: 100%;
   display: flex;
@@ -79,7 +86,7 @@ body {
 
 .card-header h2 {
   margin: 0;
-  color: #222;
+  color: #F4F4F0;
 }
 
 /* SCROLL AREA */
@@ -94,7 +101,7 @@ body {
 label {
   margin-top: 12px;
   font-size: 13px;
-  color: #555;
+  color: #aaa;
   font-weight: 500;
   display: block;
 }
@@ -104,54 +111,72 @@ input {
   width: 100%;
   padding: 12px;
   margin-top: 5px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background: #fff;
+  border-radius: 4px;
+  border: 2px solid #333;
+  background: #121212;
+  color: #F4F4F0;
   box-sizing: border-box;
   transition: 0.2s;
+  font-family: 'Inter', sans-serif;
 }
 
 select:focus,
 input:focus {
   outline: none;
-  border-color: #f39c12;
+  border-color: #FE8330;
+  box-shadow: none;
 }
 
-/* BOTONES */
+/* BOTONES BRUTALISTAS */
 button {
-  border: none;
-  border-radius: 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
   padding: 12px;
   cursor: pointer;
-  font-weight: bold;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
   transition: 0.2s;
+  text-transform: uppercase;
 }
 
 .btn-save {
   margin-top: 20px;
-  background: #f39c12;
-  color: white;
+  background: #FE8330;
+  color: #111;
   width: 100%;
-  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+  border: 2px solid #FE8330;
 }
 
 .btn-save:hover {
-  background: #e67e22;
+  background: #121212;
+  color: #FE8330;
 }
 
 .btn-clear {
-  background: #ff5f56;
-  color: white;
+  background: transparent;
+  color: #F4F4F0;
+  border: 2px dashed #555;
   width: auto;
   padding: 8px 15px;
-  font-size: 13px;
+  font-size: 1rem;
+}
+
+.btn-clear:hover {
+  border-color: #ff5f56;
+  color: #ff5f56;
 }
 
 .btn-save-all {
   margin-top: 15px;
-  background: #3498db;
-  color: white;
+  background: transparent;
+  color: #FE8330;
+  border: 2px solid #FE8330;
   width: 100%;
+}
+.btn-save-all:hover {
+  background: #FE8330;
+  color: #111;
 }
 
 /* RUTAS UI */
@@ -185,20 +210,22 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f8f9fa;
+  background: #222;
   padding: 10px;
   margin-top: 5px;
-  border-radius: 8px;
+  border-radius: 4px;
   font-size: 14px;
-  border: 1px solid #eee;
+  border: 1px dashed #444;
+  color: #ddd;
 }
 
 .ruta-item button {
   background: #ff5f56;
-  color: white;
+  color: #111;
   padding: 4px 8px;
-  font-size: 12px;
-  border-radius: 6px;
+  font-size: 1rem;
+  border-radius: 2px;
+  border: none;
 }
 
 /* Scrollbar moderno */

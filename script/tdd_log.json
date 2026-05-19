@@ -846,9 +846,15 @@
     "testId": 33
   },
   {
-    "commitId": "HEAD",
+    "commitId": "30a87b3d3c61905045feaa72068edc3fadc8518c",
     "commitName": "Fix: Pagina de home de usuario + imagen de distritos",
     "commitTimestamp": 1779164196969,
     "testId": 34
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Refact: cambio de diseno total",
+    "commitTimestamp": 1779196389267,
+    "testId": 35
   }
 ]
