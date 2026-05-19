@@ -17,7 +17,7 @@ export async function loadSidebar(type, activeMenuId) {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Error al cargar el sidebar');
-    
+
     const htmlText = await response.text();
     container.innerHTML = htmlText;
 
@@ -29,6 +29,25 @@ export async function loadSidebar(type, activeMenuId) {
 
     // Activar la funcionalidad de colapsar e interactuar con el Grid
     setupToggle();
+
+    // Activar la redirección forzada a la vista de perfil
+    setupProfileRedirect(type);
+
+    // Inyectar el botón hamburguesa para móviles si no existe
+    if (!document.querySelector('.mobile-header')) {
+      const mobileHeader = document.createElement('div');
+      mobileHeader.className = 'mobile-header';
+      mobileHeader.innerHTML = `
+        <button class="mobile-menu-toggle">☰</button>
+        <span style="color: white; font-weight: bold; margin-left: 15px; font-size: 1.2rem;">Menú</span>
+      `;
+      document.body.insertBefore(mobileHeader, document.body.firstChild);
+      
+      mobileHeader.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
+        const sidebar = document.getElementById('appSidebar');
+        if (sidebar) sidebar.classList.toggle('mobile-open');
+      });
+    }
 
   } catch (error) {
     console.error("Fallo la carga del sidebar dinámico:", error);
@@ -43,9 +62,35 @@ function setupToggle() {
     toggleBtn.addEventListener('click', () => {
       // 1. Contraemos o expandimos el sidebar visualmente
       sidebar.classList.toggle('collapsed');
-      
+
       // 2. Cambiamos el ícono de la flecha según el estado del colapso
       toggleBtn.textContent = sidebar.classList.contains('collapsed') ? "▶" : "◀";
     });
+  }
+}
+
+function setupProfileRedirect(type) {
+  // Buscamos el ítem del menú de perfil (si usas el ID menu-profile)
+  const profileMenuBtn = document.getElementById('menu-user-profile') || document.getElementById('menu-profile');
+  // También volvemos clickeable toda el área de la foto/nombre del usuario
+  const userProfileArea = document.querySelector('.user-profile');
+
+  const redirectToProfile = (e) => {
+    // Evita interferir si el botón ya es un enlace (<a>) que sí funciona
+    const link = e.target.closest('a');
+    if (link && link.getAttribute('href') && link.getAttribute('href') !== '#') return;
+
+    e.preventDefault();
+    // REDIRECCIÓN DIRECTA: Cambiamos a la ruta real según el tipo
+    const targetUrl = type === 'emsa' ? '../templates/edit_profile_emsa.html' : '../templates/edit_profile_citizen.html';
+    window.location.href = targetUrl; 
+  };
+
+  if (profileMenuBtn) {
+    profileMenuBtn.addEventListener('click', redirectToProfile);
+  }
+  if (userProfileArea) {
+    userProfileArea.style.cursor = 'pointer';
+    userProfileArea.addEventListener('click', redirectToProfile);
   }
 }
