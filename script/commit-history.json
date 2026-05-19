@@ -798,12 +798,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "0ab2f00c76fe325a2748a33759d72d1e50482473",
     "author": "Nataly",
     "commit": {
       "date": "2026-05-19T14:24:41.000Z",
       "message": "feat: user logic without email",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/0ab2f00c76fe325a2748a33759d72d1e50482473"
     },
     "stats": {
       "total": 6,
@@ -847,6 +847,25 @@
       "total": 8,
       "additions": 7,
       "deletions": 1,
+      "date": "2026-05-19"
+    },
+    "coverage": 97.47,
+    "test_count": 36,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:32:43.000Z",
+      "message": "fix: Put user functions in correct place",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 87,
+      "additions": 48,
+      "deletions": 39,
       "date": "2026-05-19"
     },
     "coverage": 97.47,
