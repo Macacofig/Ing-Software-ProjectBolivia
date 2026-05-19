@@ -29,83 +29,108 @@
         <!-- 4. Contenido original, lo hacemos flexible y scrolleable -->
         <main class="content-area">
 
-            <!-- HEADER -->
-            <header class="main-header">
-                <h1 class="titulo">EMSA</h1>
-            </header>
+            <div class="left-panel">
 
-            <!-- FILTROS -->
-            <section class="filters">
-                <form class="filter-bar">
+                <!-- HEADER -->
+                <header class="main-header">
+                    <h1 class="titulo">EMSA</h1>
+                </header>
 
-                    <!-- DISTRITO -->
-                    <label>
-                        <span>Distrito</span>
-                        <select id="filter-distrito">
-                            <option value="">Seleccionar</option>
-                            <option value="2">Distrito 2</option>
-                            <option value="6">Distrito 6</option>
-                            <option value="7">Distrito 7</option>
-                            <option value="8">Distrito 8</option>
-                            <option value="9">Distrito 9</option>
-                            <option value="15">Distrito 15</option>
-                        </select>
-                    </label>
+                <!-- FILTROS -->
+                <section class="filters">
+                    <form class="filter-bar">
 
-                    <!-- ZONA -->
-                    <label>
-                        <span>Zona</span>
-                        <select id="filter-zona">
-                            <option value="">Seleccionar</option>
-                        </select>
-                    </label>
+                        <!-- DISTRITO -->
+                        <label>
+                            <span>Distrito</span>
+                            <select id="filter-distrito">
+                                <option value="">Seleccionar</option>
+                                <option value="2">Distrito 2</option>
+                                <option value="6">Distrito 6</option>
+                                <option value="7">Distrito 7</option>
+                                <option value="8">Distrito 8</option>
+                                <option value="9">Distrito 9</option>
+                                <option value="15">Distrito 15</option>
+                            </select>
+                        </label>
 
-                    <!-- DÍA -->
-                    <label>
-                        <span>Día</span>
-                        <select id="filter-dia">
-                            <option value="">Seleccionar</option>
-                            <option value="lunes">Lunes</option>
-                            <option value="martes">Martes</option>
-                            <option value="miércoles">Miércoles</option>
-                            <option value="jueves">Jueves</option>
-                            <option value="viernes">Viernes</option>
-                            <option value="sabado">Sábado</option>
-                            <option value="domingo">Domingo</option>
-                        </select>
-                    </label>
+                        <!-- ZONA -->
+                        <label>
+                            <span>Zona</span>
+                            <select id="filter-zona">
+                                <option value="">Seleccionar</option>
+                            </select>
+                        </label>
 
-                    <!-- RUTA -->
-                    <label>
-                        <span>Ruta</span>
-                        <input type="text" id="filter-ruta" placeholder="Ej: CALA CALA">
-                    </label>
+                        <!-- DÍA -->
+                        <label>
+                            <span>Día</span>
+                            <select id="filter-dia">
+                                <option value="">Seleccionar</option>
+                                <option value="lunes">Lunes</option>
+                                <option value="martes">Martes</option>
+                                <option value="miércoles">Miércoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                                <option value="sabado">Sábado</option>
+                                <option value="domingo">Domingo</option>
+                            </select>
+                        </label>
 
-                    <!-- FILTRO ESTRICTO -->
-                    <label style="flex-direction: row; align-items: center; gap: 6px;">
-                        <input type="checkbox" id="filter-estricto" style="width:auto; padding:0;">
-                        <span>Estricto</span>
-                    </label>
+                        <!-- RUTA -->
+                        <label>
+                            <span>Ruta</span>
+                            <input type="text" id="filter-ruta" placeholder="Ej: CALA CALA">
+                        </label>
 
-                    <button type="button" class="search-btn">
-                        <i class="fas fa-search"></i>
-                    </button>
+                        <!-- FILTRO ESTRICTO -->
+                        <label style="flex-direction: row; align-items: center; gap: 6px;">
+                            <input type="checkbox" id="filter-estricto" style="width:auto; padding:0;">
+                            <span>Estricto</span>
+                        </label>
 
-                </form>
-            </section>
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
 
-            <!-- RESULTADOS -->
-            <section class="results">
-                <h2 class="subtitulo">Días de Servicio</h2>
-                <div id="grid-cards" class="grid-cards"></div>
-                <div id="confirmation-message" style="display:none;" class="confirmation-box">
-                    <p id="confirmation-text"></p>
-                    <button id="confirm-btn">Confirmar selección</button>
-                    <button id="cancel-btn">Cancelar</button>
+                    </form>
+                </section>
+
+                <!-- RESULTADOS -->
+                <section class="results">
+                    <h2 class="subtitulo">Días de Servicio</h2>
+                    <div id="grid-cards" class="grid-cards"></div>
+                    <div id="confirmation-message" style="display:none;" class="confirmation-box">
+                        <p id="confirmation-text"></p>
+                        <button id="confirm-btn">Confirmar selección</button>
+                        <button id="cancel-btn">Cancelar</button>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- MAPA DE DISTRITOS -->
+            <aside class="right-panel">
+                <div class="map-card">
+                    <h3 class="map-title"><i class="fas fa-map-marked-alt"></i> Mapa de Distritos</h3>
+                    <p class="map-desc">Haz clic en el mapa para ampliar</p>
+                    <div class="map-image-container" id="map-container">
+                        <img src="../assets/mapa_distritos.jpg" alt="Mapa de Distritos EMSA" class="map-image" id="map-image">
+                        <div class="map-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Ver mapa completo</span>
+                        </div>
+                    </div>
                 </div>
+            </aside>
 
+            <!-- MODAL DEL MAPA -->
+            <div class="map-modal-overlay" id="map-modal">
+                <span class="close-modal" id="close-modal">&times;</span>
+                <img src="../assets/mapa_distritos.jpg" alt="Mapa de Distritos - Ampliado" class="modal-content-img">
+            </div>
 
-            </section>
         </main>
     </div>
 
