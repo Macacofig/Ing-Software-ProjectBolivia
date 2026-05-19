@@ -828,60 +828,45 @@
     "testId": 30
   },
   {
-    "numPassedTests": 26,
-    "failedTests": 1,
-    "numTotalTests": 27,
-    "timestamp": 1779057237079,
-    "success": false,
+    "commitId": "8bc745ff94c327d064023eeb6a79d8de5a5180a9",
+    "commitName": "feat: Editar perfil(update)",
+    "commitTimestamp": 1779073782741,
     "testId": 31
   },
   {
-    "numPassedTests": 27,
-    "failedTests": 0,
-    "numTotalTests": 27,
-    "timestamp": 1779058281749,
-    "success": true,
-    "testId": 31
+    "commitId": "9ea8f12a2663ece9e5b73febfe1913095e90f510",
+    "commitName": "Fix: Implementacion de barra oculta y responsividad",
+    "commitTimestamp": 1779162524235,
+    "testId": 32
   },
   {
-    "numPassedTests": 27,
-    "failedTests": 0,
-    "numTotalTests": 27,
-    "timestamp": 1779058281749,
-    "success": true,
-    "testId": 31
+    "commitId": "218448c03074641e0b63be6d375acca7b2b5a980",
+    "commitName": "Fix: Pagina de registrar servicio de emsa",
+    "commitTimestamp": 1779162783983,
+    "testId": 33
   },
   {
-    "numPassedTests": 28,
-    "failedTests": 0,
-    "numTotalTests": 28,
-    "timestamp": 1779059996911,
-    "success": true,
-    "testId": 31
+    "commitId": "30a87b3d3c61905045feaa72068edc3fadc8518c",
+    "commitName": "Fix: Pagina de home de usuario + imagen de distritos",
+    "commitTimestamp": 1779164196969,
+    "testId": 34
   },
   {
-    "numPassedTests": 29,
-    "failedTests": 0,
-    "numTotalTests": 29,
-    "timestamp": 1779060196512,
-    "success": true,
-    "testId": 31
-  },
-  {
-    "numPassedTests": 30,
-    "failedTests": 0,
-    "numTotalTests": 30,
-    "timestamp": 1779060410298,
-    "success": true,
     "commitId": "8e004f9acad54347b8800a46b561a89e3a1b0c5e",
-    "commitName": "refac: I added the clear button and refac the search bar",
-    "commitTimestamp": 1779061388501,
-    "testId": 31
+    "commitName": "Refact: cambio de diseno total",
+    "commitTimestamp": 1779196389267,
+    "testId": 35
   },
   {
-    "commitId": "HEAD",
+    "commitId": "8bfa078697ac4dc98954157fa51da33de71f179f",
     "commitName": "Fix: commentary",
     "commitTimestamp": 1779199773721,
     "testId": 32
+  },
+  {
+    "commitId": "HEAD",
+    "commitName": "Complete merge",
+    "commitTimestamp": 1779199968474,
+    "testId": 33
   }
 ]
