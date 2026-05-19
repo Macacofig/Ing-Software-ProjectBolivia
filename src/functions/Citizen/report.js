@@ -9,4 +9,12 @@ function register_report(idCitizen, description, location)
     return "Report: Successfully registered";
 }
 
-export { register_report };
+function register_user(name, email, role)
+{
+    if(name === "" || email === "" || role === "") {
+        return "All fields are required";
+    }
+    return "User Successfully registered";
+}
+
+export { register_report, register_user };

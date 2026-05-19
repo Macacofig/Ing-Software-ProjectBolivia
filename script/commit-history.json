@@ -703,12 +703,12 @@
     "conclusion": "success"
   },
   {
-    "sha": "HEAD",
+    "sha": "eeeffc34605d3282e3efb70e4bf4b65bda3f62f4",
     "author": "Ruben Cordero",
     "commit": {
       "date": "2026-05-19T04:16:36.000Z",
       "message": "Fix: Pagina de home de usuario + imagen de distritos",
-      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/eeeffc34605d3282e3efb70e4bf4b65bda3f62f4"
     },
     "stats": {
       "total": 210,
@@ -756,6 +756,25 @@
     },
     "coverage": 97.06,
     "test_count": 30,
+    "failed_tests": 0,
+    "conclusion": "success"
+  },
+  {
+    "sha": "HEAD",
+    "author": "Nataly",
+    "commit": {
+      "date": "2026-05-19T14:22:37.000Z",
+      "message": "feat: user logic",
+      "url": "https://github.com/Macacofig/Ing-Software-ProjectBolivia/commit/HEAD"
+    },
+    "stats": {
+      "total": 16,
+      "additions": 14,
+      "deletions": 2,
+      "date": "2026-05-19"
+    },
+    "coverage": 95.77,
+    "test_count": 31,
     "failed_tests": 0,
     "conclusion": "success"
   }

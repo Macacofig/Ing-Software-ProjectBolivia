@@ -1,4 +1,4 @@
-import { register_report } from "./report.js";
+import { register_report , register_user } from "./report.js";
 
 describe("Reports", () => {
     
@@ -11,4 +11,8 @@ describe("Reports", () => {
   it("It should show an error if location is empty", () => {
     expect(register_report(1,"There is accumulated garbage", "")).toEqual("Location cannot be empty");
   });
+  it("It should show a registered user", () => {
+    expect(register_user("nataly","nramirezmachicado@gmail.com", "citizien")).toEqual("User Successfully registered");
+  });
+
 });
