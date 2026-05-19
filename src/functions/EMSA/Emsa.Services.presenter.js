@@ -1,5 +1,4 @@
-
-editDistrito.addEventListener("change", function () {
+/*editDistrito.addEventListener("change", function () {
 
     const distrito = this.value;
 
@@ -20,10 +19,9 @@ editDistrito.addEventListener("change", function () {
 
     }
 
-});
+});*/
 
 import {ModelService, Service, filter_services } from "../../Models/Service.js";
-
 const model = new ModelService();
 
 const gridCards = document.getElementById("grid-cards");
@@ -368,6 +366,7 @@ renderServices(model.getServices());
 
 /* =========================
    EDIT MODAL ZONAS
+========================= */
 
 editDistrito.addEventListener("change", function () {
 
@@ -391,4 +390,5 @@ editDistrito.addEventListener("change", function () {
     }
 
 });
+
 

@@ -1,42 +1,43 @@
-import { login_user, ModelUser } from "./User.js";
+import { login_user } from "./User.js";
+
+const usuariosBasura = [
+  { id: 1, correo: "ale@gmail.com", password: "1234", role: "citizen" },
+  { id: 2, correo: "admin@emsa.com", password: "admin123", role: "admin" }
+];
 
 describe("User", () => {
 
-  it("login fails if email is empty", () => {
-    expect(login_user("", "1234")).toEqual({
-      success: false,
-      message: "Email y contraseña requeridos"
-    });
-  });
-   
-  it("login fails if password is empty", () => {
-    expect(login_user("ale@gmail.com", "")).toEqual({
+  it("login falla si email vacio", () => {
+    expect(login_user("", "1234", usuariosBasura)).toEqual({
       success: false,
       message: "Email y contraseña requeridos"
     });
   });
 
-   it("login fails if user not found", () => {
-    expect(login_user("noexiste@gmail.com", "1234")).toEqual({
+  it("login falla si password vacio", () => {
+    expect(login_user("ale@gmail.com", "", usuariosBasura)).toEqual({
+      success: false,
+      message: "Email y contraseña requeridos"
+    });
+  });
+
+  it("login falla si usuario no existe", () => {
+    expect(login_user("noexiste@gmail.com", "1234", usuariosBasura)).toEqual({
       success: false,
       message: "Credenciales incorrectas"
     });
   });
 
-  it("login success for citizen", () => {
-    const model = new ModelUser();
-    model.addUser({ id: 1, nombre: "Ale", correo: "ale@gmail.com", password: "1234", role: "citizen" });
-    expect(login_user("ale@gmail.com", "1234", model.getUsers())).toEqual({
+  it("login exitoso ciudadano", () => {
+    expect(login_user("ale@gmail.com", "1234", usuariosBasura)).toEqual({
       success: true,
       role: "citizen",
       id: 1
     });
   });
 
-  it("login success for admin", () => {
-    const model = new ModelUser();
-    model.addUser({ id: 2, nombre: "Admin", correo: "admin@gmail.com", password: "admin123", role: "admin" });
-    expect(login_user("admin@gmail.com", "admin123", model.getUsers())).toEqual({
+  it("login exitoso admin", () => {
+    expect(login_user("admin@emsa.com", "admin123", usuariosBasura)).toEqual({
       success: true,
       role: "admin",
       id: 2
