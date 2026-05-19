@@ -14,5 +14,7 @@ describe("Reports", () => {
   it("It should show a registered user", () => {
     expect(register_user("nataly","nramirezmachicado@gmail.com", "citizien")).toEqual("User Successfully registered");
   });
-
+  it("It should show an error if name is empty", () => {
+    expect(register_user("","nramirezmachicado@gmail.com", "citizien")).toEqual("The name field is required");
+  });
 });
