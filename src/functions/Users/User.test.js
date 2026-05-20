@@ -55,4 +55,10 @@ describe("Users", () => {
     });
   });
 
+  it("login exitoso admin", () => {
+    expect(login_user("admin@emsa.com", "admin123", usuariosBasura)).toEqual({
+      success: true, role: "emsa", id: 2
+    });
+  });
+
 });
