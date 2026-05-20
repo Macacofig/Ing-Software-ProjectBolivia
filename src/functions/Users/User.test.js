@@ -49,4 +49,10 @@ describe("Users", () => {
     });
   });
 
+  it("login exitoso ciudadano", () => {
+    expect(login_user("ale@gmail.com", "1234", usuariosBasura)).toEqual({
+      success: true, role: "citizen", id: 1
+    });
+  });
+
 });
