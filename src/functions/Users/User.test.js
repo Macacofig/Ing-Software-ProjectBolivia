@@ -42,4 +42,11 @@ describe("Users", () => {
     });
   });
 
+  it("login falla si usuario no existe", () => {
+    expect(login_user("noexiste@gmail.com", "1234", usuariosBasura)).toEqual({
+      success: false,
+      message: "Credenciales incorrectas"
+    });
+  });
+
 });
