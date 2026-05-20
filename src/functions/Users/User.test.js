@@ -35,4 +35,11 @@ describe("Users", () => {
     });
   });
 
+  it("login falla si password vacio", () => {
+    expect(login_user("ale@gmail.com", "", usuariosBasura)).toEqual({
+      success: false,
+      message: "Email y contraseña requeridos"
+    });
+  });
+
 });
