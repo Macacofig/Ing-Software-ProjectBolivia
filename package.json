@@ -5,7 +5,7 @@
   "default": "index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel src/templates/index.html",
+    "start": "parcel src/templates/index.html src/templates/login.html src/templates/Register_Users.html",
     "build": "parcel build src/templates/index.html",
     "test": "node ./script/tddScript.js",
     "cypress": "cypress open",
