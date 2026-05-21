@@ -3,181 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMSA - Sistema de Gestión de Residuos</title>
+    <title>EMSA - Sistema de Gestión de Residuos Urbanos</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="Plataforma de gestión de residuos de EMSA. Reporta problemas de recolección de basura, consulta horarios oficiales y colabora por una ciudad más verde y sostenible.">
+    <meta name="keywords" content="EMSA, Gestión de Residuos, Limpieza Urbana, Cochabamba, Recolección de Basura, Medio Ambiente">
+    <meta name="author" content="EMSA Cochabamba">
+    
     <!-- Google Fonts for Bebas Neue and Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                flex-direction: row;
-                align-items: center;
-                gap: 60px;
-            }
-        }
-
-        .hero-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .hero-title {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 5rem;
-            color: #ffffff;
-            text-shadow: 5px 5px 0px #FE8330;
-            line-height: 1;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 7rem;
-                text-shadow: 7px 7px 0px #FE8330;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #FE8330;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero-paragraph {
-            font-size: 1.1rem;
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        @media (min-width: 480px) {
-            .hero-buttons {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            /* Brutalist border */
-            border: 3px solid #FE8330;
-        }
-
-        .btn-primary {
-            background-color: #FE8330;
-            color: #121212;
-            /* Hard brutalist shadow */
-            box-shadow: 4px 4px 0px #FE8330;
-        }
-
-        .btn-primary:hover {
-            background-color: transparent;
-            color: #FE8330;
-            box-shadow: none;
-            transform: translate(4px, 4px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #FE8330;
-            box-shadow: 4px 4px 0px #1A1A1A;
-            border-color: #FE8330;
-        }
-
-        .btn-outline:hover {
-            background-color: #FE8330;
-            color: #121212;
-            box-shadow: none;
-            transform: translate(4px, 4px);
-        }
-
-        .hero-image-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border: 3px solid #FE8330;
-            /* Dark grey offset shadow for brutalist feel */
-            box-shadow: 12px 12px 0px #1A1A1A;
-            filter: grayscale(20%) contrast(120%);
-            transition: all 0.3s ease;
-        }
-
-        .hero-image:hover {
-            filter: grayscale(0%) contrast(100%);
-            transform: translate(-4px, -4px);
-            box-shadow: 16px 16px 0px #1A1A1A;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Independent Stylesheet -->
+    <link rel="stylesheet" href="../styles/landing.css">
 </head>
 <body>
-    <div class="container">
-        <div class="hero-text">
-            <h1 class="hero-title">EMSA</h1>
-            <h2 class="hero-subtitle">Sistema de Gestión de Residuos</h2>
-            <p class="hero-paragraph">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. EMSA lidera la gestión sostenible y la limpieza urbana. Nuestro objetivo es transformar el presente para construir un futuro verde, eficiente y libre de contaminación, donde cada acción cuente.
-            </p>
-            <div class="hero-buttons">
-                <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
-                <a href="Register_Users.html" class="btn btn-outline">Registrarse</a>
+    <main class="landing-container">
+        <!-- Mitad Izquierda: Imagen de EMSA -->
+        <section class="image-section" aria-label="Vista del equipo EMSA">
+            <div class="image-wrapper">
+                <img src="../assets/emsa.png" alt="Equipo de limpieza y servicios urbanos de EMSA" class="hero-image" id="emsa-hero-img">
+                <div class="image-overlay"></div>
             </div>
-        </div>
-        <div class="hero-image-container">
-            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070&auto=format&fit=crop" alt="Gestión de residuos y sostenibilidad" class="hero-image">
-        </div>
-    </div>
+        </section>
+
+        <!-- Mitad Derecha: Contenido e Información -->
+        <section class="content-section" aria-label="Mensaje de bienvenida">
+            <div class="content-wrapper">
+                <div class="badge">Empresa Municipal de Servicios de Aseo</div>
+                <h1 class="main-title" id="emsa-title">EMSA</h1>
+                <p class="description-text">
+                    Lideramos la gestión integral de residuos y la preservación ambiental en nuestra ciudad. A través de la innovación, planificación y participación activa de los ciudadanos, transformamos Cochabamba en un espacio limpio, saludable y ecológicamente responsable. Reporta incidencias de limpieza, conoce tus rutas de recolección y sé parte activa del cambio.
+                </p>
+                <div class="action-buttons">
+                    <a href="login.html" class="btn btn-login" id="btn-login">Iniciar Sesión</a>
+                    <a href="Register_Users.html" class="btn btn-register" id="btn-register">Registrarse</a>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

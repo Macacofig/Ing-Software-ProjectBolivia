@@ -98,3 +98,60 @@
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ================================
+   MODAL DE ÉXITO
+   ================================ */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: #1E1E1E;
+  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  border: 3px solid #FE8330;
+  box-shadow: 10px 10px 0px #111;
+}
+
+.success-modal {
+  text-align: center;
+}
+
+.success-modal-text {
+  color: #F4F4F0;
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+
+.accept-btn {
+  border: 2px solid #FE8330;
+  padding: 12px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  background: #FE8330;
+  color: #111;
+}
+
+.accept-btn:hover {
+  background: #111;
+  color: #FE8330;
+}
