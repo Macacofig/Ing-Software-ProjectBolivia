@@ -5,15 +5,19 @@
   "default": "index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel src/templates/*.html",
-    "build": "parcel build src/templates/*.html",
-    "test": "node ./script/tddScript.js",
-    "cypress": "cypress open",
-    "cypress-run": "cypress run",
-    "lint": "eslint .",
-    "postinstall": "git init && npx husky",
-    "semantic-commits-on": "node semantic-commits.js enable",
-    "semantic-commits-off": "node semantic-commits.js disabled"
+
+     "start": "parcel serve src/templates/index.html src/templates/login.html src/templates/Register_Users.html src/templates/citizen_WasteCollections.html src/templates/citizen_create_report.html src/templates/citizen_reports.html src/templates/edit_profile_citizen.html src/templates/edit_profile_emsa.html src/templates/emsa_WasteCollections.html src/templates/emsa_register_WasteCollection.html src/templates/emsa_reports.html",
+
+  "build": "parcel build src/templates/index.html src/templates/login.html src/templates/Register_Users.html src/templates/citizen_WasteCollections.html src/templates/citizen_create_report.html src/templates/citizen_reports.html src/templates/edit_profile_citizen.html src/templates/edit_profile_emsa.html src/templates/emsa_WasteCollections.html src/templates/emsa_register_WasteCollection.html src/templates/emsa_reports.html",
+
+  "test": "node ./script/tddScript.js",
+  "cypress": "cypress open",
+  "cypress-run": "cypress run",
+  "lint": "eslint .",
+  "postinstall": "git init && npx husky",
+  "semantic-commits-on": "node semantic-commits.js enable",
+  "semantic-commits-off": "node semantic-commits.js disabled"
+  
   },
   "author": "Israel Antezana R.",
   "license": "ISC",
