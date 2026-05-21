@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const model = new ModelUser();
 
+    // Usuarios de prueba si no hay ninguno registrado
+    if (model.getUsers().length === 0) {
+        model.addUser("Ciudadano", "ciudadano@gmail.com", "1234", "citizen");
+        model.addUser("Admin", "admin@emsa.com", "admin123", "emsa");
+    }
+
     loginBtn.addEventListener("click", () => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
