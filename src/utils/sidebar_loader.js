@@ -1,3 +1,5 @@
+import { authService } from '../services/AuthService.js';
+
 /**
  * Inyecta el sidebar correspondiente y maneja su lógica visual
  * @param {string} type - 'emsa' o 'citizen'
@@ -32,6 +34,15 @@ export async function loadSidebar(type, activeMenuId) {
 
     // Activar la redirección forzada a la vista de perfil
     setupProfileRedirect(type);
+
+    // Activar el botón de cerrar sesión
+    const logoutBtn = document.getElementById('menu-logout');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        authService.logout();
+      });
+    }
 
     // Inyectar el botón hamburguesa para móviles si no existe
     if (!document.querySelector('.mobile-header')) {

@@ -3,14 +3,21 @@ import {
     verify_update_user
 } from "../../Models/User.js";
 
+import { authService } from "../../services/AuthService.js";
+
+// Proteger ruta
+if (!authService.checkAuth()) {
+    throw new Error("No autenticado");
+}
+
 const form =
     document.getElementById(
-        "updateProfileForm"
+        "edit-profile-form"
     );
 
 const messageBox =
     document.getElementById(
-        "messageBox"
+        "message-container"
     );
 
 const modelUser =
@@ -35,7 +42,7 @@ form.addEventListener(
         clearErrors();
 
         const currentUser =
-            modelUser.getCurrentUser();
+            authService.getCurrentLoggedUser();
 
         if (!currentUser) {
 
@@ -59,7 +66,7 @@ form.addEventListener(
 
             name:
                 document
-                    .getElementById("name")
+                    .getElementById("username")
                     .value,
 
             email:
@@ -126,12 +133,12 @@ form.addEventListener(
 function loadCurrentUser() {
 
     const currentUser =
-        modelUser.getCurrentUser();
+        authService.getCurrentLoggedUser();
 
     if (!currentUser) return;
 
     document
-        .getElementById("name")
+        .getElementById("username")
         .value =
         currentUser.getName();
 
@@ -181,9 +188,11 @@ function renderMessage(result) {
 
 function showFieldError(field) {
 
+    const inputId = field === "name" ? "username" : field;
+
     const input =
         document.getElementById(
-            field
+            inputId
         );
 
     if (input) {

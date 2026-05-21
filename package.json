@@ -5,8 +5,8 @@
   "default": "index.html",
   "type": "module",
   "scripts": {
-    "start": "parcel src/templates/index.html",
-    "build": "parcel build src/templates/index.html",
+    "start": "parcel src/templates/*.html",
+    "build": "parcel build src/templates/*.html",
     "test": "node ./script/tddScript.js",
     "cypress": "cypress open",
     "cypress-run": "cypress run",
