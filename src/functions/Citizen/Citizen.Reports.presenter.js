@@ -1,19 +1,18 @@
-import {
-  getServices
-} from '../../utils/localStorage.js';
+import { ModelReport } from '../../Models/Report.js';
+import { authService } from '../../services/AuthService.js';
 
-import {
-  verify_report,ModelReport
-} from '../../Models/Report.js';
+if (!authService.checkAuth()) {
+    throw new Error("No autenticado");
+}
+
+const currentUser = authService.getCurrentLoggedUser();
+const citizenId = currentUser.getId();
 
 // =========================
 // ELEMENTOS
 // =========================
 const reportsContainer =
   document.getElementById("reportsContainer");
-
-const idCitizenFilter =
-  document.getElementById("idCitizenFilter");
 
 const dateFilter =
   document.getElementById("dateFilter");
@@ -29,17 +28,11 @@ const clearButton =
 // =========================
 let reports = new ModelReport();
 
-
 // =========================
 // EVENTOS
 // =========================
 filterButton.addEventListener(
   "click",
-  applyFilters
-);
-
-idCitizenFilter.addEventListener(
-  "input",
   applyFilters
 );
 
@@ -56,11 +49,8 @@ function applyFilters() {
   const filteredReports =
     reports.filterReports(
       {
-        idCitizen:
-          idCitizenFilter.value,
-
-        date:
-          dateFilter.value
+        idCitizen: citizenId,
+        date: dateFilter.value
       }
     );
 
@@ -73,11 +63,9 @@ function applyFilters() {
 // =========================
 function clearFilters() {
 
-  idCitizenFilter.value = "";
-
   dateFilter.value = "";
 
-  renderReports(reports.getReports());
+  applyFilters();
 
 }
 
@@ -88,7 +76,6 @@ function renderReports(reportsToRender) {
 
   reportsContainer.innerHTML = "";
 
-  // SIN REPORTES
   if (reportsToRender.length === 0) {
 
     reportsContainer.innerHTML = `
@@ -101,7 +88,6 @@ function renderReports(reportsToRender) {
     return;
   }
 
-  // CARDS
   reportsToRender.forEach(report => {
 
     const card =
@@ -168,7 +154,6 @@ function renderReports(reportsToRender) {
       </div>
     `;
 
-    // EXPANDIR
     card.addEventListener(
       "click",
       () => {
@@ -197,4 +182,5 @@ function formatDate(dateString) {
   );
 
 }
-renderReports(reports.getReports());
+
+applyFilters();

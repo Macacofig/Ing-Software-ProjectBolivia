@@ -1,5 +1,4 @@
 import {
-    ModelUser,
     verify_update_user
 } from "../../Models/User.js";
 
@@ -20,8 +19,10 @@ const messageBox =
         "message-container"
     );
 
-const modelUser =
-    new ModelUser();
+const successModal =
+    document.getElementById(
+        "success-modal"
+    );
 
 // ==========================================
 // LOAD CURRENT USER
@@ -91,7 +92,7 @@ form.addEventListener(
         const verifyResult =
             verify_update_user(
                 userData,
-                modelUser.getUsers()
+                authService.userModel.getUsers()
             );
 
         if (
@@ -115,13 +116,60 @@ form.addEventListener(
         // ==========================
 
         const updateResult =
-            modelUser.updateUser(
+            authService.userModel.updateUser(
                 userData
             );
 
-        renderMessage(
-            updateResult
-        );
+        if (
+            updateResult.success
+        ) {
+
+            successModal
+                .classList
+                .add("active");
+
+        } else {
+
+            renderMessage(
+                updateResult
+            );
+
+        }
+
+    }
+);
+
+// ==========================================
+// CLOSE MODAL
+// ==========================================
+
+document
+    .getElementById("accept-btn")
+    .addEventListener(
+        "click",
+        function() {
+
+            successModal
+                .classList
+                .remove("active");
+
+        }
+    );
+
+successModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            successModal
+        ) {
+
+            successModal
+                .classList
+                .remove("active");
+
+        }
 
     }
 );

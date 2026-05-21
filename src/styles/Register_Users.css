@@ -1,149 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap');
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: #101820;
-
+    font-family: 'Inter', sans-serif;
+    background: #121212;
     display: flex;
-
-    justify-content: center;
     align-items: center;
-
+    justify-content: center;
     height: 100vh;
-
+    overflow: hidden;
 }
 
-.container {
-
-    width: 400px;
-
-}
-
-.form {
-
-    background: white;
-
-    padding: 30px;
-
-    border-radius: 12px;
-
+.register-wrapper {
     display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-
-    box-shadow:
-        0px 10px 30px rgba(0,0,0,0.2);
-
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
 
-.form h1 {
+.register-card {
+    background: #1A1A1A;
+    border: 3px solid #FE8330;
+    box-shadow: 10px 10px 0px #FE8330;
+    padding: 40px 40px;
+    width: 420px;
+}
 
+.register-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: #FE8330;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
     text-align: center;
-
-    color: #101820;
-
 }
 
-.form input,
-.form select {
+.register-card p.subtitle {
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
 
-    padding: 12px;
+#registerForm label {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
 
-    border: 1px solid #ccc;
-
-    border-radius: 8px;
-
+#registerForm input,
+#registerForm select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    border: 2px solid #333;
+    background: #111;
+    color: #F4F4F0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
     outline: none;
-
-    font-size: 14px;
-
 }
 
-.form input:focus,
-.form select:focus {
-
-    border-color: #0077ff;
-
-}
-
-.form button {
-
-    padding: 12px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #0077ff;
-
-    color: white;
-
+#registerForm select {
     cursor: pointer;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
-.form button:hover {
+#registerForm select option {
+    background: #111;
+    color: #F4F4F0;
+}
 
-    background: #005ed1;
+#registerForm input:focus,
+#registerForm select:focus {
+    border-color: #FE8330;
+}
 
+#registerForm input.input-error {
+    border-color: #e74c3c;
 }
 
 .hidden {
-
     display: none;
-
 }
-
-#message {
-
-    text-align: center;
-
-    color: crimson;
-
-    font-size: 14px;
-
-}
-
 
 .message-box {
-
-    margin-top: 10px;
-
+    text-align: center;
+    font-size: 13px;
     padding: 10px;
-
-    border-radius: 8px;
-
-    font-size: 14px;
-
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: none;
 }
 
-.error {
-
-    background: #ffdede;
-
-    color: crimson;
-
+.message-box.error {
+    display: block;
+    color: #e74c3c;
+    border: 2px dashed #e74c3c;
 }
 
-.success {
+.message-box.success {
+    display: block;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
 
-    background: #dfffe0;
+.register-btn {
+    width: 100%;
+    background: #FE8330;
+    color: #111;
+    padding: 16px;
+    border: 2px solid #FE8330;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    transition: 0.1s;
+    margin-top: 5px;
+}
 
-    color: green;
+.register-btn:hover {
+    background: #111;
+    color: #FE8330;
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0px #FE8330;
+}
 
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.login-link a {
+    color: #FE8330;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
 }

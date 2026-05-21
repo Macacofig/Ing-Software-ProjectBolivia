@@ -1,8 +1,14 @@
 import { ModelReport, verify_report } from "../../Models/Report.js";
+import { authService } from "../../services/AuthService.js";
+
+if (!authService.checkAuth()) {
+    throw new Error("No autenticado");
+}
+
+const currentUser = authService.getCurrentLoggedUser();
 
 const form = document.getElementById("reportForm");
 const messageBox = document.getElementById("messageBox");
-
 
 const modelReport = new ModelReport();
 
@@ -11,9 +17,9 @@ const modelReport = new ModelReport();
 // =======================
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault(); // evita recarga
+  event.preventDefault();
 
-  const idCitizen = document.getElementById("idCitizen").value;
+  const idCitizen = currentUser.getId();
   const description = document.getElementById("description").value;
   const location = document.getElementById("location").value;
 
