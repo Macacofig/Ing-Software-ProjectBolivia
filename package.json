@@ -4,6 +4,12 @@
   "description": "",
   "default": "index.html",
   "type": "module",
+  "targets": {
+    "default": {
+        "distDir": "dist",
+        "publicUrl": "./"
+      }
+  },
   "scripts": {
 
      "start": "parcel serve src/templates/index.html src/templates/login.html src/templates/Register_Users.html src/templates/citizen_WasteCollections.html src/templates/citizen_create_report.html src/templates/citizen_reports.html src/templates/edit_profile_citizen.html src/templates/edit_profile_emsa.html src/templates/emsa_WasteCollections.html src/templates/emsa_register_WasteCollection.html src/templates/emsa_reports.html",
