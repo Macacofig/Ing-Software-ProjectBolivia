@@ -10,8 +10,8 @@ export async function loadSidebar(type, activeMenuId) {
   if (!container) return;
 
   // Declaramos ambas URLs de forma estática para que Parcel las detecte sin problemas
-  const emsaUrl = '../components/emsa_sidebar.partial.html';
-  const citizenUrl = '../components/citizen_sidebar.partial.html';
+  const emsaUrl = '/components/emsa_sidebar.partial.html';
+  const citizenUrl = '/components/citizen_sidebar.partial.html';
 
   // Elegimos la ruta correcta según el parámetro
   const url = type === 'emsa' ? emsaUrl : citizenUrl;
@@ -93,7 +93,7 @@ function setupProfileRedirect(type) {
 
     e.preventDefault();
     // REDIRECCIÓN DIRECTA: Cambiamos a la ruta real según el tipo
-    const targetUrl = type === 'emsa' ? '../templates/edit_profile_emsa.html' : '../templates/edit_profile_citizen.html';
+    const targetUrl = type === 'emsa' ? 'edit_profile_emsa.html' : 'edit_profile_citizen.html';
     window.location.href = targetUrl; 
   };
 
