@@ -3,6 +3,13 @@ import {
     verify_update_user
 } from "../../Models/User.js";
 
+import { authService } from "../../services/AuthService.js";
+
+// Proteger ruta
+if (!authService.checkAuth()) {
+    throw new Error("No autenticado");
+}
+
 const form =
     document.getElementById(
         "updateProfileForm"
@@ -35,7 +42,7 @@ form.addEventListener(
         clearErrors();
 
         const currentUser =
-            modelUser.getCurrentUser();
+            authService.getCurrentLoggedUser();
 
         if (!currentUser) {
 
@@ -126,7 +133,7 @@ form.addEventListener(
 function loadCurrentUser() {
 
     const currentUser =
-        modelUser.getCurrentUser();
+        authService.getCurrentLoggedUser();
 
     if (!currentUser) return;
 

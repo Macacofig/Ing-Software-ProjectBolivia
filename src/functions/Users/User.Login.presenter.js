@@ -1,4 +1,4 @@
-import { ModelUser, login_user } from "../../Models/User.js";
+import { authService } from "../../services/AuthService.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const emailInput = document.getElementById("email");
@@ -6,19 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const loginBtn = document.getElementById("login-btn");
     const errorMsg = document.getElementById("error-msg");
 
-    const model = new ModelUser();
-
     // Usuarios de prueba si no hay ninguno registrado
-    if (model.getUsers().length === 0) {
-        model.addUser("Ciudadano", "ciudadano@gmail.com", "1234", "citizen");
-        model.addUser("Admin", "admin@emsa.com", "admin123", "emsa");
+    if (authService.userModel.getUsers().length === 0) {
+        authService.userModel.addUser("Ciudadano", "ciudadano@gmail.com", "1234", "citizen");
+        authService.userModel.addUser("Admin", "admin@emsa.com", "admin123", "emsa");
     }
 
     loginBtn.addEventListener("click", () => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
-        const result = login_user(email, password, model.getUsers());
+        const result = authService.login(email, password);
+        console.log("Intento de login:", { email, password, result });
 
         if (!result.success) {
             errorMsg.textContent = result.message;
@@ -28,11 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         errorMsg.style.display = "none";
 
-        if (result.role === "citizen") {
-            localStorage.setItem("citizen_id", result.id);
-            window.location.href = "user_home.html";
-        } else if (result.role === "emsa") {
-            window.location.href = "emsa_services.html";
+        if (result.user.role === "citizen") {
+            window.location.href = "edit_profile_citizen.html";
+        } else if (result.user.role === "emsa") {
+            window.location.href = "edit_profile_emsa.html";
+        } else {
+            alert("Error: Rol desconocido '" + result.user.role + "'");
         }
     });
 });

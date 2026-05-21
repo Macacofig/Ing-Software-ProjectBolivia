@@ -72,17 +72,17 @@ form.addEventListener(
             name:
                 document
                     .getElementById("name")
-                    .value,
+                    .value.trim(),
 
             email:
                 document
                     .getElementById("email")
-                    .value,
+                    .value.trim(),
 
             password:
                 document
                     .getElementById("password")
-                    .value,
+                    .value.trim(),
 
             role:
                 document

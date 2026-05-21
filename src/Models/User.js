@@ -83,7 +83,7 @@ class ModelUser {
         this.users = usersData.map(
             user =>
                 new User(
-                    this.generateUserId(),
+                    user.id || this.generateUserId(), // use saved ID
                     user.name,
                     user.email,
                     user.password,
@@ -270,22 +270,10 @@ function verify_update_user(user,usersList = [])
 
 }
 
-function login_user(email, password, users = []) {
-    if (!email || !password) {
-        return { success: false, message: "Email y contraseña requeridos" };
-    }
-    const user = users.find(u => u.email === email && u.password === password);
-    if (!user) {
-        return { success: false, message: "Credenciales incorrectas" };
-    }
-    return { success: true, role: user.role, id: user.getId() };
-}
-
 
 export {
     User,
     ModelUser,
     verify_user,
-    verify_update_user,
-    login_user
+    verify_update_user
 };
