@@ -1,5 +1,6 @@
 import { authService } from '../services/AuthService.js';
-
+import { emsaSidebar } from '../components/emsaSidebar.js';
+import { citizenSidebar } from '../components/citizenSidebar.js';
 /**
  * Inyecta el sidebar correspondiente y maneja su lógica visual
  * @param {string} type - 'emsa' o 'citizen'
@@ -9,59 +10,64 @@ export async function loadSidebar(type, activeMenuId) {
   const container = document.getElementById('sidebar-container');
   if (!container) return;
 
-  // Declaramos ambas URLs de forma estática para que Parcel las detecte sin problemas
-  const emsaUrl = '/components/emsa_sidebar.partial.html';
-  const citizenUrl = '/components/citizen_sidebar.partial.html';
+  const htmlText =
+    type === 'emsa'
+      ? emsaSidebar
+      : citizenSidebar;
 
-  // Elegimos la ruta correcta según el parámetro
-  const url = type === 'emsa' ? emsaUrl : citizenUrl;
+  container.innerHTML = htmlText;
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Error al cargar el sidebar');
+  // Resaltar el botón activo en el menú
+  const activeItem = document.getElementById(activeMenuId);
 
-    const htmlText = await response.text();
-    container.innerHTML = htmlText;
+  if (activeItem) {
+    activeItem.classList.add('active');
+  }
 
-    // Resaltar el botón activo en el menú
-    const activeItem = document.getElementById(activeMenuId);
-    if (activeItem) {
-      activeItem.classList.add('active');
-    }
+  // Activar funcionalidades
+  setupToggle();
+  setupProfileRedirect(type);
 
-    // Activar la funcionalidad de colapsar e interactuar con el Grid
-    setupToggle();
+  // Logout
+  const logoutBtn = document.getElementById('menu-logout');
 
-    // Activar la redirección forzada a la vista de perfil
-    setupProfileRedirect(type);
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      authService.logout();
+    });
+  }
 
-    // Activar el botón de cerrar sesión
-    const logoutBtn = document.getElementById('menu-logout');
-    if (logoutBtn) {
-      logoutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        authService.logout();
+  // Mobile menu
+  if (!document.querySelector('.mobile-header')) {
+
+    const mobileHeader = document.createElement('div');
+
+    mobileHeader.className = 'mobile-header';
+
+    mobileHeader.innerHTML = `
+      <button class="mobile-menu-toggle">☰</button>
+      <span style="color: white; font-weight: bold; margin-left: 15px; font-size: 1.2rem;">
+        Menú
+      </span>
+    `;
+
+    document.body.insertBefore(
+      mobileHeader,
+      document.body.firstChild
+    );
+
+    mobileHeader
+      .querySelector('.mobile-menu-toggle')
+      .addEventListener('click', () => {
+
+        const sidebar =
+          document.getElementById('appSidebar');
+
+        if (sidebar) {
+          sidebar.classList.toggle('mobile-open');
+        }
       });
-    }
-
-    // Inyectar el botón hamburguesa para móviles si no existe
-    if (!document.querySelector('.mobile-header')) {
-      const mobileHeader = document.createElement('div');
-      mobileHeader.className = 'mobile-header';
-      mobileHeader.innerHTML = `
-        <button class="mobile-menu-toggle">☰</button>
-        <span style="color: white; font-weight: bold; margin-left: 15px; font-size: 1.2rem;">Menú</span>
-      `;
-      document.body.insertBefore(mobileHeader, document.body.firstChild);
-      
-      mobileHeader.querySelector('.mobile-menu-toggle').addEventListener('click', () => {
-        const sidebar = document.getElementById('appSidebar');
-        if (sidebar) sidebar.classList.toggle('mobile-open');
-      });
-    }
-
-  } catch (error) {
-    console.error("Fallo la carga del sidebar dinámico:", error);
   }
 }
 
