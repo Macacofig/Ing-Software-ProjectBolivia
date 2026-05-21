@@ -1,106 +1,33 @@
 <!DOCTYPE html>
-<html xml:lang="es">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EMSA PROYECT</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Mantenemos el estilo base y agregamos el nuevo CSS modular de EMSA -->
-  <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/emsa_sidebar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EMSA</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <div class="main-layout">
+    <div class="login-wrapper">
+        <div class="login-card">
+            <h2>EMSA</h2>
+            <p class="subtitle">Sistema de Gestión de Residuos</p>
 
-    <!-- AQUÍ ESTÁ LA MAGIA: El contenedor vacío que recibirá el Sidebar dinámicamente -->
-    <div id="sidebar-container"></div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="tucorreo@gmail.com">
 
-    <!-- Todo tu contenido funcional queda exactamente igual, no se toca nada de la lógica -->
-    <main class="content-area">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="••••••••">
 
-      <div class="form-panel-full">
-        <div class="form-section">
-          <div class="card-header">
-            <h2>Registrar servicio</h2>
-            <span id="form-message" class="form-message"></span>
-            <button type="button" id="clearBtn" class="btn-clear">Clear</button>
-          </div>
+            <div id="error-msg" class="error-msg"></div>
 
-          <form id="formulario">
-            <label>Día:</label>
-            <select id="daySelect">
-              <option value="">Selecciona un día</option>
-              <option value="lunes">Lunes</option>
-              <option value="martes">Martes</option>
-              <option value="miércoles">Miércoles</option>
-              <option value="jueves">Jueves</option>
-              <option value="viernes">Viernes</option>
-              <option value="sábado">Sábado</option>
-              <option value="domingo">Domingo</option>
-            </select>
-            <small class="error" id="error-day"></small>
+            <button id="login-btn" class="login-btn">Ingresar</button>
 
-            <label>Distrito:</label>
-            <select id="distrito">
-              <option value="">Selecciona distrito</option>
-              <option value="2">Distrito 2</option>
-              <option value="6">Distrito 6</option>
-              <option value="7">Distrito 7</option>
-              <option value="8">Distrito 8</option>
-              <option value="9">Distrito 9</option>
-              <option value="15">Distrito 15</option>
-            </select>
-            <small class="error" id="error-district"></small>
-
-            <label>Zona:</label>
-            <select id="zona">
-              <option value="">Selecciona zona</option>
-            </select>
-            <small class="error" id="error-zone"></small>
-
-            <label>Horario:</label>
-            <input type="time" id="schedule">
-            <small class="error" id="error-schedule"></small>
-
-            <label>Rutas:</label>
-            <div class="ruta-input">
-              <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
-              <button type="button" id="addRuta">+</button>
+            <div class="register-link">
+                ¿No tienes cuenta? <a href="Register_Users.html">Regístrate aquí</a>
             </div>
-            <small class="error" id="error-rutas"></small>
-
-            <ul id="lista-rutas" class="lista-rutas"></ul>
-
-            <button type="submit" class="btn-save">Guardar</button>
-          </form>
         </div>
-      </div>
-
-      <div class="form-panel-full">
-        <div class="form-section">
-          <h2>Registros Nuevos</h2>
-          <div id="lista-registros" class="scroll-area"></div>
-          <button id="guardarTodo" class="btn-save-all">
-            Guardar todo
-          </button>
-        </div>
-      </div>
-
-    </main>
-  </div>
-
-  <!-- NUEVO: Llamamos al script que inyecta el sidebar de EMSA y resalta la pestaña "Register New" -->
-  <script type="module">
-    // ¡AQUÍ ESTÁ LA CORRECCIÓN! Ruta actualizada apuntando directo a ../utils/
-    import { loadSidebar } from '../utils/sidebar_loader.js';
-    loadSidebar('emsa', 'menu-emsa-register');
-  </script>
-
-  <!-- Tu presentador original -->
-  <script type="module" src="../functions/EMSA/Emsa.Service.presenter.js"></script>
+    </div>
+    <script type="module" src="../functions/Users/User.Login.presenter.js"></script>
 </body>
-
 </html>
