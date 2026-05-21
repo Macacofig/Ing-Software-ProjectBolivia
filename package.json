@@ -2,7 +2,6 @@
   "name": "parcel-jest-base",
   "version": "1.0.0",
   "description": "",
-  "default": "index.html",
   "type": "module",
   "targets": {
     "default": {

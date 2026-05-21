@@ -10,8 +10,8 @@ export async function loadSidebar(type, activeMenuId) {
   if (!container) return;
 
   // Declaramos ambas URLs de forma estática para que Parcel las detecte sin problemas
-  const emsaUrl = new URL('../components/emsa_sidebar.html', import.meta.url);
-  const citizenUrl = new URL('../components/citizen_sidebar.html', import.meta.url);
+  const emsaUrl = '../components/emsa_sidebar.partial.html';
+  const citizenUrl = '../components/citizen_sidebar.partial.html';
 
   // Elegimos la ruta correcta según el parámetro
   const url = type === 'emsa' ? emsaUrl : citizenUrl;
