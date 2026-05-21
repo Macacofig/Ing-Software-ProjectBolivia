@@ -1,4 +1,4 @@
-import { Service,ModelService, verify_service } from "../../Models/Service.js";
+import { WasteCollection,ModelWasteCollection, verify_WasteCollection } from "../../Models/WasteCollection.js";
 import { getServices } from "../../utils/localStorage.js";
 //Data elements
 const Day_input = document.getElementById("daySelect"); // DAY INPUT
@@ -181,7 +181,7 @@ form.addEventListener("submit", (e) => {
 
   clearErrors();
 
-  const service = new Service(
+  const wastecollection = new WasteCollection(
     Day_input.value,
     District_input.value,
     Zone_input.value,
@@ -190,9 +190,9 @@ form.addEventListener("submit", (e) => {
     "available"
   );
 
-  const validation = verify_service(
-    service,
-    getServices("services"),
+  const validation = verify_WasteCollection(
+    wastecollection,
+    getServices("wasteCollections") || [],
     registros
   );
 
@@ -211,7 +211,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  registros.push(service);
+  registros.push(wastecollection);
 
   showFormMessage("Servicio registrado correctamente", "success");
 
@@ -256,9 +256,9 @@ guardarTodoBtn.addEventListener("click", () => {
     return;
   }
 
-   const model = new ModelService();
+   const model = new ModelWasteCollection();
 
-  registros.forEach(service  => { model.addService(service); });
+  registros.forEach(wastecollection  => { model.addWasteCollection(wastecollection); });
   registros = []; 
   renderRegistros();
   showFormMessage("Todos los servicios han sido guardados", "success");

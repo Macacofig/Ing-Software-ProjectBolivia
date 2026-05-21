@@ -1,5 +1,5 @@
 import { getServices } from "../../utils/localStorage.js";
-import { filter_services } from "../../Models/Service.js";
+import { filter_Wastecollections } from "../../Models/WasteCollection.js";
 import { select_collection_point, filter_by_route } from "../EMSA/Service.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -121,9 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const rutaInput = inputRuta.value.trim();
         const estricto = checkEstricto.checked;
 
-        let services = getServices('services');
+        let services = getServices('wasteCollections');
 
-        services = filter_services(services, { distrito, zone: zona, day: dia });
+        services = filter_Wastecollections(services, { distrito, zone: zona, day: dia });
 
         if (rutaInput) {
             const routes = rutaInput.split(",").map(r => r.trim()).filter(r => r !== "");
@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== CARGA INICIAL =====
-    renderServices(getServices('services'));
+    renderServices(getServices('wasteCollections'));
 
     // ===== MAPA - MODAL =====
     const mapContainer = document.getElementById("map-container");

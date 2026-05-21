@@ -204,7 +204,7 @@ function activateCompleteButtons() {
         Number(e.target.dataset.id);
 
       const reportToUpdate =
-        reports.find(
+        reports.getReports().find(
           report => report.id === reportId
         );
 
@@ -217,10 +217,7 @@ function activateCompleteButtons() {
           : "Completed";
 
       // GUARDAR
-      saveServicesToLocalStorage(
-        reports,
-        "reports"
-      );
+      reports.saveReports();
 
       // REAPLICAR FILTROS
       applyFilters();

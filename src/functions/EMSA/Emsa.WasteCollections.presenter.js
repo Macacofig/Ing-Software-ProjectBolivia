@@ -1,30 +1,8 @@
 
-editDistrito.addEventListener("change", function () {
 
-    const distrito = this.value;
+import {ModelWasteCollection, WasteCollection, filter_Wastecollections } from "../../Models/WasteCollection.js";
 
-    editZona.innerHTML = '<option value="">Zona</option>';
-
-    if (Zones_by_district[distrito]) {
-
-        Zones_by_district[distrito].forEach(zona => {
-
-            const option = document.createElement("option");
-
-            option.value = zona;
-            option.textContent = zona;
-
-            editZona.appendChild(option);
-
-        });
-
-    }
-
-});
-
-import {ModelService, Service, filter_services } from "../../Models/Service.js";
-
-const model = new ModelService();
+const model = new ModelWasteCollection();
 
 const gridCards = document.getElementById("grid-cards");
 
@@ -198,7 +176,7 @@ function filterServices() {
     const dia = selectDia.value;
     const search = searchInput.value.toLowerCase();
 
-    const filtered = filter_services(model.getServices(), { distrito, zone: zona, day: dia, search });
+    const filtered = filter_Wastecollections(model.getWasteCollections(), { distrito, zone: zona, day: dia, search });
     renderServices(filtered);
 
 }
@@ -215,7 +193,7 @@ function clearFilters() {
     selectZona.innerHTML = '<option value="">Zona</option>';
 
     renderServices(
-        model.getServices()
+        model.getWasteCollections()
     );
 
 }
@@ -251,9 +229,9 @@ clearFiltersBtn.addEventListener(
 
 function openEditModal(index) {
 
-    const services = model.getServices();
+    const wasteCollections = model.getWasteCollections();
 
-    const service = services[index];
+    const service = wasteCollections[index];
 
     currentEditIndex = index;
 
@@ -298,7 +276,7 @@ function closeEditModal() {
 saveEdit.addEventListener("click", () => {
 
     const updatedService =
-        new Service(
+        new WasteCollection(
 
             editDia.value,
 
@@ -317,13 +295,13 @@ saveEdit.addEventListener("click", () => {
 
         );
 
-    model.updateService(
+    model.updateWasteCollection(
         currentEditIndex,
         updatedService
     );
 
     renderServices(
-        model.getServices()
+        model.getWasteCollections()
     );
 
     closeEditModal();
@@ -350,10 +328,10 @@ function closeDeleteModal() {
 
 confirmDelete.addEventListener("click", () => {
 
-    model.deleteService(currentDeleteIndex);
+    model.deleteWasteCollection(currentDeleteIndex);
 
     renderServices(
-        model.getServices()
+        model.getWasteCollections()
     );
 
     closeDeleteModal();
@@ -364,13 +342,12 @@ cancelDelete.addEventListener("click", closeDeleteModal);
 
 /* INITIAL */
 
-renderServices(model.getServices());
+renderServices(model.getWasteCollections());
 
 /* =========================
    EDIT MODAL ZONAS
 ========================= */
 
-/*
 editDistrito.addEventListener("change", function () {
 
     const distrito = this.value;
@@ -393,5 +370,4 @@ editDistrito.addEventListener("change", function () {
     }
 
 });
-*/
 
