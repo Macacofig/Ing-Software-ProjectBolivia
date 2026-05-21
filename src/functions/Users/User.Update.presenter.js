@@ -12,12 +12,12 @@ if (!authService.checkAuth()) {
 
 const form =
     document.getElementById(
-        "updateProfileForm"
+        "edit-profile-form"
     );
 
 const messageBox =
     document.getElementById(
-        "messageBox"
+        "message-container"
     );
 
 const modelUser =
@@ -66,7 +66,7 @@ form.addEventListener(
 
             name:
                 document
-                    .getElementById("name")
+                    .getElementById("username")
                     .value,
 
             email:
@@ -138,7 +138,7 @@ function loadCurrentUser() {
     if (!currentUser) return;
 
     document
-        .getElementById("name")
+        .getElementById("username")
         .value =
         currentUser.getName();
 
@@ -188,9 +188,11 @@ function renderMessage(result) {
 
 function showFieldError(field) {
 
+    const inputId = field === "name" ? "username" : field;
+
     const input =
         document.getElementById(
-            field
+            inputId
         );
 
     if (input) {
