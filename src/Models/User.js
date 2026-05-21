@@ -270,10 +270,33 @@ function verify_update_user(user,usersList = [])
 
 }
 
+function login_user(email, password, usersList = [])
+{
+    if (!email || !password)
+    {
+        return {success: false, message: "Email y contraseña requeridos"};
+    }
+
+    const user = usersList.find(u => u.email === email);
+
+    if (!user)
+    {
+        return {success: false, message: "Credenciales incorrectas"};
+    }
+
+    if (user.password !== password)
+    {
+        return {success: false, message: "Credenciales incorrectas"};
+    }
+
+    return {success: true, role: user.role, id: user.id};
+}
+
 
 export {
     User,
     ModelUser,
     verify_user,
-    verify_update_user
+    verify_update_user,
+    login_user
 };
